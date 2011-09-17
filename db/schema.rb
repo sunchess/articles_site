@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110903173132) do
+ActiveRecord::Schema.define(:version => 20110916174639) do
 
   create_table "articles", :force => true do |t|
     t.integer  "category_id"
@@ -23,7 +23,8 @@ ActiveRecord::Schema.define(:version => 20110903173132) do
   add_index "articles", ["category_id"], :name => "index_articles_on_category_id"
 
   create_table "categories", :force => true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "position"
   end
 
   add_index "categories", ["name"], :name => "index_categories_on_name"
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20110903173132) do
     t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role_mask",                             :default => 0,  :null => false
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

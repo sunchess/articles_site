@@ -1,7 +1,11 @@
 Jsovet::Application.routes.draw do
-  get "home/index"
 
   devise_for :users
+
+  namespace :admin do
+    resources :category, :only => %w{index create edit update}
+    resource :dashboard, :only => %w{show}
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
