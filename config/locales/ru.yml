@@ -1,11 +1,35 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  hello: "Hello world"
-
+ru:
+  sessions:
+    login: 'Войти'
+    logout: 'Выйти'
+    sign_in: "Вход для пользователей"
+        
   activerecord:
     attributes:
-      user:  
-        login: "Username or email"
-
+      user:
+        email: "Email" #Exeple for not en locale
+        password: "Пароль"
+        password_confirmation: "Пароль еще раз"
+        current_password: "Текущий пароль"
+        remember_me: "Запомнить меня"
+        login: "Логин или емеил"
+        
+  helpers:
+    label:
+      #post:
+        # body: "Write your entire text here"
+    submit:
+      create: "Создать"
+      update: "Редактировать"
+      submit: "Загрузить"
+      destroy: "Удалить"
+      publish: "Опубликовать"
+      next: "Далее"
+  
+  errors:      
+    messages: 
+      activerecord:
+        title: "Допущены ошибки"

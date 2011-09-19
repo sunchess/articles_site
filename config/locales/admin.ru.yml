@@ -1,0 +1,20 @@
+ru:
+  admin:
+    dashboard:
+      navigation: "Администраторская"
+      show:
+        category: "Категории статей"
+    categories:
+      index:
+        title: "Управление категориями"
+        edit: "Редактировать" 
+        name: "Название"
+        position: "Позиция"
+        tools: "Действия"
+
+  
+  activerecord:
+    attributes:
+      category:
+        name: "Название"
+        position: "Позиция"

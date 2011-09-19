@@ -1,0 +1,8 @@
+<div>
+  <%= form_for @category, :url => admin_category_path(@category) do |f| %>
+    <p>
+      <%= f.label :name %>  <%= f.text_field :name %> <%= f.label :position %> <%= f.text_field :position, :size => 3 %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+</div>

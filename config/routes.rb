@@ -3,8 +3,8 @@ Jsovet::Application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    resources :category, :only => %w{index create edit update}
-    resource :dashboard, :only => %w{show}
+    resources :categories, :only => %w{index create edit update}
+    resource :dashboard, :only => %w{show}, :controller => "dashboard"
   end
 
   # The priority is based upon order of creation:

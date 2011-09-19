@@ -11,6 +11,30 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login
 
+  def role
+    User.roles[self.role_mask]
+  end
+
+  def role?(role)
+    if self.role_mask
+      User.roles[self.role_mask] == role.to_sym
+    else
+      false
+    end
+  end
+
+  def role=(role)
+    self.role_mask = User.roles.map{|r| r == role.to_sym ? User.roles.index(r) : nil }.compact.first
+  end
+
+
+  def admin?
+    self.role? :admin
+  end
+  
+  
+  before_save :check_first_user
+
   protected
 
   def self.find_for_database_authentication(warden_conditions)
@@ -59,30 +83,6 @@ class User < ActiveRecord::Base
    def self.find_record(login)
      where(["username = :value OR email = :value", { :value => login }]).first
    end
-
-  def role
-    User.roles[self.role_mask]
-  end
-
-  def role?(role)
-    if self.role_mask
-      User.roles[self.role_mask] == role.to_sym
-    else
-      false
-    end
-  end
-
-  def role=(role)
-     self.role_mask = User.roles.map{|r| r == role.to_sym ? User.roles.index(r) : nil }.compact.first
-  end
-
-
-  def admin?
-    self.role? :admin
-  end
-  
-  
-  before_save :check_first_user
   
   private
   def check_first_user
