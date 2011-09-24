@@ -1,0 +1,6 @@
+<h1><%= t(".title") %></h1>
+
+<%= render :partial => "article", :collection => @articles %>
+
+
+<%= will_paginate @articles %>

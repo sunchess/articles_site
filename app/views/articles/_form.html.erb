@@ -1,0 +1,21 @@
+<% set_editor %>
+<%= form_for @article do |f| %>
+  <%= render "shared/error_messages", :target => @article %>
+  <p>
+    <%= f.label :category_id %><%= mark_required(@article, :category_id) %><br/>
+    <%= f.select :category_id,  Category.all.collect {|p| [ p.name, p.id ] }, { :include_blank => true } %>
+  </p>
+  <p>
+    <%= f.label :name %><%= mark_required(@article, :name) %><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :body %><%= mark_required(@article, :body) %><br/>
+    <%= f.text_area :body, :id => "textile" %>
+  </p>
+  <%= f.submit %>
+<% end %>
+
+
+
+

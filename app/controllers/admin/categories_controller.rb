@@ -2,15 +2,17 @@ class Admin::CategoriesController < ApplicationController
   load_and_authorize_resource :category
 
   def index
-   # @categories = Category.all
+    @category = Category.new
   end
+
 
   def create
     @category = Category.new(params[:category])
     if @category.save
-      redirect_to admin_categories_path, :notice => t("categories.successfule.create")
+      redirect_to admin_categories_path, :notice => t("categories.successful.create")
     else
-      render :action => :new
+      @categories = Category.all
+      render :action => :index
     end
   end
 
@@ -19,7 +21,7 @@ class Admin::CategoriesController < ApplicationController
 
   def update
     if @category.update_attributes(params[:category])
-      redirect_to admin_categories_path, :notice => t("categories.successfule.update")
+      redirect_to admin_categories_path, :notice => t("categories.successful.update")
     else
       render :action => :edit
     end

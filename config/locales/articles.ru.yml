@@ -1,0 +1,18 @@
+ru:
+  articles:
+    add: "Добавть статью"
+    my: "Мои статьи"
+    new:
+      title: "Добавить статью"
+    article:
+      publish_on: "Опубликавана"
+    my:
+      title: "Статьи добавленные мной"
+
+
+  activerecord:
+    attributes:
+      article:
+        category_id: "Категория"
+        name: "Название"
+        body: "Текст"

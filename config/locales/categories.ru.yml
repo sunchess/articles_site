@@ -1,0 +1,6 @@
+ru:
+  categories:
+    successful:
+      create: "Категоря успешно создана"
+      update: "Категоря отредактирована"
+

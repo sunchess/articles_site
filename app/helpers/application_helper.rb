@@ -1,2 +1,24 @@
 module ApplicationHelper
+  def mark_required(object, attribute)
+    "*" if object.class.validators_on(attribute).map(&:class).include? ActiveModel::Validations::PresenceValidator
+  end
+
+  def set_editor
+    content_for(:editor) do
+      '
+      <link rel="stylesheet" type="text/css" href="/markitup/skins/markitup/style.css" />
+      <link rel="stylesheet" type="text/css" href="/markitup/sets/default/style.css" />
+      <script type="text/javascript" src="/markitup/jquery.markitup.js"></script>
+      <script type="text/javascript" src="/markitup/sets/default/set.js"></script>
+
+      <script language="javascript">
+      $(document).ready(function()	{
+          $(\'#textile\').markItUp(myTextileSettings);
+      });
+      </script>
+      '.html_safe
+    end
+  end
 end
+
+

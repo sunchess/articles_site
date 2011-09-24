@@ -7,6 +7,7 @@ class CreateCategories < ActiveRecord::Migration
   end
 
   def self.down
+    remove_index :categories, :column => :name
     drop_table :categories
   end
 end

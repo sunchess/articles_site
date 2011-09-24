@@ -7,6 +7,17 @@ Jsovet::Application.routes.draw do
     resource :dashboard, :only => %w{show}, :controller => "dashboard"
   end
 
+  resources :categories, :only => %w{index} do
+    resources :articles
+  end
+
+  resources :articles, :only => %w{new create edit update} do
+    collection do
+      get 'my'
+      post 'preview'
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

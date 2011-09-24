@@ -15,7 +15,8 @@
   <% end %>
 </table>
   <div>
-    <%= form_for Category.new, :url => admin_categories_path do |f| %>
+    <%= form_for @category, :url => admin_categories_path do |f| %>
+      <%= render "shared/error_messages", :target => @category %>
       <p>
         <%= f.label :name %>  <%= f.text_field :name %> <%= f.label :position %> <%= f.text_field :position, :size => 3 %>
       </p>
