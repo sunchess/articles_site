@@ -4,6 +4,7 @@ ru:
       navigation: "Администраторская"
       show:
         category: "Категории статей"
+        articles: "Статьи неопубликованные"
     categories:
       index:
         title: "Управление категориями"

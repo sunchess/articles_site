@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
+    @article.accessible = [:user_id] if admin?
     @article.user = current_user
     if @article.save
       redirect_to my_articles_path, :notice => t( "articles.successful.update" ) 
@@ -35,6 +36,7 @@ class ArticlesController < ApplicationController
 
   def update
    #@hotel.accessible = [ :draft, :paid_placement  ] if admin?
+   @article.accessible = [:user_id] if admin?
    @article.attributes = params[:article] 
    if @article.save
      redirect_to edit_article_path(@article), :notice => t( "articles.successful.update" )

@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   has_many :articles
 
+  scope :authors, where(:role_mask => 2)
+
   def role
     User.roles[self.role_mask]
   end
@@ -33,7 +35,7 @@ class User < ActiveRecord::Base
   def admin?
     self.role? :admin
   end
-  
+
   
   before_save :check_first_user
 
@@ -94,7 +96,7 @@ class User < ActiveRecord::Base
   end
 
   def self.roles
-    [:user, :admin, :manager]
+    [:user, :admin, :author]
   end
 
 end

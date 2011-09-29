@@ -33,5 +33,9 @@ class Article < ActiveRecord::Base
     transitions :to => :deleted, :from => ["draft", "publics"]
   end
 
+  def author
+    self.user.username
+  end
+
 
 end

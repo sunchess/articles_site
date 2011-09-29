@@ -2,6 +2,10 @@
 <%= form_for @article do |f| %>
   <%= render "shared/error_messages", :target => @article %>
   <p>
+    <%= f.label :user_id %>
+    <%= f.select :user_id,  User.all.collect {|p| [ p.username, p.id ] } %>
+  </p>
+  <p>
     <%= f.label :category_id %><%= mark_required(@article, :category_id) %><br/>
     <%= f.select :category_id,  Category.all.collect {|p| [ p.name, p.id ] }, { :include_blank => true } %>
   </p>
