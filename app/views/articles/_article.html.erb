@@ -3,11 +3,20 @@
   <%= article.preview %>
 </div>
 <div class="article date">  <%= t(".publish_on")  %>: <%= l( article.updated_at ) %></div>
+<% if params[:action] == "my" %>
+  <div class="article status"> <%= t(".status") %>: <%= article.aasm_status %></div>
+<% end %>
 <% if can? :update, article %>
   <div>
     <%= link_to t("edit"), edit_article_path(article) %>
     <% if can? :destroy, article %>
       <%= link_to t("destroy"), article_path(article), :method => :delete%>
+    <% end %>
+    <% if can? :publish, article and not article.publics? %>
+      <%= link_to t("publish"), publish_article_path(article) %>
+    <% end %>
+    <% if can? :delete, article %>
+      <%= link_to t("delete"), delete_article_path(article), :confirm => t("confirm") %>
     <% end %>
   </div>
 <% end %>

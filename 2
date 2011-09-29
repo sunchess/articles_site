@@ -1,8 +1,0 @@
-<h2><%= link_to article.name, category_article_path(article.category_id, article.id) %></h2>
-<div class="article body">
-  <%= article.preview %>
-</div>
-<div class="article date">  <%= t(".publish_on")  %>: <%= l( article.updated_at ) %></div>
-<% if can? :update, article %>
-  <div><%= link_to t("edit"), edit_article_path(article) %></div>
-<% end %>

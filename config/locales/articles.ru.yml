@@ -1,13 +1,21 @@
 ru:
   articles:
+    successful:
+      create: "Статья создана"
+      update: "Статья отредактирована"
+
     add: "Добавть статью"
     my: "Мои статьи"
+    edit:
+      title: "Редактирование статьи"
     new:
       title: "Добавить статью"
     article:
       publish_on: "Опубликавана"
+      status: "Статус статьи"
     my:
       title: "Статьи добавленные мной"
+
 
 
   activerecord:
@@ -16,3 +24,4 @@ ru:
         category_id: "Категория"
         name: "Название"
         body: "Текст"
+        preview: "Кратко о статье"

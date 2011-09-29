@@ -1,10 +1,13 @@
 Jsovet::Application.routes.draw do
 
+  get "articles/index"
+
   devise_for :users
 
   namespace :admin do
     resources :categories, :only => %w{index create edit update}
     resource :dashboard, :only => %w{show}, :controller => "dashboard"
+    resources :articles, :only => "index"
   end
 
   resources :categories, :only => %w{index} do
@@ -15,6 +18,9 @@ Jsovet::Application.routes.draw do
     collection do
       get 'my'
       post 'preview'
+    end
+    member do 
+      get 'publish', 'delete'
     end
   end
 
