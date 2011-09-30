@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110929085829) do
+ActiveRecord::Schema.define(:version => 20110929105839) do
 
   create_table "articles", :force => true do |t|
     t.integer  "category_id"
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(:version => 20110929085829) do
 
   add_index "comments", ["article_id"], :name => "index_comments_on_article_id"
   add_index "comments", ["parent_id"], :name => "index_comments_on_parent_id"
+
+  create_table "images", :force => true do |t|
+    t.integer  "user_id"
+    t.boolean  "hidden"
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
+  end
+
+  add_index "images", ["pic_content_type"], :name => "index_images_on_pic_content_type"
+  add_index "images", ["pic_file_name"], :name => "index_images_on_pic_file_name"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

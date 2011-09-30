@@ -1,2 +1,24 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<h1><%= @article.name %></h1>
+
+<div class="article body">
+  <%= RedCloth.new( @article.body ).to_html.html_safe %>
+</div>
+<div class="article date">  <%= t("articles.article.publish_on")  %>: <%= l( @article.updated_at ) %></div>
+<div class="article author">  <%= t("articles.article.author")  %>: <%=  @article.author %></div>
+<% if params[:action] == "my" %>
+  <div class="article status"> <%= t("articles.article.status") %>: <%= @article.aasm_status %></div>
+<% end %>
+<% if can? :update, @article %>
+  <div>
+    <%= link_to t("edit"), edit_article_path(@article) %>
+    <% if can? :destroy, @article %>
+      <%= link_to t("destroy"), article_path(@article), :method => :delete%>
+    <% end %>
+    <% if can? :publish, @article and not @article.publics? %>
+      <%= link_to t("publish"), publish_article_path(@article) %>
+    <% end %>
+    <% if can? :delete, @article %>
+      <%= link_to t("delete"), delete_article_path(@article), :confirm => t("confirm") %>
+    <% end %>
+  </div>
+<% end %>

@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login
 
   has_many :articles
+  has_many :images
+
 
   scope :authors, where(:role_mask => 2)
 
