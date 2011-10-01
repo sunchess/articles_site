@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
    
   def index
-    @articles = @category.articles.paginate(:page => params[:page], :per_page => 10)
+    @articles = @category.articles.published.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

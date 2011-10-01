@@ -1,0 +1,52 @@
+<style>
+	
+*{
+	margin: 0;
+	padding: 0;	 
+}
+
+ul, li {
+	display: inline;
+}
+	
+ul li  {
+	display: block;
+	//background: red;
+	//color: white;
+	padding: 10px;	
+	float: left;
+}	
+
+a.selected:link { 
+	color: #333333;
+	}
+a.selected:visited { 
+	color: #333333;
+	}
+a.selected:hover { 
+	color: #CCCCCC;
+	background-color: #333333;
+	text-decoration: none;
+	}
+a.selected:active { 
+	color: #333333;
+	}
+</style>
+
+<h1><%= t(".title") %></h1>
+<%= link_to t(".shown"), images_path(:images_type => "shown"), :class => ( params[:images_type] != "hidden" ) ? "selected":nil, :method => :post %> | <%= link_to t(".hidden"), images_path(:images_type => "hidden"), :class => ( params[:images_type] == "hidden" ) ? "selected" : nil, :method => :post %>
+<%= form_for @image, :html => { :multipart => true } do |f| %>
+  <%= f.label :pic %>
+  <%= f.file_field :pic  %>
+  <%= f.submit %>
+<% end %>
+<br/>
+<%= form_tag(update_images_images_path, :method => :put) do %>
+  <%= submit_tag t(".hide") %>
+<br/>
+  <ul>
+    <%= render :partial => "shared/image", :collection => @images %>
+  </ul>
+<br CLEAR="both" />
+  <%= submit_tag t(".hide") %>
+<% end %>

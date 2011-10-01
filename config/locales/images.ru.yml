@@ -1,0 +1,13 @@
+ru:
+  images:
+    index:
+      title: "Ваши изображения"
+      hide: "Спрятать/показать изображения"
+      shown: "Просматриваеммые"
+      hidden: "Удаленные"
+
+
+  activerecord:
+    attributes:
+      image:
+        pic: "Изображение"

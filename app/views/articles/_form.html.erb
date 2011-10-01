@@ -1,4 +1,4 @@
-<% set_editor %>
+<% set_editor_comment %>
 <%= form_for @article do |f| %>
   <%= render "shared/error_messages", :target => @article %>
   <% if admin? %>
@@ -26,11 +26,9 @@
   <%= f.submit %>
 <% end %>
 
-<iframe >
-<p>
-  <%= render :partial => "shared/image", :collection => current_user.images %>
-</p>
-</iframe>
+<div style="margin-top: 10px;">
+  <iframe src="<%= images_path %>" width="90%" height="500" name="imagesIframe"></iframe>
+</div>
 
 
 

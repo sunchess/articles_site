@@ -1,0 +1,7 @@
+<% set_editor_comment %>
+<%= t(".new") %>
+<div id="errors"></div>
+<%= form_for [ @article, Comment.new ], :remote => true, :url => article_comments_path(@article) do |f| %>
+  <%=f.text_area :body, :size => "80x8", :id => "textile", :class => "markItUp" %>
+  <%= f.submit t(".create") %>
+<% end %>

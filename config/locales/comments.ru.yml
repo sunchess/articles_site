@@ -1,0 +1,13 @@
+ru:
+  comments:
+    form:
+      new: "Добавить комментарий"
+      create: "Комментировать"
+
+
+
+
+  activerecord:
+    attributes:
+      comment:
+        body: "Комментарий"

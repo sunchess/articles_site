@@ -16,6 +16,11 @@ ru:
       author: "Автор"
     my:
       title: "Статьи добавленные мной"
+    show:
+      register_or_login: "%{link_register} или %{link_login} для того чтобы комментировать."
+      register: "Зарегистрируйтесь"
+      login: "войдите"
+
 
 
 

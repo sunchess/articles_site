@@ -1,7 +1,5 @@
 Jsovet::Application.routes.draw do
 
-  get "articles/index"
-
   devise_for :users
 
   namespace :admin do
@@ -15,14 +13,26 @@ Jsovet::Application.routes.draw do
   end
 
   resources :articles, :only => %w{new create edit update} do
+
     collection do
       get 'my'
       post 'preview'
     end
+
     member do 
       get 'publish', 'delete'
     end
+
+    resources :comments, :only => %w{create update}
   end
+
+  resources :images do
+    collection do
+      put "update_images"
+    end
+  end
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

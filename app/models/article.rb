@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
   attr_accessible :name, :body, :category_id, :preview, :status
+  acts_as_commentable
+
 
   belongs_to :category, :counter_cache => true
   belongs_to :user, :counter_cache => true
@@ -8,7 +10,7 @@ class Article < ActiveRecord::Base
   validates_length_of :preview, :within => 100..2000
   validates_length_of :body, :within => 500..50000
 
-  scope :published, where(:aasm_status => :public)
+  scope :published, where(:aasm_status => :publics)
   scope :draft, where(:aasm_status=> :draft)
   scope :deleted, where(:aasm_status => :deleted)
   scope :not_deleted, where(:aasm_status => [:publics, :draft])

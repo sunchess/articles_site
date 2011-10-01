@@ -15,6 +15,8 @@ gem 'inherited_resources'
 gem "acts_as_list-rails3", "~> 0.0.4"
 gem 'RedCloth', :require => 'redcloth'
 gem 'aasm'
+gem 'acts_as_commentable_with_threading'
+
 #gem 'inherited_resources',        '~> 1.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

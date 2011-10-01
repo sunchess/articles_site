@@ -1,0 +1,2 @@
+  page << "$('#comments').html('#{escape_javascript(render :partial => "comments/comment", :collection => @article.comment_threads )}')"
+

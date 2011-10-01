@@ -31,6 +31,10 @@ GEM
       activemodel (= 3.0.10)
       activesupport (= 3.0.10)
     activesupport (3.0.10)
+    acts_as_commentable_with_threading (1.1.1)
+      activerecord (~> 3.0)
+      activesupport (~> 3.0)
+      moretea-awesome_nested_set
     acts_as_list-rails3 (0.0.4)
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
@@ -56,6 +60,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    moretea-awesome_nested_set (1.4.3.1)
+      activerecord (~> 3.0.0)
     orm_adapter (0.0.5)
     paperclip (2.3.16)
       activerecord (>= 2.3.0)
@@ -101,6 +107,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   aasm
+  acts_as_commentable_with_threading
   acts_as_list-rails3 (~> 0.0.4)
   cancan
   devise

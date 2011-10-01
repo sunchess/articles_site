@@ -22,3 +22,13 @@
     <% end %>
   </div>
 <% end %>
+
+<br/>
+<% if can? :create, Comment %>
+  <%= render :partial => "comments/form" %>
+<% else %>
+  <%= t(".register_or_login", :link_register => link_to( t(".register"), new_user_registration_path ) , :link_login =>link_to( t(".login"), new_user_registration_path ) ).html_safe  %>
+<% end %>
+<div id="comments">
+  <%= render :partial => "comments/comment", :collection => @article.comment_threads %>
+</div>
