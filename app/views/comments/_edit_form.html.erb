@@ -1,0 +1,11 @@
+<div id="errors"></div>
+<%= form_for [ @article, comment ], :remote => true do |f| %>
+  <% if admin? %>
+    <p>
+      <%= f.label :user_id %>
+      <%= f.select :user_id,  User.authors_and_admins.collect {|p| [ p.username, p.id ] } %>
+    </p>
+  <% end %>
+  <%=f.text_area :body, :size => "80x8", :id => "textile", :class => "markItUpR" %>
+  <%= f.submit t(".create") %>
+<% end %>

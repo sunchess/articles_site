@@ -24,11 +24,31 @@
 <% end %>
 
 <br/>
+
+<% set_editor_comment %>
 <% if can? :create, Comment %>
-  <%= render :partial => "comments/form" %>
+  <%= render :partial => "comments/form", :locals => {:parent_id => 0} %>
 <% else %>
-  <%= t(".register_or_login", :link_register => link_to( t(".register"), new_user_registration_path ) , :link_login =>link_to( t(".login"), new_user_registration_path ) ).html_safe  %>
+  <%= t(".register_or_login", :link_register => link_to( t(".register"), new_user_registration_path ) , :link_login =>link_to( t(".login"), new_user_session_path ) ).html_safe  %>
 <% end %>
 <div id="comments">
-  <%= render :partial => "comments/comment", :collection => @article.comment_threads %>
+  <%= render :partial => "comments/comment", :collection => @article.root_comments%>
 </div>
+<%= hidden_field_tag "set_editor", "0" %>
+
+        <script language="javascript">
+          $('#comments').live('click', function()	{
+           if ($('#set_editor').val()=="0") {
+              jQuery(".markItUpR").markItUp(myTextileSettings).css('height', function() {
+                /* Since line-height is set in the markItUp-css, fetch that value and
+                split it into value and unit.  */
+                var h = jQuery(this).css('line-height').match(/(\d+)(.*)/)
+                /* Multiply line-height-value with nr-of-rows and add the unit.  */
+                return (h[1]*jQuery(this).attr('rows'))+h[2]
+              });
+             $('#set_editor').val("1");
+            } 
+          });
+
+        </script>
+

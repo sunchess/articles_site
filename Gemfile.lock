@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/sunchess/breadcrumbs_on_rails.git
+  revision: 9743f8144520a4e893ff0b37b946e46b9080bf4c
+  specs:
+    breadcrumbs_on_rails (2.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -109,6 +115,7 @@ DEPENDENCIES
   aasm
   acts_as_commentable_with_threading
   acts_as_list-rails3 (~> 0.0.4)
+  breadcrumbs_on_rails!
   cancan
   devise
   haml

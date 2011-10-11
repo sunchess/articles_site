@@ -20,6 +20,8 @@ ru:
       register_or_login: "%{link_register} или %{link_login} для того чтобы комментировать."
       register: "Зарегистрируйтесь"
       login: "войдите"
+    index:
+      title: "Статьи"
 
 
 

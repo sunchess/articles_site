@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 
 
   scope :authors, where(:role_mask => 2)
+  scope :authors_and_admins, where(:role_mask => [1, 2])
 
   def role
     User.roles[self.role_mask]

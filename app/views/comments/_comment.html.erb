@@ -1,2 +1,23 @@
-<%= comment.user.username %>
-<%= comment.body %>
+<div style="padding-left:20px; padding-top: 10px;">
+  <div><%= comment.user.username %> <%= l comment.created_at %></div>
+  <div><%= RedCloth.new(sanitize( comment.body )).to_html.html_safe %></div>
+  <% if can? :create, Comment %>
+    <div>
+      <%= link_to t(".commenting"), '#', :onclick => "$('#comment_form_#{ comment.id }').toggle(); return false; " %>
+      <% if can? :update, comment %>
+        <%= link_to t(".updating"), '#', :onclick => "$('#edit_comment_form_#{ comment.id }').toggle(); return false;" %>
+        <div style="display:none; padding-left:10px" id="edit_comment_form_<%= comment.id %>">
+          <%= render :partial => "comments/edit_form", :locals=>{:comment => comment} %>
+        </div>
+      <% end %>
+    </div>
+      <div style="display:none; padding-left:10px" id="comment_form_<%= comment.id %>">
+        <% if can? :create, Comment %>
+          <%= render :partial => "comments/form", :locals=>{:parent_id => comment.id} %>
+        <% end %>
+      </div>
+  <% end %>
+  <% if comment.has_children? %>
+    <%= render :partial => "comments/comment", :collection => comment.children %>
+  <% end %>
+</div>

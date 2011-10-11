@@ -1,7 +1,13 @@
-<% set_editor_comment %>
-<%= t(".new") %>
+<%= parent_id == 0 ? t(".new") : t(".answer") %>
 <div id="errors"></div>
-<%= form_for [ @article, Comment.new ], :remote => true, :url => article_comments_path(@article) do |f| %>
-  <%=f.text_area :body, :size => "80x8", :id => "textile", :class => "markItUp" %>
+<%= form_for [ @article, Comment.new ], :remote => true, :url => article_comments_path(@article, :parent => parent_id || 0) do |f| %>
+  <% if admin? %>
+    <p>
+      <%= f.label :user_id %>
+      <%= f.select :user_id,  User.authors_and_admins.collect {|p| [ p.username, p.id ] } %>
+    </p>
+  <% end %>
+  <%=f.text_area :body, :size => "80x8", :id => "textile", :class => parent_id == 0 ? "markItUp" : "markItUpR"  %>
   <%= f.submit t(".create") %>
 <% end %>
+

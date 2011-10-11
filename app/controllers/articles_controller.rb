@@ -10,10 +10,13 @@ class ArticlesController < ApplicationController
    
   def index
     @articles = @category.articles.published.paginate(:page => params[:page], :per_page => 10)
+    add_breadcrumb @category.name, category_articles_path(@category)
   end
 
   def show
     @articles = @category.articles.find(params[:id])
+    add_breadcrumb @category.name, category_articles_path(@category)
+    add_breadcrumb @article.name, category_article_path(@category, @article)
   end
 
   def new

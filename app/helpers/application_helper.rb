@@ -36,7 +36,9 @@ module ApplicationHelper
               /* Multiply line-height-value with nr-of-rows and add the unit.  */
               return (h[1]*jQuery(this).attr(\'rows\'))+h[2]
             });
+
           });
+
         </script>
         '.html_safe
     end
