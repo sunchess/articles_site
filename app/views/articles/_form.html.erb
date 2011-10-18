@@ -12,12 +12,12 @@
     <%= f.select :category_id,  Category.all.collect {|p| [ p.name, p.id ] }, { :include_blank => true } %>
   </p>
   <p>
-    <%= f.label :preview %><%= mark_required(@article, :preview) %><br/>
-    <%= f.text_area :preview, :size => "70x6" %>
-  </p>
-  <p>
     <%= f.label :name %><%= mark_required(@article, :name) %><br/>
     <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :preview %><%= mark_required(@article, :preview) %><br/>
+    <%= f.text_area :preview, :size => "70x6" %>
   </p>
   <p>
     <%= f.label :body %><%= mark_required(@article, :body) %><br/>

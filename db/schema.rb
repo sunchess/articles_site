@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111001140231) do
+ActiveRecord::Schema.define(:version => 20111018094328) do
 
   create_table "articles", :force => true do |t|
     t.integer  "category_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20111001140231) do
     t.integer  "user_id",                          :null => false
     t.string   "aasm_status", :default => "draft", :null => false
     t.text     "preview"
+    t.boolean  "delta",       :default => true,    :null => false
   end
 
   add_index "articles", ["aasm_status"], :name => "index_articles_on_status"

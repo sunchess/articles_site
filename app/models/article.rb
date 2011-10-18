@@ -16,6 +16,17 @@ class Article < ActiveRecord::Base
   scope :not_deleted, where(:aasm_status => [:publics, :draft])
 
 
+  define_index do
+    indexes name
+    indexes preview
+    indexes body
+    has category_id
+    where "aasm_status = 'publics'"
+
+    set_property :delta => true
+  end
+
+
   include AASM
 
   aasm_column :aasm_status # defaults to aasm_state

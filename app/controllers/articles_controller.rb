@@ -26,7 +26,12 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     @article.accessible = [:user_id] if admin?
-    @article.user = current_user
+    if params[:article][:user_id]
+      @article.user_id = params[:article][:user_id]
+    else 
+      @article.user = current_user
+    end
+
     if @article.save
       redirect_to my_articles_path, :notice => t( "articles.successful.update" ) 
     else

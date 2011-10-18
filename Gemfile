@@ -17,6 +17,8 @@ gem 'RedCloth', :require => 'redcloth'
 gem 'aasm'
 gem 'acts_as_commentable_with_threading'
 gem "breadcrumbs_on_rails", :git => 'git://github.com/sunchess/breadcrumbs_on_rails.git'
+gem 'thinking-sphinx', '2.0.5'
+
 
 #gem 'inherited_resources',        '~> 1.2.2'
 # Bundle edge Rails instead:

@@ -5,3 +5,6 @@ tmp/
 config/*.yml
 *.swp
 public/system
+config/development.sphinx.conf
+log
+db/sphinx
