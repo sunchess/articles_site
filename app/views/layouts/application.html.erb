@@ -73,9 +73,11 @@
     <p class="alert"><%= alert %></p>
   <% end %>
 
+  <div class="content">
     <%= render_breadcrumbs %>
     <%#= render :partial => "layouts/search_form" %>
     <%= yield %>
+  </div>
 
 		</div><!-- END content -->
 	</div><!-- END wrapper -->
