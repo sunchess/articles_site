@@ -9,12 +9,17 @@ class ArticlesController < ApplicationController
   end
    
   def index
-    @articles = @category.articles.published.paginate(:page => params[:page], :per_page => 10)
-    add_breadcrumb @category.name, category_articles_path(@category)
+    if @category
+      @articles = @category.articles.published.paginate(:page => params[:page], :per_page => 10)
+      add_breadcrumb @category.name, category_articles_path(@category)
+    else
+      @articles = Article.published.order("id DESC").paginate(:per_page => 20, :page => params[:page])
+    end
   end
 
   def show
-    @articles = @category.articles.find(params[:id])
+    @article = @category.articles.find(params[:id])
+    @articles = @category.articles.where([ "id <> ?", params[:id] ]).limit(3)
     add_breadcrumb @category.name, category_articles_path(@category)
     add_breadcrumb @article.name, category_article_path(@category, @article)
   end
@@ -33,7 +38,7 @@ class ArticlesController < ApplicationController
     end
 
     if @article.save
-      redirect_to my_articles_path, :notice => t( "articles.successful.update" ) 
+      redirect_to my_articles_path, :notice => t( "articles.successful.create" ) 
     else
       render :action => :new
     end
@@ -75,7 +80,7 @@ class ArticlesController < ApplicationController
 
   private
   def find_category
-    @category = Category.find(params[:category_id])
+    @category = Category.find(params[:category_id]) if params[:category_id]
   end
 
   def find_article

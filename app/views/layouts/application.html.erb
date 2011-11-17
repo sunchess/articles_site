@@ -3,7 +3,7 @@
 <head>
   <title><% if render_breadcrumbs(:full=>true).present?%>
     <%= "#{render_breadcrumbs(:no_html=>true, :separator => ' / ', :full=>true).html_safe} :: " %>
-  <% end %>Text Engine</title>
+  <% end %>Мед на дом</title>
 
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
@@ -11,18 +11,92 @@
   <%= csrf_meta_tag %>
 
 </head>
+
 <body>
-  <div><%= render :partial => "layouts/users_login_register" %></div>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if current_user %>
+    <%= render :partial => "layouts/users_login_register" %>
+  <% end %>
+  <div class="header">
+		<h1><a href="#"><span></span>Honey-bee</a></h1>
+		<a href="/" class="home"></a>
+		<a href="#" class="sitemap"></a>
+		<ul class="top_nav">
+			<li><a href="#">Каталог <span>Продукции</span></a></li>
+			<li><a href="#">Как купить <span>условия покупки и доставки</span></a></li>
+			<li><a href="#">Вопросы <span>ответы на вопросы от пчеловодов</span></a></li>
+			<li><a href="<%= articles_path %>">Статьи <span>всё о мёде</span></a></li>
+		</ul><!-- END top_nav -->
+	</div><!-- END header -->
+        <!--<div><%= render :partial => "layouts/users_login_register" %></div>-->
+	<div class="wrapper">
+		<div class="sidebar">
+			<div class="sidebar_block menu">
+				<ul>
+                                  <%= render :partial => "layouts/category", :collection => Category.all %>
+				</ul>
+			</div><!-- END sidebar_block -->
+			<div class="sidebar_block cart">
+				<h2>Моя корзина</h2>
+				<span>2</span>
+				<p>товара(-ов)</p>
+				<a href="#">Посмотреть корзину</a>
+			</div><!-- END sidebar_block -->
+			<div class="sidebar_block contact">
+				<h2>Контакты</h2>
+				<p>+7(495)<span>555 78 45</span></p>
+				<p>info@honey-bee.ru</p>
+			</div><!-- END sidebar_block -->
+			<div class="sidebar_block qa">
+				<h2>Вопрос-ответ</h2>
+				<ul>
+					<li><a href="#">Чем полезен мед?</a></li>
+					<li><a href="#">Как мед используется в косметике?</a></li>
+					<li><a href="#">Как различить сорт меда?</a></li>
+					<li><a href="#">Как хранить мед?</a></li>
+					<li><a href="#">Как мед используется в косметике?</a></li>
+					<li><a href="#">Чем полезен мед?</a></li>
+					<li><a href="#">Как мед используется в косметике?</a></li>
+					<li><a href="#">Как различить сорт меда?</a></li>
+					<li><a href="#">Как хранить мед?</a></li>
+					<li><a href="#">Как мед используется в косметике?</a></li>
+					<li><a href="#">Как различить сорт меда?</a></li>
+					<li><a href="#">Как хранить мед?</a></li>
+					<li><a href="#">Как мед используется в косметике?</a></li>
+				</ul>
+				<a href="#" class="ask">Задать вопрос</a>
+			</div><!-- END sidebar_block -->
+		</div><!-- END sidebar -->
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
 
   <div style="float: right; width: 70%;">
     <%= render_breadcrumbs %>
-    <%= render :partial => "layouts/search_form" %>
+    <%#= render :partial => "layouts/search_form" %>
     <%= yield %>
   </div>
-  <div style="float: left; width: 300px;">
-    <%= render :partial => "layouts/category", :collection => Category.all %>
-  </div>
+
+		</div><!-- END content -->
+	</div><!-- END wrapper -->
+	<div class="footer">
+		<ul>
+			<li><a href="#">Каталог</a></li>
+			<li><a href="#">Как купить</a></li>
+			<li><a href="#">Вопросы</a></li>
+			<li><a href="#">Статьи</a></li>
+			<li><a href="#">Форумы</a></li>
+		</ul>
+		<div class="footer_left">
+			<p>+7(495) <strong>555 78 45</strong></p>
+			<p>info@honey-bee.ru</p>
+		</div>
+		<div class="footer_right">
+			<p>&copy; 2011 Honey-bee.</p>
+			<p>Лучший мёд. Все виды меда.</p>
+		</div>
+	</div>
 </body>
 </html>

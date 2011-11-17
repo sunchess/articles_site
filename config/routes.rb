@@ -12,7 +12,7 @@ Jsovet::Application.routes.draw do
     resources :articles
   end
 
-  resources :articles, :only => %w{new create edit update} do
+  resources :articles, :only => %w{new create edit update index} do
 
     collection do
       get 'my'

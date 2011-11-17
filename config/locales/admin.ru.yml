@@ -12,6 +12,9 @@ ru:
         name: "Название"
         position: "Позиция"
         tools: "Действия"
+    articles:
+      index:
+        title: "Не опубликованные статьи"
 
   
   activerecord:

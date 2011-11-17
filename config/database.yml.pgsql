@@ -11,10 +11,11 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: catalogue-of-hotels_development
+  database: mednadom_development
   pool: 5
   username: postgres
   password: 123
+  host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -37,15 +38,16 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: catalogue-of-hotels_test
+  database: mednadom_test
   pool: 5
   username: postgres
   password: 123
+  host: localhost
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: catalogue-of-hotels_production
+  database: mednadom_production
   pool: 5
   username: postgres
   password: 123

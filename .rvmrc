@@ -1,2 +1,2 @@
 rvm_gemset_create_on_use_flag=1
-rvm use ree@jsovet
+rvm use ree@mednadom

@@ -1,13 +1,14 @@
-<h2><%= link_to article.name, category_article_path(article.category_id, article.id) %></h2>
-<div class="article body">
+<div class="post">
+<h4><%= link_to article.name, category_article_path(article.category_id, article.id) %></h2>
+<p class="article body">
   <%= article.preview %>
-</div>
+</p>
+<% if can? :update, article %>
 <div class="article date">  <%= t(".publish_on")  %>: <%= l( article.updated_at ) %></div>
 <div class="article author">  <%= t(".author")  %>: <%=  article.author %></div>
 <% if params[:action] == "my" %>
   <div class="article status"> <%= t(".status") %>: <%= article.aasm_status %></div>
 <% end %>
-<% if can? :update, article %>
   <div>
     <%= link_to t("edit"), edit_article_path(article) %>
     <% if can? :destroy, article %>
@@ -21,3 +22,4 @@
     <% end %>
   </div>
 <% end %>
+</div>
