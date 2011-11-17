@@ -8,3 +8,6 @@ public/system
 config/development.sphinx.conf
 log
 db/sphinx
+config/initializers/secret_token.rb
+config/deploy.rb
+Capfile
