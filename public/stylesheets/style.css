@@ -312,6 +312,14 @@ a:hover {
 		margin-bottom: 25px;
 		width: 100%;
 	}
+	.posts h1{
+		border-bottom: 3px #404040 dotted;
+		font-size: 32px;
+		font-style: italic;
+		font-weight: bold;
+		margin-bottom: 25px;
+		width: 100%;
+	}
 .single p{
 	margin-bottom: 10px;
 	width: 540px;
@@ -337,6 +345,13 @@ a:hover {
 		color: #a54b14;
 		font-size: 24px;
 	}
+        
+        .post h1{
+		border-bottom: 1px #d29e89 solid;
+		color: #a54b14;
+		font-size: 24px;
+	}
+
 	.post p{
 		font-size: 14px;
 		padding-left: 45px;
@@ -397,7 +412,10 @@ a:hover {
   padding: 5px;
   text-align: center;
   width: 40%;
-  margin: 0 auto 0 auto; }
+  margin: 0 auto 0 auto;
+  z-index: 999999;
+
+}
 
 .error, .alert {
   background-color: #ffd53d;
@@ -405,4 +423,6 @@ a:hover {
   padding: 5px;
   text-align: center;
   width: 40%;
-  margin: 0 auto 0 auto; }
+  margin: 0 auto 0 auto;
+  z-index: 999999;
+}

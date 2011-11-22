@@ -1,0 +1,34 @@
+<div class="post single">
+<h1>Администраторская Магазин</h1>
+
+<br/>
+<p>
+  <%= link_to t("add"), new_admin_store_path%>
+</p>
+<br/>
+
+<table>
+  <tr>
+    <th>Наименование</th>
+    <th>Описание</th>
+    <th>Откуда</th>
+    <th>Цвет</th>
+    <th>На главной?</th>
+    <th>Топ продаж?</th>
+    <th>Архивный</th>
+  </tr>
+
+  <% @stores.each do |store| %>
+    <tr>
+      <td><%= store.name %></td>
+      <td><%= store.description %></td>
+      <td><%= store.where_from%></td>
+      <td><%= store.honey_sort %></td>
+      <td><%= store.on_index%></td>
+      <td><%= store.on_top %></td>
+      <td><%= store.shown %></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
+</div>

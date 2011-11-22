@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111018094328) do
+ActiveRecord::Schema.define(:version => 20111122162147) do
 
   create_table "articles", :force => true do |t|
     t.integer  "category_id"
@@ -61,6 +61,18 @@ ActiveRecord::Schema.define(:version => 20111018094328) do
   end
 
   add_index "images", ["user_id"], :name => "index_images_on_user_id"
+
+  create_table "stores", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "where_from"
+    t.integer  "honey_sort"
+    t.boolean  "on_index",    :default => false, :null => false
+    t.boolean  "on_top",      :default => false, :null => false
+    t.boolean  "shown",       :default => true,  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

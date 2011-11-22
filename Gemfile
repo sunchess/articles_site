@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.0.11'
 gem 'pg'
 gem "cancan"
 gem "devise"
@@ -18,6 +18,7 @@ gem 'aasm'
 gem 'acts_as_commentable_with_threading'
 gem "breadcrumbs_on_rails", :git => 'git://github.com/sunchess/breadcrumbs_on_rails.git'
 gem 'thinking-sphinx', '2.0.5'
+gem 'formtastic'
 
 
 #gem 'inherited_resources',        '~> 1.2.2'

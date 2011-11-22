@@ -6,6 +6,7 @@ Jsovet::Application.routes.draw do
     resources :categories, :only => %w{index create edit update}
     resource :dashboard, :only => %w{show}, :controller => "dashboard"
     resources :articles, :only => "index"
+    resources :stores
   end
 
   resources :categories, :only => %w{index} do

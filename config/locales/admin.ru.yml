@@ -5,6 +5,7 @@ ru:
       show:
         category: "Категории статей"
         articles: "Статьи неопубликованные"
+        stores: "Магазин"
     categories:
       index:
         title: "Управление категориями"
