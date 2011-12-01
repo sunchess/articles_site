@@ -1,7 +1,4 @@
 <div class="post single">
-  <h1>Добавить позицию в магазин</h1>
-  <%= semantic_form_for [:admin, @store] do |f| %>
-    <%= f.inputs %>
-    <%= f.buttons %>
-  <% end %>
+  <h1><%= t(".title") %></h1>
+  <%= render :partial => "form" %>
 </div>

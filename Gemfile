@@ -20,7 +20,6 @@ gem "breadcrumbs_on_rails", :git => 'git://github.com/sunchess/breadcrumbs_on_ra
 gem 'thinking-sphinx', '2.0.5'
 gem 'formtastic'
 
-
 #gem 'inherited_resources',        '~> 1.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @articles = Article.published.paginate(:per_page => 20, :page => params[:page])
+    @articles = Article.published.order("id DESC")
+    @stores = Store.shown.at_index
   end
 
 end

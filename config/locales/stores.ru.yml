@@ -1,0 +1,25 @@
+ru:
+  admin:
+    stores:
+      new:
+        title: "Добавить позицию в магазин"
+      edit: 
+        title: "Редактирвоние позиции"
+
+  stores:
+    successful:
+      create: "Мед добавлен"
+  
+  
+  activerecord:
+    attributes:
+       store:
+        name: "Название"
+        description: "Описание меда"
+        where_from: "От куда"
+        honey_sort: "Цвет меда"
+        on_index: "На главной?"
+        on_top: "Топ продаж?"
+        shown: "Показываем?"
+        logo: "Изображение медоноса"
+        price: "Цена за кг."

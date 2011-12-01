@@ -13,6 +13,8 @@ Jsovet::Application.routes.draw do
     resources :articles
   end
 
+  resources :stores, :only => %w{show index} 
+
   resources :articles, :only => %w{new create edit update index} do
 
     collection do

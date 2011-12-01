@@ -43,6 +43,11 @@ module ApplicationHelper
         '.html_safe
     end
   end
+
+
+  def sort_image(num)
+    image_tag("/images/m#{num}.png")
+  end
 end
 
 
