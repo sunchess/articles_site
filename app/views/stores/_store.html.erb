@@ -10,7 +10,7 @@
     </p>
     <div class="price">
       <p><%= store.price %> Р.</p>
-     <%= link_to "Купить", add_shoping_carts_path(:id=>store), :remote => true, :class => "buy", :method => :get%>   
+     <%= link_to "Купить", add_shoping_cart_path(store), :remote => true, :class => "buy", :method => :get%>   
       <span>1000гр.</span>
     </div>
 </div><!-- END product -->

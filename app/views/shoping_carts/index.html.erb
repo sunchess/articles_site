@@ -14,15 +14,15 @@
       <td><%= idx + 1 %></td>
       <td><%= product[2] %></td>
       <td><%= product[1] %></td>
-      <td><%= link_to "Удалить", delete_shoping_cart_path(product[0]), :method=>:get, :remote => true, :class => "link", :confirm => t("confirm") %></td>
+      <td><%= link_to "Удалить", delete_shoping_cart_path(product[0]), :method=>:get, :class => "link", :confirm => t("confirm") %></td>
     </tr>
   <% end %>
 </table>
 
 <p>
-  Всего: <%= shop_cart.total %>
+  Всего: <%= shop_cart.total %> р.
 </p>
 
 <p>
-  <%= link_to "Отправить заявку", mail_shoping_carts_path, :class => "link", :confirm => t("confirm") %>  |  <%= link_to "Отчистить корзину", clear_shoping_carts_path, :class => "link", :confirm => t("confirm")%>
+  <%= link_to "Отправить заявку", new_mail_shoping_carts_path, :class => "link", :confirm => t("confirm") %>  |  <%= link_to "Отчистить корзину", clear_shoping_carts_path, :class => "link", :confirm => t("confirm")%>
 </p>

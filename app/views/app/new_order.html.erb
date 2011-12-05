@@ -1,0 +1,29 @@
+Новый заказ на мед.
+
+<br/>
+<%= @order.name %>
+<br/>
+Тел. <%= @order.telephone %>
+
+<br/>
+<%= @order.content %>
+
+<br/>
+
+<table class="border" width="80%">
+  <tr>
+    <th>#</th>
+    <th>Название</th>
+    <th>Цена</th>
+  </tr>
+  <% @cart.products.each_with_index do |product, idx| %>
+    <tr>
+      <td><%= idx + 1 %></td>
+      <td><%= product[2] %></td>
+      <td><%= product[1] %></td>
+    </tr>
+  <% end %>
+</table>
+<p>
+  Всего: <%= cart.total %> р.
+</p>

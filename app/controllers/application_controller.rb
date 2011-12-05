@@ -17,7 +17,11 @@ class ApplicationController < ActionController::Base
 
   private
   def add_cart
-    session[:cart] ||= CartItems.new
+    begin
+      session[:cart] ||= CartItems.new
+    rescue
+      session[:cart] = CartItems.new
+    end
     #debugger
   end
 

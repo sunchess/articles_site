@@ -14,7 +14,7 @@ class ShopingCartsController < ApplicationController
   def delete
     store = Store.find(params[:id])
     shop_cart.delete(store)
-    redirect_to shoping_carts
+    redirect_to shoping_carts_path
   end
 
   def clear
@@ -22,4 +22,19 @@ class ShopingCartsController < ApplicationController
     redirect_to :back
   end
 
+  def new_mail
+    @order = Order.new 
+  end
+
+  def send_mail
+    @order = Order.new(params[:order])
+    if @order.valid?
+      @cart = shop_cart
+      AppMailer.new_order(@order, @cart).deliver 
+      shop_cart.clear
+      redirect_to stores_path, :notice => t("order_sent")
+    else
+      render :action => :new_mail
+    end
+  end
 end

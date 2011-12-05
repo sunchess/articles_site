@@ -18,7 +18,8 @@ Jsovet::Application.routes.draw do
   resources :shoping_carts, :only => %w{index} do 
     collection do
       get 'clear'
-      get 'mail'
+      get 'new_mail'
+      post 'send_mail'
     end
 
     member do
