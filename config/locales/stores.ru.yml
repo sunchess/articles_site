@@ -9,6 +9,8 @@ ru:
   stores:
     successful:
       create: "Мед добавлен"
+    index:
+      title: "Каталог продукции"
   
   
   activerecord:

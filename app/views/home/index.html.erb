@@ -5,32 +5,15 @@
 				<p>продукт питания, представляющий собой частично переваренный в зобе медоносной пчелы (Apis mellifera) нектар. Мёд содержит 13-20 % воды, 75-80 % углеводов (глюкоза, фруктоза, сахароза), витамины В1, В2, В6, Е, К, С, провитамин А-каротин, фолиевую кислоту. </p>
 			</div><!-- END message -->
 			<div class="products">
-                          <% @stores.each do |store| %>
-				<div class="product">
-                                      <% if store.on_top? %>
-					<span class="top"></span>
-                                      <% end %>
-                                      <%= sort_image store.honey_sort %>
-					<h4><%= link_to store.name, store_path(store) %></h4>
-					<span><%= store.where_from %></span>
-                                        <p>
-                                          <%= truncate store.description, :length => 150 %>
-                                        </p>
-					<div class="price">
-						<p><%= store.price %> Р.</p>
-						<a href="#" class="buy">Купить</a>
-						<span>1000гр.</span>
-					</div>
-				</div><!-- END product -->
-                          <% end %>
-                          </div><!-- END products -->
+                            <%= render :partial => "stores/store", :collection => @stores %>
+                        </div><!-- END products -->
 			<div class="posts">
 				<h4>Статьи о мёде</h4>
 				
                                 <%- @articles.each do |article| %>
 				<div class="post">
-					<h4><%= link_to article.name, category_article_path(article.category,article) %></h4>
-					<p>Как известно, со временем кожа начинает терять способность удерживать влагу, становится сухой и морщинистой. Это связано с угасанием функции сальных желёз. Однако этот процесс можно замедлить применением медовых масок, медовых ванн и другими косметическими процедурами и средствами на основе мёда. В данной статье мы остановимся на медовых масках. </p>
+                                      <h4><%= link_to article.name, category_article_path(article.category,article) %></h4>
+                                      <p><%= truncate article.body, :length => 200 %> </p>
                                         <%= link_to "Подробнее...", article_path(article), :class=>"more"%>
 				</div><!-- END post -->
                                 <% end %>

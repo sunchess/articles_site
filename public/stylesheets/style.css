@@ -29,6 +29,15 @@ a {
 a:hover {
 	text-decoration: none;
 }
+	 a.link{
+		color: #404040;
+		font-size: 14px;
+		font-style: italic;
+		text-decoration: underline;
+	}
+		 a.link:hover{
+			text-decoration: none;
+		}
 .header{
 	background: url(../images/header.jpg) no-repeat;
 	border-top: 2px #a54b14 solid;

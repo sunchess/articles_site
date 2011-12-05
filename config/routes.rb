@@ -1,5 +1,6 @@
 Jsovet::Application.routes.draw do
 
+
   devise_for :users
 
   namespace :admin do
@@ -14,6 +15,17 @@ Jsovet::Application.routes.draw do
   end
 
   resources :stores, :only => %w{show index} 
+  resources :shoping_carts, :only => %w{index} do 
+    collection do
+      get 'clear'
+      get 'mail'
+    end
+
+    member do
+      get 'add'
+      get 'delete'
+    end
+  end
 
   resources :articles, :only => %w{new create edit update index} do
 

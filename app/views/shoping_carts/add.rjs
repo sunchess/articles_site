@@ -1,0 +1,2 @@
+page << "$('#shop-cart').html('#{shop_cart.size}')"
+

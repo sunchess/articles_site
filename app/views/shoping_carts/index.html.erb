@@ -1,0 +1,28 @@
+<div class="posts single">
+  <h1>Ваша корзина</h1>
+</div>
+
+<table class="border" width="80%">
+  <tr>
+    <th>#</th>
+    <th>Название</th>
+    <th>Цена</th>
+    <th>Управление</th>
+  </tr>
+  <% shop_cart.products.each_with_index do |product, idx| %>
+    <tr>
+      <td><%= idx + 1 %></td>
+      <td><%= product[2] %></td>
+      <td><%= product[1] %></td>
+      <td><%= link_to "Удалить", delete_shoping_cart_path(product[0]), :method=>:get, :remote => true, :class => "link", :confirm => t("confirm") %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  Всего: <%= shop_cart.total %>
+</p>
+
+<p>
+  <%= link_to "Отправить заявку", mail_shoping_carts_path, :class => "link", :confirm => t("confirm") %>  |  <%= link_to "Отчистить корзину", clear_shoping_carts_path, :class => "link", :confirm => t("confirm")%>
+</p>

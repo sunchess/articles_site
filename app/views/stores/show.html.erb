@@ -1,2 +1,22 @@
-<h1>Stores#show</h1>
-<p>Find me in app/views/stores/show.html.erb</p>
+<div class="posts single">
+  <h1><%= @store.name %></h1>
+</div>
+<div class="product">
+    <% if @store.on_top? %>
+      <span class="top"></span>
+    <% end %>
+    <%= sort_image @store.honey_sort %>
+    <span><%= @store.where_from %></span>
+    <p>
+      <%= simple_format @store.description %>
+    </p>
+    <br/>
+    <p>
+      <%= image_tag @store.logo.url(:medium) %>
+    </p>
+    <div class="price">
+      <p><%= @store.price %> Р.</p>
+      <%= link_to "Купить", add_shoping_cart_path(@store), :remote => true, :class => "buy", :method => :get%>
+      <span>1000гр.</span>
+    </div>
+</div><!-- END product -->

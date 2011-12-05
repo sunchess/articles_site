@@ -24,7 +24,7 @@
 		<a href="/" class="home"></a>
 		<a href="#" class="sitemap"></a>
 		<ul class="top_nav">
-			<li><a href="#">Каталог <span>Продукции</span></a></li>
+			<li><a href="<%= stores_path %>">Каталог <span>Продукции</span></a></li>
 			<li><a href="#">Как купить <span>условия покупки и доставки</span></a></li>
 			<li><a href="#">Вопросы <span>ответы на вопросы от пчеловодов</span></a></li>
 			<li><a href="<%= articles_path %>">Статьи <span>всё о мёде</span></a></li>
@@ -38,12 +38,7 @@
                                   <%= render :partial => "layouts/category", :collection => Category.all %>
 				</ul>
 			</div><!-- END sidebar_block -->
-			<div class="sidebar_block cart">
-				<h2>Моя корзина</h2>
-				<span>2</span>
-				<p>товара(-ов)</p>
-				<a href="#">Посмотреть корзину</a>
-			</div><!-- END sidebar_block -->
+                        <%= render :partial => "shoping_carts/cart" %>
 			<div class="sidebar_block contact">
 				<h2>Контакты</h2>
 				<p>+7(495)<span>555 78 45</span></p>

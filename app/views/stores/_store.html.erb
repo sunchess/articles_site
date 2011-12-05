@@ -1,0 +1,16 @@
+<div class="product">
+    <% if store.on_top? %>
+      <span class="top"></span>
+    <% end %>
+    <%= sort_image store.honey_sort %>
+    <h4><%= link_to store.name, store_path(store) %></h4>
+    <span><%= store.where_from %></span>
+    <p>
+      <%= truncate store.description, :length => 150 %>
+    </p>
+    <div class="price">
+      <p><%= store.price %> Р.</p>
+     <%= link_to "Купить", add_shoping_carts_path(:id=>store), :remote => true, :class => "buy", :method => :get%>   
+      <span>1000гр.</span>
+    </div>
+</div><!-- END product -->
