@@ -1,9 +1,9 @@
-<%= semantic_form_for @answer do |f| %>
+<%= semantic_form_for [ @question, @answer ] do |f| %>
   <%= f.inputs do %>
     <%= f.input :body %>
   <% end %>
 
   <%= f.buttons do %>
-    <%= f.commit_button %>
+    <%= f.commit_button "Ответить" %>
   <% end %>
 <% end %>

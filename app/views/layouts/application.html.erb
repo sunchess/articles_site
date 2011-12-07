@@ -26,7 +26,7 @@
 		<ul class="top_nav">
 			<li><a href="<%= stores_path %>">Каталог <span>Продукции</span></a></li>
 			<li><a href="#">Как купить <span>условия покупки и доставки</span></a></li>
-			<li><a href="#">Вопросы <span>ответы на вопросы от пчеловодов</span></a></li>
+			<li><a href="<%= questions_path %>">Вопросы <span>ответы на вопросы от пчеловодов</span></a></li>
 			<li><a href="<%= articles_path %>">Статьи <span>всё о мёде</span></a></li>
 		</ul><!-- END top_nav -->
 	</div><!-- END header -->
@@ -47,31 +47,22 @@
 			<div class="sidebar_block qa">
 				<h2>Вопрос-ответ</h2>
 				<ul>
-					<li><a href="#">Чем полезен мед?</a></li>
-					<li><a href="#">Как мед используется в косметике?</a></li>
-					<li><a href="#">Как различить сорт меда?</a></li>
-					<li><a href="#">Как хранить мед?</a></li>
-					<li><a href="#">Как мед используется в косметике?</a></li>
-					<li><a href="#">Чем полезен мед?</a></li>
-					<li><a href="#">Как мед используется в косметике?</a></li>
-					<li><a href="#">Как различить сорт меда?</a></li>
-					<li><a href="#">Как хранить мед?</a></li>
-					<li><a href="#">Как мед используется в косметике?</a></li>
-					<li><a href="#">Как различить сорт меда?</a></li>
-					<li><a href="#">Как хранить мед?</a></li>
-					<li><a href="#">Как мед используется в косметике?</a></li>
+                                  <% Question.shown.each do |question| %>
+                                    <li><%= link_to truncate(question.body), question %>
+                                  <% end %>
 				</ul>
                                 <%= link_to "Задать вопрос", new_question_path, :class => "ask" %>
 			</div><!-- END sidebar_block -->
 		</div><!-- END sidebar -->
-  <% if notice %>
-    <p class="notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert"><%= alert %></p>
-  <% end %>
 
   <div class="content">
+    <b>Сайт находится на стадии разработки</b>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
     <%= render_breadcrumbs %>
     <%#= render :partial => "layouts/search_form" %>
     <%= yield %>

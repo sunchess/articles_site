@@ -1,0 +1,8 @@
+ru:
+  answer:
+    
+  
+  activerecord:
+    attributes:
+       answer:
+         body: "Ответ"

@@ -1,9 +1,13 @@
 Jsovet::Application.routes.draw do
 
-
   resources :answers
 
-  resources :questions
+  resources :questions do
+    resources :answers
+    collection do
+      get "hidden"
+    end
+  end
 
   devise_for :users
 

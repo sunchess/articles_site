@@ -1,15 +1,22 @@
-<p id="notice"><%= notice %></p>
 
+<div class="posts">
+    <div class="post">
+      <h4><%= @question.name %></h4>
+      <p>
+        <%= @question.body %>
+       </p>
+</div>
+
+Ответ:
 <p>
-  <b>Name:</b>
-  <%= @question.name %>
+  <%= @question.answer.body %>
 </p>
 
-<p>
-  <b>Body:</b>
-  <%= @question.body %>
-</p>
 
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<% if can? :manage, Question %>
+  <%= link_to 'Редактировать', edit_question_path(@question) %> |
+  <%= link_to 'Удалить', @question, :method => :delete %>
+  <% unless @question.answer %>
+    | <%= link_to "Ответить", new_question_answer_path(@question) %>
+  <% end %>
+<% end %>

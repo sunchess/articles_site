@@ -1,5 +1,10 @@
-<h1>New answer</h1>
+<div class="posts single">
+  <h1>Ответ на вопрос</h1>
+</div>
+
+<p>
+  <%= @question.body %>
+</p>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', answers_path %>
