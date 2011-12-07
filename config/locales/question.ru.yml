@@ -1,0 +1,10 @@
+ru:
+  questions:
+    
+
+  activerecord:
+    attributes:
+       question:
+         name: "Ваше имя"
+         body: "Вопрос"
+         shown: "Опубликован?"

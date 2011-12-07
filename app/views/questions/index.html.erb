@@ -1,0 +1,18 @@
+<div class="posts single">
+  <h1>Вопросы</h1>
+</div>
+
+<div class="posts">
+    <% @questions.each do |question| %>
+    <div class="post">
+      <h4><%= question.name %></h4>
+      <p>
+        <%= question.body %>
+       </p>
+        
+        <%= link_to "Подробнее...", article_path(article), :class=>"more"%>
+        </div><!-- END post -->
+        <% end %>
+</div><!-- END posts -->
+
+<%= link_to "Задать вопрос", new_question_path, :class => "ask" %>

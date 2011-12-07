@@ -12,7 +12,11 @@ class ApplicationController < ActionController::Base
   end
 
   def shop_cart
-    session[:cart]
+    begin
+      session[:cart]
+    rescue
+
+    end
   end
 
   private

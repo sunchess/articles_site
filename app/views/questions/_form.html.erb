@@ -1,0 +1,13 @@
+<%= semantic_form_for @question do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :body %>
+    <% if admin? %>
+      <%= f.input :shown %>
+    <% end %>
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button "Отправить вопрос" %>
+  <% end %>
+<% end %>
