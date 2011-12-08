@@ -279,9 +279,7 @@ body{
 	z-index:999;
 }
 
-.posts{
-	clear: both;
-}
+.posts{clear: both;}
 	.posts h4,.posts h1{
 		border-bottom: 3px #404040 dotted;
 		font-size: 32px;
@@ -294,9 +292,10 @@ body{
 	margin-bottom: 10px;
 	width: 540px;
 }
-	.single img {
-		margin-top: 20px;
-	}
+	.single img {margin-top: 20px;}
+	.single ul li,.single ol li{margin-left: 0px 0 10px 30px;}
+		.single ul li {list-style: disc;}
+		.single ol li {list-style: decimal;}
 	p.desc{
 		border-bottom: 1px #a54b14 dotted;
 		color: #a54b14;
@@ -307,16 +306,14 @@ body{
 		padding: 0px 60px 15px 60px;
 		width: 430px;
 	}
-.post{
-	margin-bottom: 45px;
-}
+.post{margin-bottom: 45px;}
 	.post h4 a, .post h4{
 		border-bottom: 1px #d29e89 solid;
 		color: #a54b14;
 		font-size: 24px;
 	}
 	.post p{
-		font-size: 14px;
+		font-size: 16px;
 		padding-left: 45px;
 	}
 	.more{

@@ -7,12 +7,13 @@
         z-index: 99999999;
  }
 
-a.link{
+a.link {
         color: #404040;
         font-size: 14px;
         font-style: italic;
         text-decoration: underline;
 }
- a.link:hover{
+
+a.link:hover {
         text-decoration: none;
 }
