@@ -57,6 +57,8 @@ Jsovet::Application.routes.draw do
   end
 
   match 'search/index' => 'search#index', :as => :search
+  match 'how_to_buy' => 'home#how_to_buy', :as => :how_to_buy
+
 
 
   # The priority is based upon order of creation:
