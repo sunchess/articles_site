@@ -5,39 +5,8 @@ body{
 	color: #404040;
 	margin: 0 auto;
 	width: 1000px;
-        font-size: 13px;
 }
 
-table.border 
-{
-  border: 1px solid black;
-}
-
-.border td
-{
-  border: 1px solid black;
-  text-align: center;
-}
-.border th
-{
-  text-align: center;
-}
-
-a {
-  text-decoration: none; color: #333;
-}
-a:hover {
-	text-decoration: none;
-}
-	 a.link{
-		color: #404040;
-		font-size: 14px;
-		font-style: italic;
-		text-decoration: underline;
-	}
-		 a.link:hover{
-			text-decoration: none;
-		}
 .header{
 	background: url(../images/header.jpg) no-repeat;
 	border-top: 2px #a54b14 solid;
@@ -49,15 +18,15 @@ a:hover {
 		display: block;
 		float: left;
 		height: 70px;
-		margin: 9px 0 15px 231px;
+		margin: 9px 0 15px 181px;
 		overflow: hidden;
-		width: 214px;
+		width: 320px;
 	}
 		.header h1 a span{
 			background: url(../images/logo.png) no-repeat;
 			display: block;
 			height: 70px;
-			width: 214px;
+			width: 320px;
 		}
 .home,.sitemap{
 	display: block;
@@ -68,7 +37,7 @@ a:hover {
 }
 	.home{
 		background: url(../images/home.gif) no-repeat;
-		margin-left: 326px;
+		margin-left: 270px;
 	}
 	.sitemap{
 		background: url(../images/map.gif) no-repeat;
@@ -284,13 +253,13 @@ a:hover {
 	}
 	.buy{
 		background: url(../images/buy.png) no-repeat;
+		border: none;
 		color: #fff;
 		display: block;
 		float: left;
 		font-size: 16px;
-		height: 22px;
+		height: 25px;
 		margin: 5px 0 0 35px;
-		padding-top: 3px;
 		text-align: center;
 		width: 92px;
 	}
@@ -321,22 +290,6 @@ a:hover {
 		margin-bottom: 25px;
 		width: 100%;
 	}
-	.posts h1{
-		border-bottom: 3px #404040 dotted;
-		font-size: 32px;
-		font-style: italic;
-		font-weight: bold;
-		margin-bottom: 25px;
-		width: 100%;
-	}
-	.work h4{
-		font-size: 22px;
-		font-style: italic;
-		font-weight: bold;
-		margin-bottom: 25px;
-		width: 100%;
-                z-index: 99999999;
-              }
 .single p{
 	margin-bottom: 10px;
 	width: 540px;
@@ -362,13 +315,6 @@ a:hover {
 		color: #a54b14;
 		font-size: 24px;
 	}
-        
-        .post h1{
-		border-bottom: 1px #d29e89 solid;
-		color: #a54b14;
-		font-size: 24px;
-	}
-
 	.post p{
 		font-size: 14px;
 		padding-left: 45px;
@@ -422,24 +368,4 @@ a:hover {
 	float: left;
 	margin: 27px 0 0 65px;
 	width: 400px;
-}
-.notice {
-  background-color: #edffb2;
-  border: 1px solid #d0ff56;
-  padding: 5px;
-  text-align: center;
-  width: 40%;
-  margin: 0 auto 0 auto;
-  z-index: 999999;
-
-}
-
-.error, .alert {
-  background-color: #ffd53d;
-  border: 1px solid #3e0c0c;
-  padding: 5px;
-  text-align: center;
-  width: 40%;
-  margin: 0 auto 0 auto;
-  z-index: 999999;
 }
