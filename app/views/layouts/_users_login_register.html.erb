@@ -1,22 +1,18 @@
-<div id="bgnavigation_tab">
-  <div id="user_nav">
+<ul class="top_nav">
     <% if current_user %>
-      <%= t("users.hello") %>, <%= current_user.username %>!
       <% if admin?  %>
-        <%= link_to t("admin.dashboard.navigation"), admin_dashboard_path, :class => "red" %>
-        |
+        <li class="admin"><%= link_to t("admin.dashboard.navigation"), admin_dashboard_path, :class => "red" %></li>
       <% end %>
-      <%= link_to t("articles.add"), new_article_path %> 
-      <%= link_to t("articles.my.title"), my_articles_path if current_user.articles_count > 0%>  
-      |
-      <%= link_to t('users.links.edit'), edit_user_registration_path(:current) %>
-      |
-      <%= link_to t('sessions.logout'), destroy_user_session_path, :method => :delete %>
+      
+        <li class="add"><%= link_to t("articles.add"), new_article_path %></li>
+        <% if current_user.articles_count > 0 %>
+          <li class="my"><%= link_to t("articles.my.title"), my_articles_path %></li>
+        <% end %>
+        <li class="profile"><%= link_to t('users.links.edit'), edit_user_registration_path(:current) %></li>
+        <li><img src="images/img1.jpg" width="30" height="35" /><%= link_to t('sessions.logout'), destroy_user_session_path, :method => :delete %></li>
     <% else %>
-      <%= link_to t('users.links.new'), new_user_registration_path %>
-      |
-      <%= link_to link_to t('sessions.login'), new_user_session_path %>
+        <li><%= link_to t('users.links.new'), new_user_registration_path %></li>
+        <li><%= link_to t('sessions.login'), new_user_session_path %></li>
     <% end %>
-  </div>
-</div>
+</ul><!-- END top_nav -->
   
