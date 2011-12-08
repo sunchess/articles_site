@@ -1,2 +1,3 @@
-page << "$('#shop-cart').html('#{shop_cart.size}')"
+page << "$('#shop-cart').html('#{shop_cart.size}');"
+page << "alert('Позиция добавлена в корзину.');"
 

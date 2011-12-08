@@ -30,6 +30,13 @@
 			<li><a href="<%= articles_path %>">Статьи <span>всё о мёде</span></a></li>
 		</ul><!-- END top_nav -->
 	</div><!-- END header -->
+
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
     <div class="work">
       <h4>Сайт находится на стадии разработки</h4>
     </div>
@@ -58,12 +65,6 @@
 		</div><!-- END sidebar -->
 
   <div class="content">
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-    <p class="alert"><%= alert %></p>
-  <% end %>
     <%= render_breadcrumbs %>
     <%#= render :partial => "layouts/search_form" %>
     <%= yield %>

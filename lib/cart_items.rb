@@ -6,14 +6,16 @@ class CartItems
     @total = 0
   end
   
-  def add(pos)
-    @products.push [pos.id, pos.price, pos.name]
-    @total = @total + pos.price
+  def add(pos, amount)
+    @products.push [pos.id, pos.price, pos.name, amount]
+    price = ( amount/1000.0 ) * pos.price.to_f
+    @total = @total + price
   end
 
-  def delete(pos)
-    @products.delete([pos.id, pos.price, pos.name])
-    @total = @total - pos.price
+  def delete(pos, amount, index)
+    @products.delete_at(index.to_i)
+    price = ( amount/1000.0 ) * pos.price.to_f
+    @total = @total - price
   end
 
   def clear

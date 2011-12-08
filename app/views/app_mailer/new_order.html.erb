@@ -15,15 +15,17 @@
     <th>#</th>
     <th>Название</th>
     <th>Цена</th>
+    <th>Количество</th>
   </tr>
   <% @cart.products.each_with_index do |product, idx| %>
     <tr>
       <td><%= idx + 1 %></td>
       <td><%= product[2] %></td>
-      <td><%= product[1] %></td>
+      <td><%= product[1].to_f * ( product[3]/1000 ) %></td>
+      <td><%= product[3] %> грамм</td>
     </tr>
   <% end %>
 </table>
 <p>
-  Всего: <%= cart.total %> р.
+  Всего: <%= @cart.total %> р.
 </p>

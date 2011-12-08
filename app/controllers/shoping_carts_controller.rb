@@ -4,7 +4,7 @@ class ShopingCartsController < ApplicationController
 
   def add 
     store = Store.find(params[:id])
-    shop_cart.add(store)
+    shop_cart.add(store, params[:amount].to_f)
     respond_to do |format|
       format.html { redirect_to :back }
       format.js
@@ -13,7 +13,7 @@ class ShopingCartsController < ApplicationController
 
   def delete
     store = Store.find(params[:id])
-    shop_cart.delete(store)
+    shop_cart.delete(store, params[:amount].to_f, params[:index].to_i)
     redirect_to shoping_carts_path
   end
 
