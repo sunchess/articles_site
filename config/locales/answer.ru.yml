@@ -1,5 +1,8 @@
 ru:
-  answer:
+  answers:
+    seccess:
+      create: "Ответ добавлен"
+
     
   
   activerecord:
