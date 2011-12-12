@@ -8,9 +8,13 @@
 </div>
 
 Ответ:
+<% if @question.answer %>
 <p>
   <%= @question.answer.body %>
 </p>
+<% else %>
+  Нет
+<% end %>
 
 
 <% if can? :manage, Question %>
