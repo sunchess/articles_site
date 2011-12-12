@@ -9,6 +9,7 @@
     <span><%= @store.where_from %></span>
     <%= simple_format(@store.description.html_safe) %>
     <br/>
+    <b>Изображение медоноса</b>
     <p>
       <%= image_tag @store.logo.url(:medium) %>
     </p>
