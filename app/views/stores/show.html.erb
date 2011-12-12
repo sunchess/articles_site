@@ -15,7 +15,7 @@
     </p>
     <div class="price">
       <p><%= @store.price %> Р.</p>
-      <%= form_tag(add_shoping_cart_path(store), :remote => true, :method => :get) do %>
+      <%= form_tag(add_shoping_cart_path(@store), :remote => true, :method => :get) do %>
       <%= select_tag "amount", options_for_select([["1000 грамм", "1000"], ["1 литр(1400 грамм)", "1400"], ["3 литра(4200 грамм)", "4200"]]) %>
       <%= submit_tag "В корзину", :class => "buy" %>
     </div>
