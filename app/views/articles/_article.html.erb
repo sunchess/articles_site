@@ -1,23 +1,41 @@
-<h2><%= link_to article.name, category_article_path(article.category_id, article.id) %></h2>
+<div class="comments">
+  <h4><%= link_to article.name, category_article_path(article.category_id, article.id) %></h4>
+</div>
 <div class="article body">
   <%= article.preview %>
 </div>
-<div class="article date">  <%= t(".publish_on")  %>: <%= l( article.updated_at ) %></div>
-<div class="article author">  <%= t(".author")  %>: <%=  article.author %></div>
-<% if params[:action] == "my" %>
-  <div class="article status"> <%= t(".status") %>: <%= article.aasm_status %></div>
-<% end %>
-<% if can? :update, article %>
-  <div>
-    <%= link_to t("edit"), edit_article_path(article) %>
-    <% if can? :destroy, article %>
-      <%= link_to t("destroy"), article_path(article), :method => :delete%>
-    <% end %>
-    <% if can? :publish, article and not article.publics? %>
-      <%= link_to t("publish"), publish_article_path(article) %>
-    <% end %>
-    <% if can? :delete, article %>
-      <%= link_to t("delete"), delete_article_path(article), :confirm => t("confirm") %>
-    <% end %>
-  </div>
-<% end %>
+  <div class="post_info">
+          <div class="author">
+                  <a href="#"><img src="/images/img1.jpg" width="30" height="35" /></a>
+                  <p><%= t(".publish_on")  %>: <%= l( article.updated_at ) %></p>
+                  <p><%= t(".author")  %>: <%=  article.author %></p>
+                  <% if params[:action] == "my" %>
+                    <p class="article status"> 
+                      <%= t(".status") %>: <%= article.aasm_status %>
+                    </p>
+                  <% end %>
+          </div><!-- END author -->
+          
+          <ul>
+                <% if can? :update, article %>
+                  <li class="edit">
+                    <%= link_to t("edit"), edit_article_path(article) %>
+                  </li>
+                  <% if can? :destroy, article %>
+                    <li class="shift_del">
+                      <%= link_to t("destroy"), article_path(article), :method => :delete%>
+                    </li>
+                  <% end %>
+                  <% if can? :publish, article and not article.publics? %>
+                    <li class="edit">
+                      <%= link_to t("publish"), publish_article_path(article) %>
+                    </li>
+                  <% end %>
+                  <% if can? :delete, article %>
+                    <li class="del">
+                      <%= link_to t("delete"), delete_article_path(article), :confirm => t("confirm") %>
+                    </li>
+                  <% end %>
+                <% end %>
+          </ul>
+  </div><!-- END post_info -->

@@ -1,13 +1,18 @@
-<%= parent_id == 0 ? t(".new") : t(".answer") %>
-<div id="errors"></div>
-<%= form_for [ @article, Comment.new ], :remote => true, :url => article_comments_path(@article, :parent => parent_id || 0) do |f| %>
-  <% if admin? %>
-    <p>
-      <%= f.label :user_id %>
-      <%= f.select :user_id,  User.authors_and_admins.collect {|p| [ p.username, p.id ] } %>
-    </p>
+<h4>
+  <%= parent_id == 0 ? t(".new") : t(".answer") %>
+</h4>
+
+<div class="add_comment">
+  <div id="errors"></div>
+  <%= form_for [ @article, Comment.new ], :remote => true, :url => article_comments_path(@article, :parent => parent_id || 0) do |f| %>
+    <% if admin? %>
+      <p>
+        <%= f.label :user_id %>
+        <%= f.select :user_id,  User.authors_and_admins.collect {|p| [ p.username, p.id ] } %>
+      </p>
+    <% end %>
+    <%=f.text_area :body, :size => "50x8", :id => "textile", :class => parent_id == 0 ? "markItUp" : "markItUpR"  %>
+    <%= f.submit t(".create") %>
   <% end %>
-  <%=f.text_area :body, :size => "80x8", :id => "textile", :class => parent_id == 0 ? "markItUp" : "markItUpR"  %>
-  <%= f.submit t(".create") %>
-<% end %>
+</div><!-- END add_comment -->
 

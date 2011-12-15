@@ -35,7 +35,6 @@
 		<div class="content">
 
                     <%= render :partial => "layouts/search_form" %>
-                    <%#= yield %>
 			<div class="breadcrumbs">
                               <%= render_breadcrumbs %>
 				<ul>
@@ -44,7 +43,9 @@
 					<li>Семья - организованная социальная группа</li>
 				</ul>
 			</div><!-- END breadcrumbs -->
+
 			<div class="post">
+                          <%= yield %>
 				<h3>Семья - организованная социальная группа</h3>
 				<div class="post_info">
 					<div class="author">

@@ -12,10 +12,10 @@ ru:
 
   users:
     hello: 'Здравствуйте'
+  sign_in: "Вход для пользователей"
   sessions:
     login: 'Войти'
     logout: 'Выйти'
-    sign_in: "Вход для пользователей"
         
   activerecord:
     attributes:
