@@ -10,7 +10,7 @@ body {background: url(../images/html_bg.png) 0px 32px no-repeat;}
 	padding-top: 32px;
 	width: 1000px;
 }
-	.header h1 a{
+	.header p a{
 		display: block;
 		float: left;
 		height: 46px;
@@ -18,7 +18,7 @@ body {background: url(../images/html_bg.png) 0px 32px no-repeat;}
 		overflow: hidden;
 		width: 89px;
 	}
-		.header h1 a span{
+		.header p a span{
 			background: url(../images/logo.png) no-repeat;
 			display: block;
 			height: 46px;
@@ -126,7 +126,7 @@ body {background: url(../images/html_bg.png) 0px 32px no-repeat;}
 .breadcrumbs {
 	overflow: hidden;
 }
-.breadcrumbs a,.breadcrumbs li{
+.breadcrumbs a,.breadcrumbs {
 	color: #3b3b3b;
 	font-size:12px; 
 }
@@ -143,11 +143,35 @@ body {background: url(../images/html_bg.png) 0px 32px no-repeat;}
 }
 	.post h3{
 		color: #3b3b3b;
-		font-size: 35px;
+		font-size: 20px;
 		font-weight: bold;
 		padding: 10px 0;
 		text-align: center;
 	}
+	.post h2{
+		color: #3b3b3b;
+		font-size: 25px;
+		font-weight: bold;
+		padding: 10px 0;
+		text-align: left;
+
+	}
+	.post h2 a{
+		color: #3b3b3b;
+		font-size: 20px;
+		font-weight: bold;
+		padding: 10px 0;
+		text-align: left;
+                text-decoration: underline;
+
+	}
+	.post h1{
+		color: #3b3b3b;
+		font-size: 30px;
+		font-weight: bold;
+		padding: 10px 0;
+		text-align: center;
+              }
 .post_info{
 	border-top: 1px #1c480b dashed;
 	height: 80px;
@@ -286,3 +310,6 @@ body {background: url(../images/html_bg.png) 0px 32px no-repeat;}
 	display: block;
 	padding: 25px 0 0 8px;
 }
+
+.notice{color: green;}
+.alert{color: red;}

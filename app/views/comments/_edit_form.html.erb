@@ -6,6 +6,6 @@
       <%= f.select :user_id,  User.authors_and_admins.collect {|p| [ p.username, p.id ] } %>
     </p>
   <% end %>
-  <%=f.text_area :body, :size => "80x8", :id => "textile", :class => "markItUpR" %>
+  <%=f.text_area :body, :size => "80x8", :id => "textile", :class => "markItUpR", :style=>"width: 90%;" %>
   <%= f.submit t(".create") %>
 <% end %>

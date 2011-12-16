@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
    @article.accessible = [:user_id] if admin?
    @article.attributes = params[:article] 
    if @article.save
-     redirect_to edit_article_path(@article), :notice => t( "articles.successful.update" )
+     redirect_to category_article_path(@article.category, @article), :notice => t( "articles.successful.update" )
    else
      render :action => :edit
    end

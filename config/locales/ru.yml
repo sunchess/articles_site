@@ -20,6 +20,7 @@ ru:
   activerecord:
     attributes:
       user:
+        username: "Имя"
         email: "Email" #Exeple for not en locale
         password: "Пароль"
         password_confirmation: "Пароль еще раз"

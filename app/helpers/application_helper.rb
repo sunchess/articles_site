@@ -37,6 +37,9 @@ module ApplicationHelper
               return (h[1]*jQuery(this).attr(\'rows\'))+h[2]
             });
 
+            jQuery(".markItUpContainer").css(\'width\', "100%");
+            jQuery(".markItUp").css(\'width\', "90%");
+            
           });
 
         </script>

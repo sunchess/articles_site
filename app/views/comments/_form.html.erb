@@ -11,7 +11,7 @@
         <%= f.select :user_id,  User.authors_and_admins.collect {|p| [ p.username, p.id ] } %>
       </p>
     <% end %>
-    <%=f.text_area :body, :size => "50x8", :id => "textile", :class => parent_id == 0 ? "markItUp" : "markItUpR"  %>
+    <%=f.text_area :body, :size => "70x8", :id => "textile", :class => parent_id == 0 ? "markItUp" : "markItUpR", :style => "width: 90%;"  %>
     <%= f.submit t(".create") %>
   <% end %>
 </div><!-- END add_comment -->

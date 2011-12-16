@@ -1,13 +1,11 @@
-<div class="comments">
-  <h4><%= link_to article.name, category_article_path(article.category_id, article.id) %></h4>
-</div>
+<h2><%= link_to article.name, category_article_path(article.category_id, article.id) %></h2>
 <div class="article body">
   <%= article.preview %>
 </div>
   <div class="post_info">
           <div class="author">
                   <a href="#"><img src="/images/img1.jpg" width="30" height="35" /></a>
-                  <p><%= t(".publish_on")  %>: <%= l( article.updated_at ) %></p>
+                  <p><%= t("articles.article.publish_on")  %>: <%= l( article.updated_at ) %></p>
                   <p><%= t(".author")  %>: <%=  article.author %></p>
                   <% if params[:action] == "my" %>
                     <p class="article status"> 
