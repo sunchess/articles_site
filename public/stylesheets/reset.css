@@ -6,6 +6,6 @@ blockquote,q{quotes:"" ""}
 body{ font-size:100%;}
 :focus {outline: 0}
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;font-family: Georgia;font-style:inherit;font-weight:inherit;outline:none;text-align:left;text-decoration:none;vertical-align:top;margin:0;padding:0}
-table{border-collapse:collapse;border-spacing:0}
+/*table{border-collapse:collapse;border-spacing:0}*/
 li{list-style:none;list-style-type:none}
 h1,h2,h3,h4,h5,h6{font-size:1em; font-weight:normal}

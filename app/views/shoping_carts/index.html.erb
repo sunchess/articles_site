@@ -2,7 +2,7 @@
   <h1>Ваша корзина</h1>
 </div>
 
-<table class="border" width="80%">
+<table class="border" width="100%" cellspacing="10" >
   <tr>
     <th>#</th>
     <th>Название</th>
@@ -15,7 +15,7 @@
       <td><%= idx + 1 %></td>
       <td><%= product[2] %></td>
       <td><%= product[1].to_f * ( product[3]/1000 ) %></td>
-      <td><%= product[3] %> грамм</td>
+      <td><%= value_h product[3] %></td>
       <td><%= link_to "Удалить", delete_shoping_cart_path(product[0], :amount => product[3], :index => idx), :method=>:get, :class => "link", :confirm => t("confirm") %></td>
     </tr>
   <% end %>

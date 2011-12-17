@@ -6,29 +6,32 @@
     <%= f.inputs do %>
       <%= f.input :name, :label => "Контактное лицо" %>
       <%= f.input :telephone, :label => "Контактный телефон" %>
+      <%= f.input :address, :label => "Адрес" %>
+      <%= f.input :dtime,:label => "Удобное время" %>
       <%= f.input :content, :as => :text, :label => "Примечание"%>
     <% end %>
     <%= f.inputs do %>
     <li style="padding-left: 20%;">
-      <table class="border" width="80%">
-        <tr>
-          <th>#</th>
-          <th>Название</th>
-          <th>Цена</th>
-          <th>Количество</th>
-        </tr>
-        <% shop_cart.products.each_with_index do |product, idx| %>
-          <tr>
-            <td><%= idx + 1 %></td>
-            <td><%= product[2] %></td>
-            <td><%= product[1].to_f * ( product[3]/1000 ) %></td>
-            <td><%= product[3] %> грамм</td>
-          </tr>
-        <% end %>
-      </table>
-      <p>
-        Всего: <%= shop_cart.total %> р.
-      </p>
+<table class="border" width="100%" cellspacing="10" >
+  <tr>
+    <th>#</th>
+    <th>Название</th>
+    <th>Цена</th>
+    <th>Количество</th>
+  </tr>
+  <% shop_cart.products.each_with_index do |product, idx| %>
+    <tr>
+      <td><%= idx + 1 %></td>
+      <td><%= product[2] %></td>
+      <td><%= product[1].to_f * ( product[3]/1000 ) %></td>
+      <td><%= value_h product[3] %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  Всего: <%= shop_cart.total %> р.
+</p>
     </li>
     <% end %>
     <br/>
@@ -38,7 +41,19 @@
   <% end %>
   <br/>
 
-
+<script type="text/javascript" language="javascript" charset="utf-8">
+//<![CDATA[
+$("#order_dtime").datetimepicker({
+	timeOnlyTitle: 'Выберите время',
+	timeText: 'Время',
+	hourText: 'Часы',
+	minuteText: 'Минуты',
+	secondText: 'Секунды',
+	currentText: 'Сейчас',
+	closeText: 'Закрыть'
+});
+//]]>
+</script>
 
 <% else %>
   Добавьте позиции в корзину перед продолжением

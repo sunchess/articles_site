@@ -32,7 +32,7 @@ module Jsovet
     config.i18n.default_locale = :ru
 
     # JavaScript files you want as :defaults (application.js is always included). jquery-ui-1.8.5.custom.min
-    config.action_view.javascript_expansions[:defaults] = %w(jquery.min rails)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery.min rails jquery-ui-1.8.16.custom.min jquery.ui.datepicker-ru jquery-ui-timepicker-addon)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
