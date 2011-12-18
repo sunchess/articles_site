@@ -315,6 +315,7 @@ body{
 	.post p{
 		font-size: 16px;
 		padding-left: 45px;
+                margin-bottom: 10px;
 	}
 	.more{
 		color: #404040;
@@ -374,3 +375,10 @@ body{
 .ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
 .ui-timepicker-div td { font-size: 90%; }
 .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.picture{
+  border-color:#666666;
+  border-style:solid;
+  border-width:1px;
+  padding:5px;
+}
