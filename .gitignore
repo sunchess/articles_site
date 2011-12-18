@@ -8,3 +8,5 @@ public/system
 config/development.sphinx.conf
 log
 db/sphinx
+config/deploy.rb 
+config/initializers/secret_token.rb
