@@ -5,17 +5,21 @@
     <%= sort_image store.honey_sort %>
     <h4><%= link_to store.name, store_path(store) %></h4>
     <span><%= store.where_from %></span>
-    <p>
-      <%= truncate(  store.description, :length => 150 ).html_safe %>
-    </p>
     <div class="price">
-      <p><%= store.price %> Р.</p>
-      <span>1000гр.</span>
+      <p><%= store.price %> Р.<span>1 килограмм.</span></p>
       <br/>
       <div>
       <%= form_tag(add_shoping_cart_path(store), :remote => true, :method => :get) do %>
-        <%= select_tag "amount", options_for_select([["1 килограмм(1000 грамм)", "1000"], ["1 литр(1400 грамм)", "1400"], ["3 литра(4200 грамм)", "4200"]]) %>
-        <%= submit_tag "В корзину", :class => "buy" %>
+        <table border="0">
+          <tr>
+            <td valign="bottom">
+              <%= select_tag "amount", options_for_select([["1 килограмм", "1000"], ["1 литр(1400 грамм)", "1400"], ["3 литра(4500 грамм)", "4500"]]) %>
+            </td>
+            <td valign="top">
+              <%= submit_tag "В корзину", :class => "buy" %>
+            </td>
+          </tr>
+        </table>
       <% end %>
       </div>
     </div>

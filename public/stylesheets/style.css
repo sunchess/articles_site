@@ -237,7 +237,7 @@ body{
 		display: block;
 		font-size: 14px;
 		font-style: italic;
-		margin: 4px 0 25px 0;
+		margin: 4px 0 5px 0;
 	}
 	.product p{
 		font-size: 14px;
@@ -245,10 +245,9 @@ body{
 .price{
 	float: left;
 	margin: 25px 0;
-	width: 224px;
+	width: 354px;
 }
 	.price p{
-		float: left;
 		font-size: 36px;
 	}
 	.buy{
@@ -259,7 +258,7 @@ body{
 		float: left;
 		font-size: 16px;
 		height: 25px;
-		margin: 5px 0 0 35px;
+		margin: 0px 0 0 3px;
 		text-align: center;
 		width: 92px;
 	}
