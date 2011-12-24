@@ -6,14 +6,14 @@
     <h4><%= link_to store.name, store_path(store) %></h4>
     <span><%= store.where_from %></span>
     <div class="price">
-      <p><%= store.price %> Р.<span>1 килограмм.</span></p>
+      <p><%= store.price %> Р.</p>
       <br/>
       <div>
       <%= form_tag(add_shoping_cart_path(store), :remote => true, :method => :get) do %>
         <table border="0">
           <tr>
-            <td valign="bottom">
-              <%= select_tag "amount", options_for_select([["1 килограмм", "1000"], ["1 литр(1400 грамм)", "1400"], ["3 литра(4500 грамм)", "4500"]]) %>
+            <td valign="bottom" >
+              <%= select_tag "amount", options_for_select([["1 килограмм", "1000"], ["1 литр(1400 грамм)", "1400"], ["3 литра(4500 грамм)", "4500"]]), :class=>"select" %>
             </td>
             <td valign="top">
               <%= submit_tag "В корзину", :class => "buy" %>

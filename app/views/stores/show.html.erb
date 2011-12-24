@@ -21,7 +21,7 @@
         <table border="0">
           <tr>
             <td valign="bottom">
-              <%= select_tag "amount", options_for_select([["1 килограмм", "1000"], ["1 литр(1400 грамм)", "1400"], ["3 литра(4500 грамм)", "4500"]]) %>
+              <%= select_tag "amount", options_for_select([["1 килограмм", "1000"], ["1 литр(1400 грамм)", "1400"], ["3 литра(4500 грамм)", "4500"]]), :class=>"select" %>
             </td>
             <td valign="top">
               <%= submit_tag "В корзину", :class => "buy" %>

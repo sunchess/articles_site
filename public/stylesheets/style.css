@@ -381,3 +381,7 @@ body{
   border-width:1px;
   padding:5px;
 }
+
+.select { 
+  font-style: italic;
+}
