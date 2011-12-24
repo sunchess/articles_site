@@ -4,7 +4,7 @@
 </div>
   <div class="post_info">
           <div class="author">
-                  <a href="#"><img src="/images/img1.jpg" width="30" height="35" /></a>
+            <a href="#"><%= image_tag article.user.avatar.url(:thumb), :class=>"thumb", :width=>"36", :height=>"36" %></a>
                   <p><%= t("articles.article.publish_on")  %>: <%= l( article.updated_at ) %></p>
                   <p><%= t(".author")  %>: <%=  article.author %></p>
                   <% if params[:action] == "my" %>

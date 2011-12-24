@@ -1,5 +1,7 @@
 ru:
   users:
+    success:
+      update: "Редактирование прошло успешно"
     links:
       edit: "Профиль"
       new: "Регистрация"

@@ -27,6 +27,7 @@ ru:
         current_password: "Текущий пароль"
         remember_me: "Запомнить меня"
         login: "Логин или емеил"
+        avatar: "Изображение"
         
   helpers:
     label:

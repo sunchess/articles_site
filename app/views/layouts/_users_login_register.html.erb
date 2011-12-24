@@ -9,11 +9,12 @@
           <li class="my"><%= link_to t("articles.my.title"), my_articles_path %></li>
         <% end %>
         <li class="profile"><%= link_to t('users.links.edit'), edit_user_registration_path(:current) %></li>
-        <li><img src="/images/img1.jpg" width="30" height="35" /><%= link_to t('sessions.logout'), destroy_user_session_path, :method => :delete %></li>
+        <li><%= image_tag(current_user.avatar.url(:thumb), :width=>"36", :height=>"36") %>
+          <%= link_to t('sessions.logout'), destroy_user_session_path, :method => :delete %></li>
     <% else %>
         <li class="add"><%= link_to t("articles.add"), new_article_path %></li>
-        <li><%= link_to t('users.links.new'), new_user_registration_path %></li>
-        <li><%= link_to t('sessions.login'), new_user_session_path %></li>
+        <li class="profile"><%= link_to t('users.links.new'), new_user_registration_path %></li>
+        <li class="admin"><%= link_to t('sessions.login'), new_user_session_path %></li>
     <% end %>
 </ul><!-- END top_nav -->
   

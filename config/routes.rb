@@ -32,6 +32,8 @@ Jsovet::Application.routes.draw do
     end
   end
 
+  resources :avatars, :only => [:edit, :update]
+
   match 'search/index' => 'search#index', :as => :search
 
 

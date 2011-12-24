@@ -1,6 +1,6 @@
 <h2>Редактировать профиль</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
 
   <p><%= f.label :username %><br />
@@ -15,8 +15,18 @@
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
 
+  <br/>
+  <p>
+    <div>
+      <%= image_tag @user.avatar.url(:small) %>
+    </div>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </p>
+
   <p><%= f.label :current_password %> <i>(ввидет текущий пароль для подтверждения)</i><br />
   <%= f.password_field :current_password %></p>
+
 
   <p><%= f.submit "Редактировать" %></p>
 <% end %>

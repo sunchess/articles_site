@@ -9,7 +9,16 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :login, :avatar
+
+
+  has_attached_file :avatar, :styles => {:thumb => "35x35#", :small => "100x100#"}
+  validates_attachment_size :avatar, :less_than => 5.megabytes
+  validates_attachment_content_type :avatar, :content_type => /image/i
+
+  #has_attached_file :avatar, 
+  #               :styles => {:small => '30x30#', :large => '100x100#'}, 
+  #               :default_url => '/images/missing_:style.png'
 
   has_many :articles
   has_many :images
