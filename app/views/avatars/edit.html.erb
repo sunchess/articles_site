@@ -1,0 +1,12 @@
+<h1> Поменять аватар </h1>
+<div>
+  <%= image_tag @user.avatar.url(:small) %>
+</div>
+<%= form_for @user, :url => avatar_path(@user), :html => {:multipart => true} do |f| %>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+  <p>
+    <%= f.submit "Загрузить" %>
+  </p>
+<% end %>
+
