@@ -261,6 +261,8 @@ body {background: url(../images/html_bg.png) 0px 32px no-repeat;}
 	.comment p{
 		color: #3b3b3b;
 		font-size: 14px;
+		padding-top: 10px;
+
 	}
 	.comment.level-2{padding-left: 35px;}
 	.comment.level-3{padding-left: 70px;}
