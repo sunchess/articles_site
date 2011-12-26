@@ -3,7 +3,7 @@
 </h4>
 
 <div class="add_comment">
-  <div id="errors"></div>
+  <div id="errors<%= parent_id %>"></div>
   <%= form_for [ @article, Comment.new ], :remote => true, :url => article_comments_path(@article, :parent => parent_id || 0) do |f| %>
     <% if admin? %>
       <p>

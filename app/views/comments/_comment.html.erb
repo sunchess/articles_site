@@ -1,6 +1,6 @@
 <div style="padding-left:20px; padding-top: 10px;" class="comment">
   <div class="comment_info">
-    <img src="/images/img1.jpg" width="30" height="35" />
+    <%= image_tag comment.user.avatar.url(:thumb), :width=>"30", :height=>"35"%>
     <p><%= l comment.created_at %></p>
     <a href="#"><%= comment.user.username %></a>
   </div>

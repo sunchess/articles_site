@@ -1,3 +1,5 @@
   page << "$('#comments').html('#{escape_javascript(render :partial => "comments/comment", :collection => @article.root_comments)}')"
   page << "$('#set_editor').val('0');"
+  page << "$('#textile').val('')"
+  page << "$('#errors#{params[:parent]}').html('')"
 

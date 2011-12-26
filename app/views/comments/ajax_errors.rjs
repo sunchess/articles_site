@@ -1,1 +1,1 @@
-page << "$('#errors').html(\"#{escape_javascript(render "shared/error_messages", :target => @comment)}\");"
+page << "$('#errors#{params[:parent]}').html(\"#{escape_javascript(render "shared/error_messages", :target => @comment)}\");"
