@@ -1,5 +1,5 @@
 class StoresController < ApplicationController
-  before_filter :add_crumb
+  before_filter :add_crumb, :only => :show
   def index
     @stores = Store.shown
   end
@@ -11,7 +11,7 @@ class StoresController < ApplicationController
 
   private
   def add_crumb
-    add_breadcrumb "Магазин", stores_path
+    add_breadcrumb "Магазин мёда", stores_path
   end
 
 end

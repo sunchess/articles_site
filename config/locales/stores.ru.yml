@@ -10,7 +10,7 @@ ru:
     successful:
       create: "Мед добавлен"
     index:
-      title: "Каталог продукции"
+      title: "Магазин мёда"
   
   
   activerecord:

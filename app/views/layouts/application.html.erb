@@ -22,7 +22,7 @@
     <%= render :partial => "layouts/users_login_register" %>
   <% end %>
   <div class="header">
-		<h1><a href="/"><span></span>Honey-bee</a></h1>
+		<h1><a href="/"><span></span>Мёд на дом</a></h1>
 		<a href="/" class="home"></a>
 		<a href="#" class="sitemap"></a>
 		<ul class="top_nav">
@@ -39,14 +39,11 @@
     <% if alert %>
     <p class="alert"><%= alert %></p>
   <% end %>
-    <div class="work">
-      <h4>Сайт находится на стадии разработки</h4>
-    </div>
 	<div class="wrapper">
 		<div class="sidebar">
 			<div class="sidebar_block menu">
 				<ul>
-                                  <%= render :partial => "layouts/category", :collection => Category.all %>
+                                  <%#= render :partial => "layouts/category", :collection => Category.all %>
 				</ul>
 			</div><!-- END sidebar_block -->
                         <%= render :partial => "shoping_carts/cart" %>

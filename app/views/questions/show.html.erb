@@ -23,4 +23,5 @@
   <% unless @question.answer %>
     | <%= link_to "Ответить", new_question_answer_path(@question) %>
   <% end %>
+  | <%= link_to "Редактировать ответ",  edit_question_answer_path(@question, @question.answer)%>
 <% end %>
