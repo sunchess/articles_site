@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :find_category, :only => [ :index, :show ]
   before_filter :find_article, :only => %w{publish delete}
   load_and_authorize_resource :article, :except => "preview"
