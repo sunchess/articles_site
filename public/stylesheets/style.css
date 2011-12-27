@@ -317,6 +317,7 @@ body {background: url(../images/html_bg.png) 0px 32px no-repeat;}
 .alert{color: red;}
 
 blockquote{
-  background-color: #333;
+  background-color: #CCCC99;
   padding-left: 10px;
+  margin-left: 20px;
 }
