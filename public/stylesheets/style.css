@@ -315,3 +315,8 @@ body {background: url(../images/html_bg.png) 0px 32px no-repeat;}
 
 .notice{color: green;}
 .alert{color: red;}
+
+blockquote{
+  background-color: #333;
+  padding-left: 10px;
+}
