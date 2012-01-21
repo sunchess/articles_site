@@ -11,7 +11,7 @@ class Ability
       if user.confirmed_at #is real user
         can :create, Comment
         can :create, Article
-        can :update, Article, { :user_id => user.id, :status => :draft }
+        can :update, Article, { :user_id => user.id, :aasm_status => :draft }
       end
     end
 
