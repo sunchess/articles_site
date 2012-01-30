@@ -1,0 +1,10 @@
+ru:
+
+
+
+  activerecord:
+    attributes:
+       review:
+         body: "Отзыв"
+         name: "Ваше имя"
+         shown: "Показываем"

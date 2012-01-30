@@ -1,5 +1,11 @@
 Jsovet::Application.routes.draw do
 
+  resources :reviews do
+    member do
+      post :publish
+    end
+  end
+
   resources :answers
 
   resources :questions do
@@ -22,8 +28,8 @@ Jsovet::Application.routes.draw do
     resources :articles
   end
 
-  resources :stores, :only => %w{show index} 
-  resources :shoping_carts, :only => %w{index} do 
+  resources :stores, :only => %w{show index}
+  resources :shoping_carts, :only => %w{index} do
     collection do
       get 'clear'
       get 'new_mail'
@@ -43,7 +49,7 @@ Jsovet::Application.routes.draw do
       post 'preview'
     end
 
-    member do 
+    member do
       get 'publish', 'delete'
     end
 

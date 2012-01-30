@@ -1,0 +1,10 @@
+<%= semantic_form_for @review do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :body %>
+  <% end %>
+
+  <%= f.buttons do %>
+    <%= f.commit_button "Добавить" %>
+  <% end %>
+<% end %>

@@ -45,7 +45,7 @@ body{
 	}
 .top_nav{
 	clear: both;
-	margin-left: 192px;
+	margin-left: 162px;
 }
 	.top_nav li{
 		float: left;
@@ -87,7 +87,7 @@ body{
 			color: #404040;
 			font-size: 14px;
 			font-style: italic;
-			padding-left: 17px;			
+			padding-left: 17px;
 		}
 .cart{
 	background: url(../images/cart_bg.png) no-repeat;
@@ -126,7 +126,7 @@ body{
 			text-decoration: none;
 		}
 .contact{
-	
+
 }
 .contact h2{
 	border-bottom: 1px #d29e89 solid;
@@ -382,6 +382,6 @@ body{
   padding:5px;
 }
 
-.select { 
+.select {
   font-style: italic;
 }

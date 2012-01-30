@@ -1,0 +1,27 @@
+<div class="posts single">
+  <h1>Отзывы наших покупателей</h1>
+</div>
+<div class="posts">
+  <div class="post">
+    <% @reviews.each do |review| %>
+      <% if review.shown? or admin? %>
+        <div>
+          <h4>
+            <%= review.name %> <% if !review.shown? %>( Не проверен )<% end %>
+          </h4>
+          <p>
+            <%= review.body %>
+          </p>
+          <p>
+            <% if can? :create, Review %>
+              <%= link_to 'Публиковать', publish_review_path(review), :confirm => "Подтверждаете?", :method => :post %> | <%= link_to 'Редактировать', edit_review_path(review) %> | <%= link_to 'Удалить', review, :confirm => 'Подтверждаете?', :method => :delete  %>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+  <% end %>
+  </div>
+</div>
+<br />
+
+<%= link_to 'Добавить отзыв', new_review_path %>
