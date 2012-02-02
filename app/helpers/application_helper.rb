@@ -46,7 +46,11 @@ module ApplicationHelper
 
 
   def sort_image(num)
-    image_tag("/images/m#{num}.png")
+    if num
+      image_tag("/images/m#{num}.png")
+    else
+      ""
+    end
   end
 end
 

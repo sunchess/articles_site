@@ -3,7 +3,7 @@
 
 <br/>
 <p>
-  <%= link_to t("add"), new_admin_store_path%>
+  <%= link_to t("Добавить мед"), new_admin_store_path%> | <%= link_to t("Добавить продукт пчеловодства"), new_admin_store_path(:product => true)%>
 </p>
 <br/>
 
@@ -30,7 +30,11 @@
       <td><%= yes_no store.on_index%></td>
       <td><%= yes_no store.on_top %></td>
       <td><%= yes_no store.shown %></td>
-      <td><%= link_to t("edit"), edit_admin_store_path(store) %></td>
+      <% unless store.honey_sort %>
+        <td><%= link_to t("edit"), edit_admin_store_path(store, :product => true) %></td>
+      <% else %>
+        <td><%= link_to t("edit"), edit_admin_store_path(store) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

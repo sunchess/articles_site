@@ -2,18 +2,26 @@
     <% if store.on_top? %>
       <span class="top"></span>
     <% end %>
-    <%= sort_image store.honey_sort %>
+    <%= sort_image store.honey_sort if store.honey_sort %>
     <h4><%= link_to store.name, store_path(store) %></h4>
     <span><%= store.where_from %></span>
     <div class="price">
-      <p><%= store.price %> Р.</p>
+      <% if store.honey_sort %>
+        <p><%= store.price %> Р.</p>
+      <% else %>
+        <p><%= store.price/10 %> Р.</p>
+      <% end %>
       <br/>
       <div>
       <%= form_tag(add_shoping_cart_path(store), :remote => true, :method => :get) do %>
         <table border="0">
           <tr>
             <td valign="bottom" >
-              <%= select_tag "amount", options_for_select([["1 килограмм", "1000"], ["1 литр(1400 грамм)", "1400"], ["3 литра(4500 грамм)", "4500"]]), :class=>"select" %>
+              <% if store.honey_sort %>
+                <%= select_tag "amount", options_for_select([["1 килограмм", "1000"], ["1 литр(1400 грамм)", "1400"], ["3 литра(4500 грамм)", "4500"]]), :class=>"select" %>
+              <% else %>
+                <%= select_tag "amount", options_for_select([["100 грамм", "100"], ["200 грамм", "200"], ["300 грамм", "300"]]), :class=>"select" %>
+              <% end %>
             </td>
             <td valign="top">
               <%= submit_tag "В корзину", :class => "buy" %>
