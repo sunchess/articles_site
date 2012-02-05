@@ -2,29 +2,23 @@
 <%= semantic_form_for [:admin, @store], :html => {:multipart => true} do |f| %>
   <%= f.inputs do %>
     <%= f.input :name %>
-    <%#= f.input :description, :class => "markItUp" %>
-    <%= f.label :description =%>
+    <%= f.label :description %>
     <%= f.text_area :description, :class => "markItUp", :size => "100x20" %>
     <%= f.input :where_from%>
     <%= f.input :price %>
     <%= f.input :logo, :as => :file %>
-    <% if !params[:product] and !@store.product  %>
-      <%= f.input :honey_sort, :as => :select, :collection => ( 1..7 ).to_a %>
-      <li style="padding-left: 100px;">
-        <% (1..7).to_a.each do |m|  %>
-          <%= image_tag "/images/m#{m}.png", :title => m %>
-        <% end %>
-      </li>
-    <% end %>
-  <% end %>
-  <%#= debug params[:product] %>
-  <% if params[:product] or @store.product %>
-    <%= f.input :product, :as => :hidden, :value => "true" %>
+    <%= f.input :honey_sort, :as => :select, :collection => ( 1..7 ).to_a %>
+    <li style="padding-left: 100px;">
+      <% (1..7).to_a.each do |m|  %>
+        <%= image_tag "/images/m#{m}.png", :title => m %>
+      <% end %>
+    </li>
   <% end %>
   <%= f.inputs do %>
     <%= f.input :on_index%>
     <%= f.input :on_top%>
     <%= f.input :shown%>
+    <%= f.input :prod%>
   <% end %>
   <%= f.buttons %>
 <% end %>

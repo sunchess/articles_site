@@ -1,10 +1,10 @@
 ru:
   answers:
-    saccess:
+    success:
       create: "Ответ добавлен"
 
-    
-  
+
+
   activerecord:
     attributes:
        answer:

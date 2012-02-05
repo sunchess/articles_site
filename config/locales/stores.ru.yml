@@ -3,7 +3,7 @@ ru:
     stores:
       new:
         title: "Добавить позицию в магазин"
-      edit: 
+      edit:
         title: "Редактирвоние позиции"
 
   stores:
@@ -11,8 +11,8 @@ ru:
       create: "Мед добавлен"
     index:
       title: "Магазин мёда"
-  
-  
+
+
   activerecord:
     attributes:
        store:
@@ -25,3 +25,4 @@ ru:
         shown: "Показываем?"
         logo: "Изображение медоноса"
         price: "Цена за кг."
+        prod: "Продукт"

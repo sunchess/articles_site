@@ -4,7 +4,8 @@ class ReviewsController < InheritedResources::Base
   custom_actions :resource => :publish
 
   def create
-    create!(:notice => "Отзыв добавлен. Спасибо!") { reviews_path }
+    create!(:notice => "Отзыв добавлен. Спасибо! После модерации он появится на сайте.") { reviews_path }
+    AppMailer._review(@review).deliver
   end
 
   def publish

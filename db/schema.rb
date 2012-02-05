@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130143606) do
+ActiveRecord::Schema.define(:version => 20120205094430) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20120130143606) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.integer  "price"
+    t.boolean  "prod",              :default => false, :null => false
   end
 
   create_table "users", :force => true do |t|

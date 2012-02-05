@@ -2,13 +2,27 @@ class CartItems
   attr_accessor :products, :total
 
   def initialize()
-    @products = Array.new 
+    @products = Array.new
     @total = 0
   end
-  
+
   def add(pos, amount)
-    @products.push [pos.id, pos.price, pos.name, amount]
-    price = ( amount/1000.0 ) * pos.price.to_f
+    val = [pos.id, pos.price, pos.name, amount]
+    prod = @products.select{|p| p.first == pos.id}
+    unless prod.empty?
+      prod = prod.first
+
+      indx = @products.index(prod)
+      prod[3] = prod[3] + amount
+
+      # replice position of array
+      @products[indx] = prod
+
+      price = ( amount/1000.0 ) * pos.price.to_f
+    else
+      @products.push val
+      price = ( amount/1000.0 ) * pos.price.to_f
+    end
     @total = @total + price
   end
 
