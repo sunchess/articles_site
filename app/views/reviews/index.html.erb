@@ -10,7 +10,7 @@
             <%= review.name %> <% if !review.shown? %>( Не проверен )<% end %>
           </h4>
           <p>
-            <%= review.body %>
+            <%= simple_format review.body %>
           </p>
           <p>
             <% if can? :create, Review %>
