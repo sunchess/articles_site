@@ -11,7 +11,7 @@
       <%= RedCloth.new( @store.description).to_html.html_safe %>
     </div>
     <br/>
-    <b>Изображение медоноса</b>
+    <b>Изображения</b>
     <span>
       <%= image_tag @store.logo.url(:medium), :class=>"picture" %>
     </span>
