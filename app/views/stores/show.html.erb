@@ -11,10 +11,12 @@
       <%= RedCloth.new( @store.description).to_html.html_safe %>
     </div>
     <br/>
-    <b>Изображения</b>
-    <span>
-      <%= image_tag @store.logo.url(:medium), :class=>"picture" %>
-    </span>
+    <% if @store.logo? %>
+      <b>Изображения</b>
+      <span>
+        <%= image_tag @store.logo.url(:medium), :class=>"picture" %>
+      </span>
+    <% end %>
     <div class="price">
       <% if @store.prod? %>
         <p><%= @store.price/10 %> Р.</p>
