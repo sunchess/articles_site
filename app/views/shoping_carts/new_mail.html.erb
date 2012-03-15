@@ -4,9 +4,10 @@
 <% if shop_cart.size.to_i > 0 %>
   <%= semantic_form_for @order, :html => {:multipart => true} , :url => send_mail_shoping_carts_path do |f| %>
     <%= f.inputs do %>
-      <%= f.input :name, :label => "Контактное лицо" %>
+      <%= f.input :name, :label => "Контактное лицо", :hint => "при пересылке в регионы, необходимо указать отчество получателя" %>
       <%= f.input :telephone, :label => "Контактный телефон" %>
-      <%= f.input :address, :label => "Адрес" %>
+      <%= f.input :email, :label => "Email", :hint => "для междугородних заказов" %>
+      <%= f.input :address, :label => "Адрес", :hint => "при пересылке в регионы, необходимо указать почтовый индекс"  %>
       <%= f.input :dtime,:label => "Удобное время" %>
       <%= f.input :content, :as => :text, :label => "Примечание"%>
     <% end %>
