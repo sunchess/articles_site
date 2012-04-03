@@ -13,7 +13,7 @@
             <%= simple_format review.body %>
           </p>
           <p>
-            <% if can? :create, Review %>
+            <% if can? :manage, Review %>
               <%= link_to 'Публиковать', publish_review_path(review), :confirm => "Подтверждаете?", :method => :post %> | <%= link_to 'Редактировать', edit_review_path(review) %> | <%= link_to 'Удалить', review, :confirm => 'Подтверждаете?', :method => :delete  %>
             <% end %>
           </p>
