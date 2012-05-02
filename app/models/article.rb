@@ -51,4 +51,8 @@ class Article < ActiveRecord::Base
   end
 
 
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
 end
