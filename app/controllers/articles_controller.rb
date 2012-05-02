@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   def my
     @articles = current_user.articles.not_deleted.paginate(:page => params[:page], :per_page => 10)
   end
-   
+
   def index
     if @category
       @articles = @category.articles.published.paginate(:page => params[:page], :per_page => 10)
@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = @category.articles.find(params[:id])
-    @articles = @category.articles.where([ "id <> ?", params[:id] ]).limit(3)
+    @articles = @category.articles.where([ "id <> ?", @article.id]).limit(3)
     add_breadcrumb @category.name, category_articles_path(@category)
     add_breadcrumb @article.name, category_article_path(@category, @article)
   end
@@ -33,12 +33,12 @@ class ArticlesController < ApplicationController
     @article.accessible = [:user_id] if admin?
     if params[:article][:user_id]
       @article.user_id = params[:article][:user_id]
-    else 
+    else
       @article.user = current_user
     end
 
     if @article.save
-      redirect_to my_articles_path, :notice => t( "articles.successful.create" ) 
+      redirect_to my_articles_path, :notice => t( "articles.successful.create" )
     else
       render :action => :new
     end
@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
   def update
    #@hotel.accessible = [ :draft, :paid_placement  ] if admin?
    @article.accessible = [:user_id] if admin?
-   @article.attributes = params[:article] 
+   @article.attributes = params[:article]
    if @article.save
      redirect_to edit_article_path(@article), :notice => t( "articles.successful.update" )
    else
