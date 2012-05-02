@@ -10,6 +10,6 @@ class Question < ActiveRecord::Base
 
 
   def to_param
-    "#{id}-#{name.parameterize}"
+    "#{id}-#{body.parameterize}"
   end
 end
