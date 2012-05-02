@@ -7,4 +7,9 @@ class Question < ActiveRecord::Base
 
   scope :shown, where(:shown => true)
   scope :hidden, where(:shown => false)
+
+
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
 end
