@@ -10,7 +10,7 @@
 Ответ:
 <% if @question.answer %>
 <p>
-  <%= @question.answer.body %>
+  <%= simple_format @question.answer.body %>
 </p>
 <% else %>
   Нет
