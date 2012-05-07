@@ -5,7 +5,7 @@ class Category < ActiveRecord::Base
 
   default_scope order("position")
 
-  has_many :articles, :order => "created_at"
+  has_many :articles, :order => "created_at", :dependent => :destroy
 
   validates_uniqueness_of :name
   validates_presence_of :name, :position

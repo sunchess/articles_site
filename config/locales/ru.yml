@@ -11,6 +11,7 @@ ru:
   confirm: "Подтверждаете?"
   search: "Искать"
   order_sent: "Ваш заказ отправлен. Мы вам позвоним в ближайшее время."
+  relative_article: "Похожие статьи"
 
   users:
     hello: 'Здравствуйте'
@@ -18,7 +19,7 @@ ru:
     login: 'Войти'
     logout: 'Выйти'
     sign_in: "Вход для пользователей"
-        
+
   activerecord:
     attributes:
       user:
@@ -32,7 +33,7 @@ ru:
         name: "Контактное лицо"
         telephone: "Контактный телефон"
         content: "Примечание"
-        
+
   helpers:
     label:
       #post:
@@ -44,8 +45,8 @@ ru:
       destroy: "Удалить"
       publish: "Опубликовать"
       next: "Далее"
-  
-  errors:      
-    messages: 
+
+  errors:
+    messages:
       activerecord:
         title: "Допущены ошибки"

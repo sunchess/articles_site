@@ -5,6 +5,9 @@ class Article < ActiveRecord::Base
 
   belongs_to :category, :counter_cache => true
   belongs_to :user, :counter_cache => true
+  has_many :relative_articles
+  has_many :relatives, :through => :relative_articles
+
   validates_presence_of :name, :body, :category_id, :preview
   validates_length_of :name, :within => 10..100
   validates_length_of :preview, :within => 100..2000
@@ -14,6 +17,10 @@ class Article < ActiveRecord::Base
   scope :draft, where(:aasm_status=> :draft)
   scope :deleted, where(:aasm_status => :deleted)
   scope :not_deleted, where(:aasm_status => [:publics, :draft])
+
+  def relative_ids
+    self.relatives.published.map(&:id)
+  end
 
 
   define_index do

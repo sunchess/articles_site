@@ -20,6 +20,9 @@
     <% if can? :delete, article %>
       <%= link_to t("delete"), delete_article_path(article), :confirm => t("confirm") %>
     <% end %>
+    <% if can? :manage, article %>
+      <%= link_to t("relative_articles"), article_relative_articles_path(article) %>
+    <% end %>
   </div>
 <% end %>
 </div>

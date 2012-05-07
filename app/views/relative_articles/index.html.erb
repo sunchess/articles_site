@@ -1,0 +1,23 @@
+<div class="posts single">
+  <h1>Позожие статьи</h1>
+</div>
+
+<h2>Добавить новые похожие статьи</h2>
+
+<%= form_tag( article_relative_articles_path ) do |f| %>
+  <table class="border" width="100%" cellspacing="10">
+    <tr>
+      <th>Название </th>
+      <th></th>
+    </tr>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.name %></td>
+          <td><%= check_box_tag "relatives[]", article.id, @relative_ids.include?(article.id) %></td>
+        </tr>
+      <% end %>
+  </table>
+  <%= submit_tag "Добавить", :name => "add" %>
+<% end %>
+
+

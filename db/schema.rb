@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120205094430) do
+ActiveRecord::Schema.define(:version => 20120507122632) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -76,6 +76,14 @@ ActiveRecord::Schema.define(:version => 20120205094430) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "relative_articles", :force => true do |t|
+    t.integer "article_id"
+    t.integer "relative_id"
+  end
+
+  add_index "relative_articles", ["article_id"], :name => "index_relative_articles_on_article_id"
+  add_index "relative_articles", ["relative_id"], :name => "index_relative_articles_on_relative_id"
 
   create_table "reviews", :force => true do |t|
     t.string   "name"

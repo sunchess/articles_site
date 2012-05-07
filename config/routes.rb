@@ -54,6 +54,7 @@ Jsovet::Application.routes.draw do
     end
 
     resources :comments, :only => %w{create update}
+    resources :relative_articles, :only => %w{index create}
   end
 
   resources :images do
