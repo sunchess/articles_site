@@ -22,7 +22,7 @@ SitemapGenerator::Sitemap.create do
   # Store path
     add stores_path, :changefreq => 'weekly'
     Store.shown.each do |store|
-      add store_path(store), :lastmod => article.updated_at
+      add store_path(store), :lastmod => store.updated_at
     end
 
   # Examples:
