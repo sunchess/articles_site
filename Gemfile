@@ -20,6 +20,7 @@ gem "breadcrumbs_on_rails", :git => 'git://github.com/sunchess/breadcrumbs_on_ra
 gem 'thinking-sphinx', '2.0.5'
 gem 'formtastic'
 gem 'russian'
+gem 'sitemap_generator'
 
 #gem 'inherited_resources',        '~> 1.2.2'
 # Bundle edge Rails instead:
@@ -31,7 +32,7 @@ gem 'russian'
 # gem 'unicorn'
 
 # Deploy with Capistrano
- gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 gem 'ruby-debug'

@@ -11,3 +11,4 @@ db/sphinx
 config/initializers/secret_token.rb
 config/deploy.rb
 Capfile
+public/sitemap*.gz
