@@ -11,7 +11,7 @@ ru:
   confirm: "Подтверждаете?"
   search: "Искать"
   order_sent: "Ваш заказ отправлен. Мы вам позвоним в ближайшее время."
-  relative_article: "Похожие статьи"
+  relative_articles: "Похожие статьи"
 
   users:
     hello: 'Здравствуйте'
