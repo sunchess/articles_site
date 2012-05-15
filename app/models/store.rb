@@ -19,4 +19,8 @@ class Store < ActiveRecord::Base
     range.step(100).to_a
   end
 
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
 end
