@@ -1,5 +1,4 @@
 class RelativeArticlesController < ApplicationController
-  authorize_resource :article
   before_filter :find_article
 
   def index
@@ -14,6 +13,7 @@ class RelativeArticlesController < ApplicationController
 
   protected
   def find_article
+    authorize! :manage, Article
     @article = Article.find(params[:article_id])
     @articles = Article.where("id <> ?", @article.id )
   end

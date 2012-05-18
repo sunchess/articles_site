@@ -1,0 +1,23 @@
+<div class="posts single">
+  <h1>Похожие вопросы</h1>
+</div>
+
+<h2>Добавить новые похожие вопросы</h2>
+
+<%= form_tag( question_relative_questions_path(@question) ) do |f| %>
+  <table class="border" width="100%" cellspacing="10">
+    <tr>
+      <th>Название </th>
+      <th></th>
+    </tr>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.body %></td>
+          <td><%= check_box_tag "relatives[]", question.id, @relative_ids.include?(question.id) %></td>
+        </tr>
+      <% end %>
+  </table>
+  <%= submit_tag "Добавить", :name => "add" %>
+<% end %>
+
+

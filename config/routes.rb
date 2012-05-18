@@ -7,8 +7,10 @@ Jsovet::Application.routes.draw do
   end
 
   resources :answers
+  resources :relative_questions, :only => [:index, :create]
 
   resources :questions do
+    resources :relative_questions, :only => [:index, :create]
     resources :answers
     collection do
       get "hidden"
