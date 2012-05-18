@@ -16,6 +16,7 @@
     <th>Изображение</th>
     <th>На главной?</th>
     <th>Топ продаж?</th>
+    <th>Свежий?</th>
     <th>Показываем</th>
     <th>Управление</th>
   </tr>
@@ -29,6 +30,7 @@
       <td><%= link_to image_tag(store.logo.url(:thumb)), store.logo.url %></td>
       <td><%= yes_no store.on_index%></td>
       <td><%= yes_no store.on_top %></td>
+      <td><%= yes_no store.fresh %></td>
       <td><%= yes_no store.shown %></td>
       <td><%= link_to t("edit"), edit_admin_store_path(store) %></td>
     </tr>

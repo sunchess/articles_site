@@ -1,6 +1,6 @@
 class Store < ActiveRecord::Base
   attr_accessor :product
-  attr_accessible :name, :description, :where_from, :honey_sort, :logo, :on_index, :on_top, :shown, :price, :product, :prod
+  attr_accessible :name, :description, :where_from, :honey_sort, :logo, :on_index, :on_top, :shown, :price, :product, :prod, :fresh
 
 
   has_attached_file :logo, :styles => {:big => "400x400>", :medium => "300x300>", :thumb => "100x100>" }

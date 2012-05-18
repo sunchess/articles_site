@@ -1,6 +1,8 @@
 <div class="product">
     <% if store.on_top? %>
       <span class="top"></span>
+    <% elsif store.fresh %>
+      <span class="top fresh"></span>
     <% end %>
     <% if store.honey_sort %>
       <%= sort_image store.honey_sort %>

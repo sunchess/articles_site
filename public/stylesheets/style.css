@@ -278,6 +278,8 @@ body{
 	z-index:999;
 }
 
+.top.fresh{background: url(../images/top2.png) no-repeat;}
+
 .posts{clear: both;}
 	.posts h4,.posts h1{
 		border-bottom: 3px #404040 dotted;
