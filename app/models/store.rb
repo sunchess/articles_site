@@ -1,6 +1,8 @@
+require 'acts_as_list'
 class Store < ActiveRecord::Base
+  acts_as_list
   attr_accessor :product
-  attr_accessible :name, :description, :where_from, :honey_sort, :logo, :on_index, :on_top, :shown, :price, :product, :prod, :fresh
+  attr_accessible :name, :description, :where_from, :honey_sort, :logo, :on_index, :on_top, :shown, :price, :product, :prod, :fresh, :position
 
 
   has_attached_file :logo, :styles => {:big => "400x400>", :medium => "300x300>", :thumb => "100x100>" }
@@ -10,9 +12,9 @@ class Store < ActiveRecord::Base
 
 
 
-  scope :at_index, where(:on_index => true).order("created_at")
+  scope :at_index, where(:on_index => true).order(:position)
   scope :at_top, where(:on_top => true)
-  scope :shown, where(:shown => true).order("created_at")
+  scope :shown, where(:shown => true).order(:position)
 
   def self.short_weight
     range = (100..1000)

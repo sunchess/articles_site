@@ -10,10 +10,10 @@ class ArticlesController < ApplicationController
 
   def index
     if @category
-      @articles = @category.articles.published.paginate(:page => params[:page], :per_page => 10)
+      @articles = @category.articles.published.order(:position).paginate(:page => params[:page], :per_page => 10)
       add_breadcrumb @category.name, category_articles_path(@category)
     else
-      @articles = Article.published.order("id DESC").paginate(:per_page => 20, :page => params[:page])
+      @articles = Article.published.order(:position).paginate(:per_page => 20, :page => params[:page])
     end
   end
 

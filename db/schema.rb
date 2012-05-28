@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120518164031) do
+ActiveRecord::Schema.define(:version => 20120528143215) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120518164031) do
     t.string   "aasm_status", :default => "draft", :null => false
     t.text     "preview"
     t.boolean  "delta",       :default => true,    :null => false
+    t.integer  "position",    :default => 0
   end
 
   add_index "articles", ["aasm_status"], :name => "index_articles_on_status"
@@ -118,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20120518164031) do
     t.integer  "price"
     t.boolean  "prod",              :default => false, :null => false
     t.boolean  "fresh",             :default => false, :null => false
+    t.integer  "position"
   end
 
   create_table "users", :force => true do |t|

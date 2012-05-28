@@ -13,21 +13,21 @@
                             Мы занимаемся прямыми продажами натурального меда непосредственно со своей пасеки, имеем многолетний опыт и знаем о меде и продуктах пчеловодства практически всё. Мы дорожим своими клиентами и относимся к ним с тем же вниманием, какое уделяем качеству своей продукции. Добро пожаловать!
                             </p>
 			</div><!-- END message -->
-			<div class="products">
+            <div class="products">
                             <%= render :partial => "stores/store", :collection => @stores %>
                         </div><!-- END products -->
                         <p class="split">
                           &nbsp;
                           <br/>
                         </p>
-			<div class="posts">
-				<h4>Статьи о мёде</h4>
-				
+            <div class="posts">
+                <h4>Статьи о мёде</h4>
+                
                                 <%- @articles.each do |article| %>
-				<div class="post">
+                  <div class="post">
                                       <h4><%= link_to article.name, category_article_path(article.category,article) %></h4>
                                       <p><%= truncate article.body, :length => 200 %> </p>
                                         <%= link_to "Подробнее...", category_article_path(article.category,article), :class=>"more"%>
-				</div><!-- END post -->
+                </div><!-- END post -->
                                 <% end %>
-			</div><!-- END posts -->
+            </div><!-- END posts -->

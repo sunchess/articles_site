@@ -34,3 +34,4 @@ ru:
         body: "Текст"
         preview: "Кратко о статье"
         user_id: "Автор"
+        position: "Позиция"

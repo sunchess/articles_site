@@ -1,6 +1,8 @@
+require 'acts_as_list'
 class Article < ActiveRecord::Base
-  attr_accessible :name, :body, :category_id, :preview, :status
+  attr_accessible :name, :body, :category_id, :preview, :status, :position
   acts_as_commentable
+  acts_as_list
 
 
   belongs_to :category, :counter_cache => true
