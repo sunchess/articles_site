@@ -6,6 +6,7 @@ class Ability
 
     if user.role? :admin
       can :manage, :all
+      can :manage, Store, :order => "position"
     else
       can :read, [Category, Article, Comment, Question, Review]
       can :create, Question

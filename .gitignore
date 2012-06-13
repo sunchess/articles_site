@@ -12,4 +12,4 @@ config/initializers/secret_token.rb
 config/deploy.rb
 Capfile
 public/sitemap*.gz
-*.DS_Store
+.DS_Store
