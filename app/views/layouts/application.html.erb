@@ -6,6 +6,8 @@
       <%= yield(:title) %>
     <% elsif render_breadcrumbs(:full=>true).present?%>
       <%= "#{render_breadcrumbs(:no_html=>true, :separator => ' / ', :full=>true).html_safe} :: " %>
+    <% else %>
+    	<%= "Мед на дом -- всегда настоящий мед" %>
     <% end %>
   </title>
 

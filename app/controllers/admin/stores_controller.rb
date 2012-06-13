@@ -2,6 +2,7 @@ class Admin::StoresController < ApplicationController
   load_and_authorize_resource :store
 
   def index
+    @stores = Store.order(:position)
   end
 
   def new
