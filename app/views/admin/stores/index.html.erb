@@ -9,6 +9,7 @@
 
 <table class="border">
   <tr>
+    <th>Позиция</th>
     <th>Наименование</th>
     <th>Откуда</th>
     <th>Цена</th>
@@ -23,6 +24,7 @@
 
   <% @stores.each do |store| %>
     <tr>
+      <td><%= store.position %></td>
       <td><%= store.name %></td>
       <td><%= store.where_from%></td>
       <td><%= store.price%></td>
