@@ -24,6 +24,10 @@ class Article < ActiveRecord::Base
     self.relatives.published.map(&:id)
   end
 
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
 
   define_index do
     indexes name
@@ -60,8 +64,5 @@ class Article < ActiveRecord::Base
   end
 
 
-  def to_param
-    "#{id}-#{name.parameterize}"
-  end
 
 end
