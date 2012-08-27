@@ -9,6 +9,7 @@ ru:
   draft: "Вернуть в черновики"
   confirm: "Подтверждаете?"
   search: "Искать"
+  back: "Назад"
 
   users:
     hello: 'Здравствуйте'
@@ -16,7 +17,7 @@ ru:
   sessions:
     login: 'Войти'
     logout: 'Выйти'
-        
+
   activerecord:
     attributes:
       user:
@@ -28,7 +29,7 @@ ru:
         remember_me: "Запомнить меня"
         login: "Логин или емеил"
         avatar: "Изображение"
-        
+
   helpers:
     label:
       #post:
@@ -40,8 +41,8 @@ ru:
       destroy: "Удалить"
       publish: "Опубликовать"
       next: "Далее"
-  
-  errors:      
-    messages: 
+
+  errors:
+    messages:
       activerecord:
         title: "Допущены ошибки"

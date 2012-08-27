@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable,  :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
-  
+
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
   validates_attachment_size :avatar, :less_than => 5.megabytes
   validates_attachment_content_type :avatar, :content_type => /image/i
 
-  #has_attached_file :avatar, 
-  #               :styles => {:small => '30x30#', :large => '100x100#'}, 
+  #has_attached_file :avatar,
+  #               :styles => {:small => '30x30#', :large => '100x100#'},
   #               :default_url => '/images/missing_:style.png'
 
   has_many :articles
@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
     self.role? :admin
   end
 
-  
+
   before_save :check_first_user
 
   protected
@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
      recoverable = find_recoverable_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
      recoverable.send_reset_password_instructions if recoverable.persisted?
      recoverable
-   end 
+   end
 
    def self.find_recoverable_or_initialize_with_errors(required_attributes, attributes, error=:invalid)
      (case_insensitive_keys || []).each { |k| attributes[k].try(:downcase!) }
@@ -79,10 +79,10 @@ class User < ActiveRecord::Base
        if attributes.has_key?(:login)
           login = attributes.delete(:login)
           record = find_record(login)
-       else  
+       else
          record = where(attributes).first
-       end  
-     end  
+       end
+     end
 
      unless record
        record = new
@@ -91,15 +91,15 @@ class User < ActiveRecord::Base
          value = attributes[key]
          record.send("#{key}=", value)
          record.errors.add(key, value.present? ? error : :blank)
-       end  
-     end  
+       end
+     end
      record
    end
 
    def self.find_record(login)
      where(["username = :value OR email = :value", { :value => login }]).first
    end
-  
+
   private
   def check_first_user
     if User.count == 0

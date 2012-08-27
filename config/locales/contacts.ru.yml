@@ -1,0 +1,24 @@
+ru:
+  contacts:
+    successfully_create: "Ваше сообщение отправлено. Мы ответим вам в ближайшее время"
+
+    new:
+      title: "Связаться с нами"
+      content: "Ваш вопрос"
+      name: "Ваше имя"
+      content: "Ваш вопрос"
+      email: "Ваш Email"
+      submit: "Отослать сообщение"
+
+  activemodel:
+    errors:
+      models:
+        message:
+          attributes:
+            name:
+              blank: "не может быть пустым"
+            email:
+              blank: "не может быть пустым"
+              invalid: "не верный формат"
+            content:
+              blank: "не может быть пустым"

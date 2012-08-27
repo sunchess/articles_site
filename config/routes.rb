@@ -1,6 +1,9 @@
 Jsovet::Application.routes.draw do
 
   devise_for :users
+  resources :authors, :only => [:index]
+
+  resources :contacts, :only => %w{new create}
 
   namespace :admin do
     resources :categories, :only => %w{index create edit update}
@@ -19,7 +22,7 @@ Jsovet::Application.routes.draw do
       post 'preview'
     end
 
-    member do 
+    member do
       get 'publish', 'delete'
     end
 

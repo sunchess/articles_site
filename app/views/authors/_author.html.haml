@@ -1,0 +1,8 @@
+%p
+  %table{ :cellspacing =>"6", :cellpadding => "4" }
+    %tr
+      %td{:style => "padding: 4px"}
+        = image_tag author.avatar.url(:thumb)
+      %td
+        = author.username
+

@@ -1,0 +1,30 @@
+%h1= t(".title")
+#main_content
+  = form_for @message, :url => contacts_path  do |f|
+    = render "shared/error_messages", :target => @message
+    %ul.form_fields.inline
+      %li
+        = f.label :name, t(".name")
+        = mark_required(@message, :name)
+        %br
+        = f.text_field :name
+      %li
+        = f.label :email, t(".email")
+        = mark_required(@message, :email)
+        %br
+        = f.text_field :email
+      %li
+        = f.label :content, t(".content")
+        = mark_required(@message, :content)
+        %br
+        = f.text_area :content, :size => "50x10"
+    .reset
+
+    %ul.form_params
+      %li
+        = f.submit t(".submit")
+
+#navigation
+  %br
+  = link_to t("back"), :back
+
