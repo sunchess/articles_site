@@ -40,7 +40,16 @@
 			<li><a href="<%= stores_path %>">Магазин<span>Мёда</span></a></li>
 			<li><a href="<%= how_to_buy_path %>">Как купить <span>условия покупки и доставки</span></a></li>
 			<li><a href="<%= questions_path %>">Вопросы <span>ответы на вопросы от пчеловодов</span></a></li>
-			<li><a href="<%= articles_path %>">Статьи <span>всё о мёде</span></a></li>
+      <li>
+        <a href="<%= articles_path %>">Статьи <span>всё о мёде</span></a>
+          <div class="dropdown">
+            <ul>
+              <% Category.order("position").each do |category| %>
+                <li><%= link_to category.name, category_articles_path(category) %></li>
+              <% end %>
+            </ul>
+          </div>
+      </li>
 			<li><a href="<%= reviews_path %>">Отзывы<span>наших покупателей</span></a></li>
 		</ul><!-- END top_nav -->
 	</div><!-- END header -->
