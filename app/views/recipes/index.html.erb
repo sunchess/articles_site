@@ -1,0 +1,29 @@
+<div class="posts single">
+  <h1>Список рецептов</h1>
+</div>
+
+<% if can? :edit, Recipe %>
+  <%= link_to "Опубликованные рецепты", recipes_path %> | <%= link_to "Не опубликованные", recipes_path(:show_all => true) %>
+<% end %>
+
+<div class="posts">
+  <% @recipes.each do |recipe| %>
+    <div class="post">
+      <h4><%= recipe.title %></h4>
+      <p>
+        <b><%= recipe.user_name %></b>
+      </p>
+      <p>
+        <%= recipe.body %>
+      </p>
+
+      <%= link_to "Подробнее...", recipe, :class=>"more"%>
+    </div><!-- END post -->
+  <% end %>
+</div><!-- END posts -->
+
+<div id="">
+  <%= will_paginate @recipes %>
+</div>
+
+<%= link_to 'Добавить рецепт', new_recipe_path, :class => "ask" %>

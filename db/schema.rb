@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528143215) do
+ActiveRecord::Schema.define(:version => 20120906173723) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -74,6 +74,15 @@ ActiveRecord::Schema.define(:version => 20120528143215) do
     t.string   "name"
     t.text     "body"
     t.boolean  "shown",      :default => false, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipes", :force => true do |t|
+    t.string   "user_name"
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "shown",      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

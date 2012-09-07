@@ -47,6 +47,7 @@
               <% Category.order("position").each do |category| %>
                 <li><%= link_to category.name, category_articles_path(category) %></li>
               <% end %>
+              <li><%= link_to "Рецепты", recipes_path %></li>
             </ul>
           </div>
       </li>
@@ -98,6 +99,7 @@
 			<li><a href="<%= how_to_buy_path %>">Как купить</a></li>
 			<li><a href="<%= questions_path %>">Вопросы</a></li>
 			<li><a href="<%= articles_path %>">Статьи</a></li>
+			<li><a href="<%= recipes_path %>">Рецепты</a></li>
 		</ul>
 		<div class="footer_left">
 			<p><strong>+7(928)604-78-34</strong></p>

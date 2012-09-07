@@ -1,0 +1,23 @@
+<div class="posts">
+    <div class="post">
+    <h4><%= @recipe.title %></h4>
+    <p>
+      <b><%= @recipe.user_name %></b>
+    </p>
+
+    <%= simple_format @recipe.body %>
+</div>
+
+<p>
+
+  <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="link" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
+
+ </p>
+
+<% if can? :manage, Recipe %>
+  <%= link_to 'Редактировать', edit_recipe_path(@recipe) %> |
+  <%= link_to 'Удалить', @recipe, :method => :delete %>
+<% end %>
+
+<%= link_to 'К списку рецептов', recipes_path %>

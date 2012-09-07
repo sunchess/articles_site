@@ -3,16 +3,16 @@
 </div>
 
 <div class="posts">
-    <% @questions.each do |question| %>
+  <% @questions.each do |question| %>
     <div class="post">
       <h4><%= question.name %></h4>
       <p>
         <%= question.body %>
-       </p>
-        
-        <%= link_to "Подробнее...", question, :class=>"more"%>
-        </div><!-- END post -->
-        <% end %>
+      </p>
+
+      <%= link_to "Подробнее...", question, :class=>"more"%>
+    </div><!-- END post -->
+  <% end %>
 </div><!-- END posts -->
 
 <%= link_to "Задать вопрос", new_question_path, :class => "ask" %>

@@ -1,5 +1,7 @@
 Jsovet::Application.routes.draw do
 
+  resources :recipes
+
   resources :reviews do
     member do
       post :publish

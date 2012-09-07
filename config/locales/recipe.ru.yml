@@ -1,0 +1,12 @@
+ru:
+  recipes:
+
+
+
+  activerecord:
+    attributes:
+      recipe:
+        user_name: "Представьтесь"
+        title: "Название рецепта"
+        body:  "Рецепт"
+        shown: "Опубликован?"
