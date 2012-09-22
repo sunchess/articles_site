@@ -5,7 +5,7 @@
     <% if !yield( :title ).empty? %>
       <%= yield(:title) %>
     <% elsif render_breadcrumbs(:full=>true).present?%>
-      <%= "#{render_breadcrumbs(:no_html=>true, :separator => ' / ', :full=>true).html_safe} :: " %>
+      <%= "#{render_breadcrumbs(:no_html=>true, :separator => ' / ', :full=>true).html_safe} :: Мед на дом" %>
     <% else %>
     	<%= "Мед на дом -- всегда настоящий мед" %>
     <% end %>

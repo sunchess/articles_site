@@ -1,6 +1,12 @@
 class QuestionsController < InheritedResources::Base
   authorize_resource :question
 
+  def show
+    @question = Question.find(params[:id])
+    add_breadcrumb @question.name, question_path(@question)
+    show!
+  end
+
   def create
     create!
     AppMailer._question(@question).deliver
