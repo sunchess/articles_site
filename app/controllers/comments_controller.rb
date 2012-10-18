@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     if @comment.save
        @comment.move_to_child_of(@parent) if @parent
     else
-      render :action => :ajax_errors   
+      render :action => :ajax_errors
     end
   end
 
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.update_attributes(params[:comment])
     else
-      render :action => :ajax_errors   
+      render :action => :ajax_errors
     end
   end
 

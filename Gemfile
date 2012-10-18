@@ -18,7 +18,7 @@ gem 'aasm'
 gem 'acts_as_commentable_with_threading'
 gem "breadcrumbs_on_rails", :git => 'git://github.com/sunchess/breadcrumbs_on_rails.git'
 gem 'thinking-sphinx', '2.0.5'
-gem 'formtastic'
+gem 'formtastic', "2.0.2"
 gem 'russian'
 gem 'sitemap_generator'
 

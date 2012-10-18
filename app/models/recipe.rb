@@ -12,4 +12,6 @@ class Recipe < ActiveRecord::Base
 
   scope :showned, where(:shown => true)
 
+  has_many :recipes_comments, :dependent => :destroy, :order => "created_at DESC"
+
 end

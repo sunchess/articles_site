@@ -154,7 +154,7 @@ DEPENDENCIES
   cancan
   capistrano
   devise
-  formtastic
+  formtastic (= 2.0.2)
   haml
   hpricot
   inherited_resources

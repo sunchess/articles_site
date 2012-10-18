@@ -21,3 +21,15 @@
 <% end %>
 
 <%= link_to 'К списку рецептов', recipes_path %>
+
+<br/>
+<br/>
+<div style="font-size: 18px; font-weight: bold">
+  Добавить комментарий
+</div>
+<br/>
+<%= render :partial => "recipes_comments/form" %>
+
+<br/>
+<br/>
+<%= render :partial => "recipes_comments/comment", :collection => @recipes_comments  %>

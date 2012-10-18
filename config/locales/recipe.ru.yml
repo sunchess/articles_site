@@ -10,3 +10,10 @@ ru:
         title: "Название рецепта"
         body:  "Рецепт"
         shown: "Опубликован?"
+
+
+      recipes_comment:
+        user_name: "Представьтесь"
+        email: "Email"
+        body:  "Комментарий"
+        shown: "Опубликован?"

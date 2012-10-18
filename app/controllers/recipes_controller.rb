@@ -1,5 +1,7 @@
 class RecipesController < InheritedResources::Base
   before_filter :only_admin, :only => [:create, :update]
+  #before_filter proc{ @comments = if(can? :manage, RecipesComment) then @recipe.recipe_comments else @recipe.recipe_comments.shown end }, :only => :show
+
   load_and_authorize_resource :recipe
 
   def create
@@ -9,6 +11,12 @@ class RecipesController < InheritedResources::Base
 
   def update
     update!(:notice => "Рецепт изменен")
+  end
+
+  def show
+    @recipes_comments= if(can? :manage, RecipesComment) then @recipe.recipes_comments else @recipe.recipes_comments.shown end
+    @recipes_comment = @recipe.recipes_comments.new
+    show!
   end
 
 

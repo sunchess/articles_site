@@ -1,0 +1,21 @@
+<div>
+  <b><%= comment.user_name %></b> <%= l comment.created_at %>
+</div>
+<% if can? :manage, RecipesComment %>
+  <div>
+    <%= comment.email %>
+  </div>
+<% end %>
+
+<div>
+   <%= comment.body  %>
+</div>
+
+<% if can? :manage, RecipesComment %>
+  <%= link_to_if  !comment.shown?, "Опубликовать", publish_recipe_recipes_comment_path(@recipe, comment), :confirm => "Подтверждаете?"  %> | <%= link_to "Редактировать", edit_recipe_recipes_comment_path(comment.recipe, comment) %>  |  <%= link_to "Удалить", recipe_recipes_comment_path(comment.recipe, comment), :method => :delete, :confirm => "Подтверждаете?" %>
+<% end %>
+
+
+<br/>
+<br/>
+

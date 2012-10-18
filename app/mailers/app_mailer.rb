@@ -24,4 +24,9 @@ class AppMailer < ActionMailer::Base
     mail(:to => ["zakaz@mednadom.com"], :subject => "New recipe :: MedNaDom.Ru")
   end
 
+  def new_comment_recipe(comment)
+    @comment = comment
+    mail(:to => ["zakaz@mednadom.com"], :subject => "New comment of recipe :: MedNaDom.Ru")
+  end
+
 end

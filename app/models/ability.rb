@@ -11,6 +11,7 @@ class Ability
       can :create, Question
       can :create, Review
       can :create, Recipe
+      can :create, RecipesComment
 
       if user.confirmed_at #is real user
         can :create, Camment
