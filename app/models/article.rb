@@ -1,6 +1,6 @@
 require 'acts_as_list'
 class Article < ActiveRecord::Base
-  attr_accessible :name, :body, :category_id, :preview, :status, :position
+  attr_accessible :name, :body, :category_id, :preview, :status, :position, :publish_on_main
   acts_as_commentable
   acts_as_list
 

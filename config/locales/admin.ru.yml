@@ -6,6 +6,8 @@ ru:
         category: "Категории статей"
         articles: "Статьи неопубликованные"
         stores: "Магазин"
+        main_articles: "Статьи размещенные на главной"
+        main_questions: "Вопросы развещенные на главной"
     categories:
       index:
         title: "Управление категориями"
@@ -16,6 +18,9 @@ ru:
     articles:
       index:
         title: "Не опубликованные статьи"
+    main_articles:
+      index:
+        title: "Статьи размещенные на главной"
 
   
   activerecord:

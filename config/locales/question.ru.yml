@@ -1,5 +1,8 @@
 ru:
   questions:
+    successful:
+      published_on_main: "Вопрос размещен на главной странице"
+      not_published_on_main: "Вопрос убран с главной страницы"
 
 
   activerecord:

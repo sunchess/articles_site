@@ -30,7 +30,12 @@
   <% unless @question.answer %>
     | <%= link_to "Ответить", new_question_answer_path(@question) %>
   <% end %>
-  | <%= link_to "Редактировать ответ",  edit_question_answer_path(@question, @question.answer) if @question.answer%>
-
-  | <%= link_to "Связанные вопросы",  question_relative_questions_path(@question)%>
+    | <%= link_to "Редактировать ответ",  edit_question_answer_path(@question, @question.answer) if @question.answer%>
+    | <%= link_to "Связанные вопросы",  question_relative_questions_path(@question)%>
+  <% if not @question.publish_on_main? %>
+    | <%= link_to "Разместить на главной", publish_on_main_question_path(@question) %>
+  <% end %>
+  <% if @question.publish_on_main? %>
+    | <%= link_to "Не размещать на главной", not_publish_on_main_question_path(@question) %>
+  <% end %>
 <% end %>

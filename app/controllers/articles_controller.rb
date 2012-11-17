@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :find_category, :only => [ :index, :show ]
-  before_filter :find_article, :only => %w{publish delete}
+  before_filter :find_article, :only => %w{publish delete publish_on_main}
   load_and_authorize_resource :article, :except => "preview"
   protect_from_forgery :except => "preview"
 
@@ -60,6 +60,16 @@ class ArticlesController < ApplicationController
 
   def publish
     @article.publishing!
+    redirect_to :back, :notice => t("articles.successful.update")
+  end
+
+  def publish_on_main
+    @article.update_attribute(:publish_on_main, true)
+    redirect_to :back, :notice => t("articles.successful.update")
+  end
+
+  def not_publish_on_main
+    @article.update_attribute(:publish_on_main, false)
     redirect_to :back, :notice => t("articles.successful.update")
   end
 

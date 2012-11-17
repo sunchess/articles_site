@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014063953) do
+ActiveRecord::Schema.define(:version => 20121116081235) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -25,11 +25,12 @@ ActiveRecord::Schema.define(:version => 20121014063953) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",                          :null => false
-    t.string   "aasm_status", :default => "draft", :null => false
+    t.integer  "user_id",                              :null => false
+    t.string   "aasm_status",     :default => "draft", :null => false
     t.text     "preview"
-    t.boolean  "delta",       :default => true,    :null => false
-    t.integer  "position",    :default => 0
+    t.boolean  "delta",           :default => true,    :null => false
+    t.integer  "position",        :default => 0
+    t.boolean  "publish_on_main"
   end
 
   add_index "articles", ["aasm_status"], :name => "index_articles_on_status"
@@ -73,9 +74,10 @@ ActiveRecord::Schema.define(:version => 20121014063953) do
   create_table "questions", :force => true do |t|
     t.string   "name"
     t.text     "body"
-    t.boolean  "shown",      :default => false, :null => false
+    t.boolean  "shown",           :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "publish_on_main"
   end
 
   create_table "recipes", :force => true do |t|

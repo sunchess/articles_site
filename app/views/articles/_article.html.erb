@@ -12,16 +12,22 @@
   <div>
     <%= link_to t("edit"), edit_article_path(article) %>
     <% if can? :destroy, article %>
-      <%= link_to t("destroy"), article_path(article), :method => :delete%>
+     | <%= link_to t("destroy"), article_path(article), :method => :delete%>
     <% end %>
     <% if can? :publish, article and not article.publics? %>
-      <%= link_to t("publish"), publish_article_path(article) %>
+     | <%= link_to t("publish"), publish_article_path(article) %>
     <% end %>
     <% if can? :delete, article %>
-      <%= link_to t("delete"), delete_article_path(article), :confirm => t("confirm") %>
+     | <%= link_to t("delete"), delete_article_path(article), :confirm => t("confirm") %>
     <% end %>
     <% if can? :manage, article %>
-      <%= link_to t("relative_articles"), article_relative_articles_path(article) %>
+     | <%= link_to t("relative_articles"), article_relative_articles_path(article) %>
+    <% end %>
+    <% if can? :publish_on_main, article and not article.publish_on_main? %>
+     | <%= link_to t("publish_on_main"), publish_on_main_article_path(article) %>
+    <% end %>
+    <% if can? :not_publish_on_main, article and article.publish_on_main? %>
+     | <%= link_to t("not_publish_on_main"), not_publish_on_main_article_path(article) %>
     <% end %>
   </div>
 <% end %>

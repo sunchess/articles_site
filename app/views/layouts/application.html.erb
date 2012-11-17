@@ -78,7 +78,9 @@
 				<h2>Вопрос-ответ</h2>
 				<ul>
                                   <% Question.shown.each do |question| %>
-                                    <li><%= link_to truncate(question.body), question %>
+                                    <% if question.publish_on_main? %>
+                                      <li><%= link_to truncate(question.body), question %>
+                                    <% end %>
                                   <% end %>
 				</ul>
                                 <%= link_to "Задать вопрос", new_question_path, :class => "ask" %>

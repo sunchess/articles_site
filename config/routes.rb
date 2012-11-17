@@ -23,6 +23,9 @@ Jsovet::Application.routes.draw do
     collection do
       get "hidden"
     end
+    member do
+      get 'publish_on_main', 'not_publish_on_main'
+    end
   end
 
   devise_for :users
@@ -32,6 +35,8 @@ Jsovet::Application.routes.draw do
     resource :dashboard, :only => %w{show}, :controller => "dashboard"
     resources :articles, :only => "index"
     resources :stores
+    resources :main_articles, :only => "index"
+    resources :main_questions, :only => "index"
   end
 
   resources :categories, :only => %w{index} do
@@ -60,7 +65,7 @@ Jsovet::Application.routes.draw do
     end
 
     member do
-      get 'publish', 'delete'
+      get 'publish', 'delete', 'publish_on_main', 'not_publish_on_main'
     end
 
     resources :comments, :only => %w{create update}
@@ -75,7 +80,7 @@ Jsovet::Application.routes.draw do
 
   match 'search/index' => 'search#index', :as => :search
   match 'how_to_buy' => 'home#how_to_buy', :as => :how_to_buy
-
+  # match 'articles/main_articles' => 'articles#main_articles'
 
 
   # The priority is based upon order of creation:

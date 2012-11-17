@@ -12,6 +12,8 @@ ru:
   search: "Искать"
   order_sent: "Ваш заказ отправлен. Мы вам позвоним в ближайшее время."
   relative_articles: "Похожие статьи"
+  publish_on_main: "Разместить на главной"
+  not_publish_on_main: "Убрать с главной"
 
   users:
     hello: 'Здравствуйте'
