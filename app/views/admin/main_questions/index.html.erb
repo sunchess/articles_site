@@ -1,0 +1,25 @@
+<%= title("Вопросы к пчеловодам о меде и о продуктах пчеловодства :: Мед на дом") %>
+
+<div class="posts single">
+  <h1>Вопросы размещенные на главной</h1>
+</div>
+
+<div class="posts">
+  <% @questions.each do |question| %>
+      <div class="post">
+        <h4><%= question.name %></h4>
+        <p>
+          <%= question.body %>
+        </p>
+        <%= link_to "Подробнее...", question, :class=>"more"%>
+    <% if can? :publish_on_main, question and not question.publish_on_main? %>
+      <%= link_to t("publish_on_main"), publish_on_main_question_path(question) %>
+    <% end %>
+    <% if can? :not_publish_on_main, question and question.publish_on_main? %>
+      <%= link_to t("not_publish_on_main"), not_publish_on_main_question_path(question) %>
+    <% end %>
+      </div><!-- END post -->
+  <% end %>
+</div><!-- END posts -->
+
+<%= link_to "Задать вопрос", new_question_path, :class => "ask" %>
