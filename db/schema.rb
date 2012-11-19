@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20121118185400) do
     t.string   "user_name"
     t.string   "title"
     t.text     "body"
-    t.boolean  "shown",      :null => false
+    t.boolean  "shown",      :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

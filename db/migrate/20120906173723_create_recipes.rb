@@ -4,7 +4,7 @@ class CreateRecipes < ActiveRecord::Migration
       t.string :user_name
       t.string :title
       t.text :body
-      t.boolean :shown, :defuelt => false, :null => false
+      t.boolean :shown, :default => false, :null => false
 
       t.timestamps
     end
