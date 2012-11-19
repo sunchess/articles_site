@@ -1,5 +1,10 @@
 class QuestionsController < InheritedResources::Base
-  authorize_resource :question
+  after_filter :authorize, :only => [:sort]
+  load_and_authorize_resource :question, :except => [:sort]
+
+  def index
+    @questions = Question.order(:position)
+  end
 
   def show
     @question = Question.find(params[:id])
@@ -28,6 +33,14 @@ class QuestionsController < InheritedResources::Base
     @question = Question.find(params[:id])
     @question.update_attribute(:publish_on_main, false)
     redirect_to :back, :notice => t("questions.successful.not_published_on_main")
+  end
+
+  def sort
+    params[:question].each_with_index do |id, index|
+      Question.update_all({:position => index+1}, {:id => id})
+    end
+  render :nothing => true
+  
   end
 
   protected

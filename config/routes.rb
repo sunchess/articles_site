@@ -22,6 +22,7 @@ Jsovet::Application.routes.draw do
     resources :answers
     collection do
       get "hidden"
+      post "sort"
     end
     member do
       get 'publish_on_main', 'not_publish_on_main'
@@ -62,6 +63,7 @@ Jsovet::Application.routes.draw do
     collection do
       get 'my'
       post 'preview'
+      post 'sort'
     end
 
     member do

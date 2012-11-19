@@ -425,3 +425,8 @@ body{
 .select {
   font-style: italic;
 }
+
+.handle:hover {
+	cursor: move;
+	color: #777;
+}

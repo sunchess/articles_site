@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
   before_filter :find_category, :only => [ :index, :show ]
   before_filter :find_article, :only => %w{publish delete publish_on_main}
-  load_and_authorize_resource :article, :except => "preview"
+  after_filter :authorize, :only => [:sort]
+  load_and_authorize_resource :article, :except => [:preview, :sort]
   protect_from_forgery :except => "preview"
 
   def my
@@ -73,6 +74,14 @@ class ArticlesController < ApplicationController
     redirect_to :back, :notice => t("articles.successful.update")
   end
 
+  def sort
+    params[:article].each_with_index do |id, index|
+      Article.update_all({:position => index+1}, {:id => id})
+    end
+  render :nothing => true
+  
+  end
+
   def delete
     @article.delete!
     redirect_to :back, :notice => t("articles.successful.update")
@@ -96,5 +105,5 @@ class ArticlesController < ApplicationController
   def find_article
     @article = Article.find(params[:id])
   end
-
 end
+

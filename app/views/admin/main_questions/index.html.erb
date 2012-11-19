@@ -1,11 +1,32 @@
+<% content_for :javascript do %>
+<%= javascript_tag do %>
+// Sorting the list
+
+jQuery(function() {
+  return $('#questions').sortable({
+    axis: 'y',
+    handle: '.handle',
+    dropOnEmpty: false,
+    cursor: 'crosshair',
+    opacity: 0.4,
+    scroll: true,
+    update: function() {
+      return $.post($(this).data('update-url'), $(this).sortable('serialize'));
+    }
+  });
+});
+<% end %>
+<% end %>
 <%= title("Вопросы к пчеловодам о меде и о продуктах пчеловодства :: Мед на дом") %>
 
 <div class="posts single">
   <h1>Вопросы размещенные на главной</h1>
 </div>
-
 <div class="posts">
+<ul id="questions" data-update-url="<%= sort_questions_url %>">
   <% @questions.each do |question| %>
+  <li id="question_<%= question.id %>">
+    <span class="handle">[Перетащить]</span>
       <div class="post">
         <h4><%= question.name %></h4>
         <p>
@@ -20,6 +41,8 @@
     <% end %>
       </div><!-- END post -->
   <% end %>
-</div><!-- END posts -->
-
+</li>
+</ul>
+<!-- END posts -->
+</div>
 <%= link_to "Задать вопрос", new_question_path, :class => "ask" %>

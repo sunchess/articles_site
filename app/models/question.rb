@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
   attr_accessible :name, :body, :shown, :publish_on_main
-  acts_as_list
+  #acts_as_list
   
   validates_presence_of :name, :body
 
