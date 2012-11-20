@@ -8,6 +8,7 @@ ru:
         stores: "Магазин"
         main_articles: "Статьи размещенные на главной"
         main_questions: "Вопросы размещенные на главной"
+        recipe_category: "Категории рецептов"
     categories:
       index:
         title: "Управление категориями"
@@ -21,10 +22,20 @@ ru:
     main_articles:
       index:
         title: "Статьи размещенные на главной"
+    recipe_categories:
+      index:
+        title: "Управление категориями рецептов"
+        edit: "Редактировать" 
+        name: "Название"
+        position: "Позиция"
+        tools: "Действия"
 
   
   activerecord:
     attributes:
       category:
+        name: "Название"
+        position: "Позиция"
+      recipe_category:
         name: "Название"
         position: "Позиция"

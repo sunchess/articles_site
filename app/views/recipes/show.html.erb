@@ -18,6 +18,7 @@
 <% if can? :manage, Recipe %>
   <%= link_to 'Редактировать', edit_recipe_path(@recipe) %> |
   <%= link_to 'Удалить', @recipe, :method => :delete %>
+   |
 <% end %>
 
 <%= link_to 'К списку рецептов', recipes_path %>

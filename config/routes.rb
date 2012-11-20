@@ -33,6 +33,7 @@ Jsovet::Application.routes.draw do
 
   namespace :admin do
     resources :categories, :only => %w{index create edit update}
+    resources :recipe_categories, :only => %w{index create edit update}
     resource :dashboard, :only => %w{show}, :controller => "dashboard"
     resources :articles, :only => "index"
     resources :stores
@@ -42,6 +43,10 @@ Jsovet::Application.routes.draw do
 
   resources :categories, :only => %w{index} do
     resources :articles
+  end
+
+  resources :recipe_categories, :only => %w{index} do
+    resources :recipes
   end
 
   resources :stores, :only => %w{show index}

@@ -10,6 +10,7 @@ ru:
         title: "Название рецепта"
         body:  "Рецепт"
         shown: "Опубликован?"
+        recipe_category_id: "Категория"
 
 
       recipes_comment:

@@ -1,0 +1,9 @@
+<div>
+  <%= form_for @recipe_category, :url => admin_recipe_category_path(@recipe_category) do |f| %>
+    <%= render "shared/error_messages", :target => @recipe_category %>
+    <p>
+      <%= f.label :name %>  <%= f.text_field :name %> <%= f.label :position %> <%= f.text_field :position, :size => 3 %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+</div>

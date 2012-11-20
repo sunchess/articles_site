@@ -7,6 +7,7 @@
         |
       <% end %>
       <%= link_to t("articles.add"), new_article_path %> 
+      |
       <%= link_to t("articles.my.title"), my_articles_path if current_user.articles_count > 0%>  
       |
       <%= link_to t('users.links.edit'), edit_user_registration_path(:current) %>

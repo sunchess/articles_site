@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121118185400) do
+ActiveRecord::Schema.define(:version => 20121120092638) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -81,13 +81,22 @@ ActiveRecord::Schema.define(:version => 20121118185400) do
     t.integer  "position"
   end
 
+  create_table "recipe_categories", :force => true do |t|
+    t.string  "name"
+    t.integer "position"
+    t.integer "recipes_count"
+  end
+
+  add_index "recipe_categories", ["name"], :name => "index_recipe_categories_on_name"
+
   create_table "recipes", :force => true do |t|
     t.string   "user_name"
     t.string   "title"
     t.text     "body"
-    t.boolean  "shown",      :default => false, :null => false
+    t.boolean  "shown",              :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "recipe_category_id"
   end
 
   create_table "recipes_comments", :force => true do |t|
