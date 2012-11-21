@@ -6,14 +6,3 @@ class Admin::MainArticlesController < ApplicationController
   end
 
 end
-
-# params[:article].each_with_index do |id, index|
-# Article.update_all({:position => index+1}, {:id => id})
-# end
-
-  #def sort
-   # params[:article].each_with_index do |id, index|
-    #  Article.update_all({:position => index+1}, {:id => id})
-    #end
-    #render :nothing => true
-  #end

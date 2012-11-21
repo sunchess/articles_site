@@ -66,12 +66,18 @@ class ArticlesController < ApplicationController
 
   def publish_on_main
     @article.update_attribute(:publish_on_main, true)
-    redirect_to :back, :notice => t("articles.successful.update")
+    respond_to do |format|
+      format.html { redirect_to :back, :notice => t("articles.successful.update") }
+      format.js
+    end
   end
 
   def not_publish_on_main
     @article.update_attribute(:publish_on_main, false)
-    redirect_to :back, :notice => t("articles.successful.update")
+    respond_to do |format|
+      format.html { redirect_to :back, :notice => t("articles.successful.update") }
+      format.js
+    end
   end
 
   def sort
