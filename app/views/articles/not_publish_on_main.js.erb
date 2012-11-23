@@ -1,4 +1,4 @@
 $(document).ready(function(){
-  $("#unpublish_<%=@article.id%>").html("<%= j link_to t("publish_on_main"),
-   publish_on_main_article_path(@article), :remote => true, :id => "publish_#{@article.id}" %>");
+  $("#unpublish_<%=@article.id%>").after("<%= j link_to t("publish_on_main"),
+   publish_on_main_article_path(@article), :remote => true, :id => "publish_#{@article.id}" %>").remove();
 });
