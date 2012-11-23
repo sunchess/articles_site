@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+ class ArticlesController < ApplicationController
   before_filter :find_category, :only => [ :index, :show ]
   before_filter :find_article, :only => %w{publish delete publish_on_main}
   after_filter :authorize, :only => [:sort]

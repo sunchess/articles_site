@@ -32,10 +32,10 @@
   <% end %>
     | <%= link_to "Редактировать ответ",  edit_question_answer_path(@question, @question.answer) if @question.answer%>
     | <%= link_to "Связанные вопросы",  question_relative_questions_path(@question)%>
-  <% if not @question.publish_on_main? %>
-    | <%= link_to "Разместить на главной", publish_on_main_question_path(@question) %>
-  <% end %>
-  <% if @question.publish_on_main? %>
-    | <%= link_to "Не размещать на главной", not_publish_on_main_question_path(@question) %>
-  <% end %>
+    <% if can? :publish_on_main, @question and not @question.publish_on_main? %>
+    |  <%= link_to t("publish_on_main"), publish_on_main_question_path(@question), :remote => true, :id => "publish_#{@question.id}" %>
+    <% end %>
+    <% if can? :not_publish_on_main, @question and @question.publish_on_main? %>
+    |  <%= link_to t("not_publish_on_main"), not_publish_on_main_question_path(@question), :remote => true, :id => "unpublish_#{@question.id}" %>
+    <% end %>
 <% end %>

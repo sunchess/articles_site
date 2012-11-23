@@ -24,10 +24,10 @@
      | <%= link_to t("relative_articles"), article_relative_articles_path(article) %>
     <% end %>
     <% if can? :publish_on_main, article and not article.publish_on_main? %>
-     | <%= link_to t("publish_on_main"), publish_on_main_article_path(article) %>
+     | <%= link_to t("publish_on_main"), publish_on_main_article_path(article), :remote => true, :id => "publish_#{article.id}" %>
     <% end %>
     <% if can? :not_publish_on_main, article and article.publish_on_main? %>
-     | <%= link_to t("not_publish_on_main"), not_publish_on_main_article_path(article) %>
+     | <%= link_to t("not_publish_on_main"), not_publish_on_main_article_path(article), :remote => true, :id => "unpublish_#{article.id}" %>
     <% end %>
   </div>
 <% end %>

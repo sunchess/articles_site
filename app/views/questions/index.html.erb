@@ -14,10 +14,10 @@
         </p>
         <%= link_to "Подробнее...", question, :class=>"more"%>
     <% if can? :publish_on_main, question and not question.publish_on_main? %>
-      <%= link_to t("publish_on_main"), publish_on_main_question_path(question) %>
+      <%= link_to t("publish_on_main"), publish_on_main_question_path(question), :remote => true, :id => "publish_#{question.id}" %>
     <% end %>
     <% if can? :not_publish_on_main, question and question.publish_on_main? %>
-      <%= link_to t("not_publish_on_main"), not_publish_on_main_question_path(question) %>
+      <%= link_to t("not_publish_on_main"), not_publish_on_main_question_path(question), :remote => true, :id => "unpublish_#{question.id}" %>
     <% end %>
       </div><!-- END post -->
   <% end %>

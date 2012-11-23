@@ -1,0 +1,4 @@
+$(document).ready(function(){
+  $("#unpublish_<%=@question.id%>").html("<%= j link_to t("publish_on_main"),
+   publish_on_main_question_path(@question), :remote => true, :id => "publish_#{@question.id}" %>");
+});
