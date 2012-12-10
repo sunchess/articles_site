@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210174901) do
+ActiveRecord::Schema.define(:version => 20121210181058) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -140,9 +140,9 @@ ActiveRecord::Schema.define(:version => 20121210174901) do
     t.text     "description"
     t.string   "where_from"
     t.integer  "honey_sort"
-    t.boolean  "on_index",          :default => false, :null => false
-    t.boolean  "on_top",            :default => false, :null => false
-    t.boolean  "shown",             :default => true,  :null => false
+    t.boolean  "on_index",                  :default => false, :null => false
+    t.boolean  "on_top",                    :default => false, :null => false
+    t.boolean  "shown",                     :default => true,  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "logo_file_name"
@@ -150,10 +150,14 @@ ActiveRecord::Schema.define(:version => 20121210174901) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.integer  "price"
-    t.boolean  "prod",              :default => false, :null => false
-    t.boolean  "fresh",             :default => false, :null => false
+    t.boolean  "prod",                      :default => false, :null => false
+    t.boolean  "fresh",                     :default => false, :null => false
     t.integer  "position"
     t.string   "logo_name"
+    t.string   "gather_place_file_name"
+    t.string   "gather_place_content_type"
+    t.integer  "gather_place_file_size"
+    t.datetime "gather_place_updated_at"
   end
 
   create_table "users", :force => true do |t|

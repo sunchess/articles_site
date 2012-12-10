@@ -19,7 +19,14 @@
       <b><%= @store.logo_name %></b>
       <% end %>
       <span>
-        <%= image_tag @store.logo.url(:medium), :class=>"picture" %>
+        <%= image_tag @store.logo.url(:medium), :id=>"picture" %>
+      </span>
+    <% end %>
+    <br/>
+          <b>Место сбора</b>
+    <% if @store.gather_place? %>
+      <span>
+        <%= image_tag @store.gather_place.url(:big), :id=>"picture" %>
       </span>
     <% end %>
     <div class="price">

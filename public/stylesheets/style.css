@@ -257,6 +257,13 @@ body{
 	float: left;
 	margin-right: 20px;
 }
+    #picture{
+       border-color:#666666;
+       border-style:solid;
+       border-width:1px;
+       padding:5px;
+       float: none;
+    }
 	.product h4, .product h4 a{
 		border-bottom: 1px #a54b14 solid;
 		color: #a54b14;
@@ -415,12 +422,7 @@ body{
 .ui-timepicker-div td { font-size: 90%; }
 .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
 
-.picture{
-  border-color:#666666;
-  border-style:solid;
-  border-width:1px;
-  padding:5px;
-}
+
 
 .select {
   font-style: italic;

@@ -4,10 +4,11 @@ class Store < ActiveRecord::Base
   attr_accessor :product
   attr_accessible :name, :description, :where_from, :honey_sort,
                   :logo, :on_index, :on_top, :shown, :price, :product,
-                  :prod, :fresh, :position, :logo_name
+                  :prod, :fresh, :position, :logo_name, :gather_place
 
 
   has_attached_file :logo, :styles => {:big => "400x400>", :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :gather_place, :styles => {:big => "400x400>", :medium => "300x300>", :thumb => "100x100>" }
 
   validates_presence_of :name, :description, :where_from,  :price
   #validates_presence_of :honey_sort, :if => Proc.new{ |store| store.product == "true" }
