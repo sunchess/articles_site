@@ -15,7 +15,9 @@
 
     <br/>
     <% if @store.logo? %>
-      <b>Изображения</b>
+      <% if @store.logo_name? %>
+      <b><%= @store.logo_name %></b>
+      <% end %>
       <span>
         <%= image_tag @store.logo.url(:medium), :class=>"picture" %>
       </span>

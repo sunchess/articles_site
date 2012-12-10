@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120092638) do
+ActiveRecord::Schema.define(:version => 20121210174901) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -153,6 +153,7 @@ ActiveRecord::Schema.define(:version => 20121120092638) do
     t.boolean  "prod",              :default => false, :null => false
     t.boolean  "fresh",             :default => false, :null => false
     t.integer  "position"
+    t.string   "logo_name"
   end
 
   create_table "users", :force => true do |t|

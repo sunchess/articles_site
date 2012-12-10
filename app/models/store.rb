@@ -2,7 +2,9 @@ require 'acts_as_list'
 class Store < ActiveRecord::Base
   acts_as_list
   attr_accessor :product
-  attr_accessible :name, :description, :where_from, :honey_sort, :logo, :on_index, :on_top, :shown, :price, :product, :prod, :fresh, :position
+  attr_accessible :name, :description, :where_from, :honey_sort,
+                  :logo, :on_index, :on_top, :shown, :price, :product,
+                  :prod, :fresh, :position, :logo_name
 
 
   has_attached_file :logo, :styles => {:big => "400x400>", :medium => "300x300>", :thumb => "100x100>" }
