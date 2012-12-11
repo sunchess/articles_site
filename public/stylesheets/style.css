@@ -320,8 +320,9 @@ body{
 	position: absolute;
 	top: -20px;
 	width: 78px;
-	z-index:999;
+	z-index:1;
 }
+
 
 .top.fresh{background: url(../images/top2.png) no-repeat;}
 
@@ -373,6 +374,11 @@ body{
 		.more:hover{
 			text-decoration: none;
 		}
+
+.cert {
+       padding:5px;
+       text-align: right;
+}
 /*** END content ***/
 
 .footer{

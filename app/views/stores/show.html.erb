@@ -9,6 +9,14 @@
     <span><%= @store.where_from %></span>
     <div class="post">
       <%= RedCloth.new( @store.description).to_html.html_safe %>
+      <% if @store.certificate? %>
+       <div id="zoom">
+       <span class="cert">
+              Сертификат соответствия:
+          <%= link_to image_tag(@store.certificate.url(:thumb), :alt =>  "certificate", :id =>"picture"), @store.certificate.url(:big), :class => "zoom" %>
+       </span>
+      </div>
+      <% end %>
       <p><script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
 <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="link" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div> </p>
     </div>
@@ -23,7 +31,7 @@
       </span>
     <% end %>
     <br/>
-          <b>Место сбора</b>
+    <b>Место сбора</b>
     <% if @store.gather_place? %>
       <span>
         <%= image_tag @store.gather_place.url(:big), :id=>"picture" %>
