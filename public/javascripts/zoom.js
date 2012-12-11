@@ -180,7 +180,7 @@
             localTop = (screenHeight / 2) - (zoomHeight / 2);
             localLeft = (screenWidth / 2) - (zoomWidth / 2);
             
-            $("#bigGrey").addClass("bigGrey").height($("div > body").innerHeight());
+           // $("#bigGrey").addClass("bigGrey").height($("div > body").innerHeight());
             
             $("#zoomPic" + currentZoom).css("top", bpOff.top).css("left", bpOff.left).css("width", bpWidth).css("height", bpHeight);
 
