@@ -1,0 +1,36 @@
+<ul id="stores" data-update-url="<%= sort_stores_url %>">
+  <% @stores.each do |store| %>
+    <li id="store_<%= store.id %>">
+      <span class="handle">[Перетащить]</span>
+      <div class="post">
+        <h4><%= store.name %></h2>
+        <table class="border">
+          <tr>
+            <th>Наименование</th>
+            <th>Откуда</th>
+            <th>Цена</th>
+            <th>Цвет</th>
+            <th>Медоносец</th>
+            <th>На главной?</th>
+            <th>Топ продаж?</th>
+            <th>Свежий?</th>
+            <th>Показываем</th>
+            <th>Управление</th>
+          </tr>	
+          <tr>
+            <td><%= store.name %></td>
+            <td><%= store.where_from%></td>
+            <td><%= store.price%></td>
+            <td><%= sort_image store.honey_sort %></td>
+            <td><%= link_to image_tag(store.logo.url(:thumb)), store.logo.url %></td>
+            <td><%= yes_no store.on_index%></td>
+            <td><%= yes_no store.on_top %></td>
+            <td><%= yes_no store.fresh %></td>
+            <td><%= yes_no store.shown %></td>
+            <td><%= link_to t("edit"), edit_admin_store_path(store) %></td>
+          </tr>
+        </table>
+      </div>
+    </li>
+  <% end %>
+</ul>

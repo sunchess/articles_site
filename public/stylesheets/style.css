@@ -428,7 +428,12 @@ body{
 .ui-timepicker-div td { font-size: 90%; }
 .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
 
-
+th {
+   text-align: center;
+}
+td {
+   text-align: center;
+}
 
 .select {
   font-style: italic;
