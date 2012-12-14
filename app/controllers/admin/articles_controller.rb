@@ -4,6 +4,7 @@ class Admin::ArticlesController < ApplicationController
 
   def index
     @articles = Article.order(:position)
+    authorize! :update, @articles
   end
 
   def sort

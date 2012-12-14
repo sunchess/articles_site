@@ -4,6 +4,7 @@ class Admin::QuestionsController < ApplicationController
 
   def index
     @questions = Question.order(:position)
+    authorize! :update, @questions
   end
 
   def sort
