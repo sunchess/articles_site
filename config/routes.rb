@@ -40,6 +40,7 @@ Jsovet::Application.routes.draw do
     resources :main_articles, :only => "index"
     resources :main_questions, :only => "index"
     resources :unpublished_articles, :only => "index"
+    resources :questions, :only => "index"
   end
 
   resources :categories, :only => %w{index} do

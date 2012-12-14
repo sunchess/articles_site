@@ -10,6 +10,7 @@ ru:
         main_questions: "Вопросы размещенные на главной"
         recipe_category: "Категории рецептов"
         unpublished_articles: "Неопубликованные статьи"
+        questions: "Все вопросы"
     categories:
       index:
         title: "Управление категориями"
@@ -26,6 +27,9 @@ ru:
     unpublished_articles:
       index:
         title: "Неопубликованные статьи"
+    questions:
+      index:
+        title: "Все вопросы"
     recipe_categories:
       index:
         title: "Управление категориями рецептов"
