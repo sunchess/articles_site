@@ -12,10 +12,6 @@
     <%= f.select :category_id,  Category.all.collect {|p| [ p.name, p.id ] }, { :include_blank => true } %>
   </p>
   <p>
-    <%= f.label :position %><%= mark_required(@article, :position) %><br/>
-    <%= f.text_field :position %>
-  </p>
-  <p>
     <%= f.label :name %><%= mark_required(@article, :name) %><br/>
     <%= f.text_field :name %>
   </p>

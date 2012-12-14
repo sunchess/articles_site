@@ -4,11 +4,12 @@ ru:
       navigation: "Администраторская"
       show:
         category: "Категории статей"
-        articles: "Статьи неопубликованные"
+        articles: "Все статьи"
         stores: "Магазин"
         main_articles: "Статьи размещенные на главной"
         main_questions: "Вопросы размещенные на главной"
         recipe_category: "Категории рецептов"
+        unpublished_articles: "Неопубликованные статьи"
     categories:
       index:
         title: "Управление категориями"
@@ -18,10 +19,13 @@ ru:
         tools: "Действия"
     articles:
       index:
-        title: "Не опубликованные статьи"
+        title: "Все статьи"
     main_articles:
       index:
         title: "Статьи размещенные на главной"
+    unpublished_articles:
+      index:
+        title: "Неопубликованные статьи"
     recipe_categories:
       index:
         title: "Управление категориями рецептов"
