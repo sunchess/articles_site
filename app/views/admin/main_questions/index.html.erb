@@ -1,22 +1,3 @@
-<% content_for :javascript do %>
-<%= javascript_tag do %>
-// Sorting the list
-
-jQuery(function() {
-  return $('#questions').sortable({
-    axis: 'y',
-    handle: '.handle',
-    dropOnEmpty: false,
-    cursor: 'crosshair',
-    opacity: 0.4,
-    scroll: true,
-    update: function() {
-      return $.post($(this).data('update-url'), $(this).sortable('serialize'));
-    }
-  });
-});
-<% end %>
-<% end %>
 <%= title("Вопросы к пчеловодам о меде и о продуктах пчеловодства :: Мед на дом") %>
 
 <div class="posts single">
