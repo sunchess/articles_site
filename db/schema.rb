@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(:version => 20121120092638) do
     t.string   "user_name"
     t.string   "title"
     t.text     "body"
-    t.boolean  "shown",              :default => false, :null => false
+    t.boolean  "shown",              :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "recipe_category_id"
