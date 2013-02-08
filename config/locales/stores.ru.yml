@@ -18,7 +18,7 @@ ru:
        store:
         name: "Название"
         description: "Описание меда"
-        where_from: "От куда"
+        where_from: "Откуда"
         honey_sort: "Цвет меда"
         on_index: "На главной?"
         on_top: "Топ продаж?"
@@ -28,3 +28,6 @@ ru:
         prod: "Продукт"
         fresh: "Свежий продукт"
         position: "Позиция"
+        logo_name: "Название медоносца"
+        gather_place: "Место сбора"
+        certificate: "Сертификат"

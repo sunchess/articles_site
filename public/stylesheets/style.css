@@ -257,6 +257,13 @@ body{
 	float: left;
 	margin-right: 20px;
 }
+    #picture{
+       border-color:#666666;
+       border-style:solid;
+       border-width:1px;
+       padding:5px;
+       float: none;
+    }
 	.product h4, .product h4 a{
 		border-bottom: 1px #a54b14 solid;
 		color: #a54b14;
@@ -313,8 +320,9 @@ body{
 	position: absolute;
 	top: -20px;
 	width: 78px;
-	z-index:999;
+	z-index:1;
 }
+
 
 .top.fresh{background: url(../images/top2.png) no-repeat;}
 
@@ -366,6 +374,11 @@ body{
 		.more:hover{
 			text-decoration: none;
 		}
+
+.cert {
+       padding:5px;
+       text-align: right;
+}
 /*** END content ***/
 
 .footer{
@@ -415,11 +428,11 @@ body{
 .ui-timepicker-div td { font-size: 90%; }
 .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
 
-.picture{
-  border-color:#666666;
-  border-style:solid;
-  border-width:1px;
-  padding:5px;
+th {
+   text-align: center;
+}
+td {
+   text-align: center;
 }
 
 .select {

@@ -25,14 +25,20 @@ class QuestionsController < InheritedResources::Base
   
   def publish_on_main
     @question = Question.find(params[:id])
-    @question.update_attribute(:publish_on_main, true)
-    redirect_to :back, :notice => t("questions.successful.published_on_main")
+    @question.update_attribute(:publish_on_main, true)  
+    respond_to do |format|
+      format.html { redirect_to :back, :notice => t("questions.successful.published_on_main") }
+      format.js
+    end
   end
 
   def not_publish_on_main
     @question = Question.find(params[:id])
     @question.update_attribute(:publish_on_main, false)
-    redirect_to :back, :notice => t("questions.successful.not_published_on_main")
+    respond_to do |format|
+      format.html { redirect_to :back, :notice => t("questions.successful.not_published_on_main") }
+      format.js
+    end
   end
 
   def sort

@@ -1,41 +1,9 @@
-<div class="post single">
-<h1>Администраторская Магазин</h1>
+<h1>Администраторская: Магазин</h1>
 
 <br/>
 <p>
   <%= link_to t("Добавить позицию"), new_admin_store_path%>
 </p>
 <br/>
+<%= render :partial => "stores"%>
 
-<table class="border">
-  <tr>
-    <th>Позиция</th>
-    <th>Наименование</th>
-    <th>Откуда</th>
-    <th>Цена</th>
-    <th>Цвет</th>
-    <th>Изображение</th>
-    <th>На главной?</th>
-    <th>Топ продаж?</th>
-    <th>Свежий?</th>
-    <th>Показываем</th>
-    <th>Управление</th>
-  </tr>
-
-  <% @stores.each do |store| %>
-    <tr>
-      <td><%= store.position %></td>
-      <td><%= store.name %></td>
-      <td><%= store.where_from%></td>
-      <td><%= store.price%></td>
-      <td><%= sort_image store.honey_sort %></td>
-      <td><%= link_to image_tag(store.logo.url(:thumb)), store.logo.url %></td>
-      <td><%= yes_no store.on_index%></td>
-      <td><%= yes_no store.on_top %></td>
-      <td><%= yes_no store.fresh %></td>
-      <td><%= yes_no store.shown %></td>
-      <td><%= link_to t("edit"), edit_admin_store_path(store) %></td>
-    </tr>
-  <% end %>
-</table>
-</div>

@@ -39,6 +39,8 @@ Jsovet::Application.routes.draw do
     resources :stores
     resources :main_articles, :only => "index"
     resources :main_questions, :only => "index"
+    resources :unpublished_articles, :only => "index"
+    resources :questions, :only => "index"
   end
 
   resources :categories, :only => %w{index} do
@@ -49,7 +51,11 @@ Jsovet::Application.routes.draw do
     resources :recipes
   end
 
-  resources :stores, :only => %w{show index}
+  resources :stores, :only => %w{show index} do
+    collection do
+      post "sort"
+    end
+  end
   resources :shoping_carts, :only => %w{index} do
     collection do
       get 'clear'
@@ -87,6 +93,7 @@ Jsovet::Application.routes.draw do
 
   match 'search/index' => 'search#index', :as => :search
   match 'how_to_buy' => 'home#how_to_buy', :as => :how_to_buy
+  match 'container' => 'home#container', :as => :container
   # match 'articles/main_articles' => 'articles#main_articles'
 
 

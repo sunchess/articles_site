@@ -3,6 +3,7 @@ class Admin::StoresController < ApplicationController
 
   def index
     @stores = Store.order(:position)
+    authorize! :update, @stores
   end
 
   def new

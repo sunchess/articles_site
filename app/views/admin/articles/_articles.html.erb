@@ -1,10 +1,14 @@
+<ul id="articles" data-update-url="<%= sort_articles_url %>">
+<% @articles.each do |article| %>
+<li id="article_<%= article.id %>">
+    <span class="handle">[Перетащить]</span>
 <div class="post">
-<h4><%= link_to article.name, category_article_path(article.category_id, article) %></h2>
-<p class="article body">
+<h4><%= link_to article.name, category_article_path(article.category_id, article) %></h4>
+<p class="article body">  
   <%= article.preview %>
 </p>
 <% if can? :update, article %>
-<div class="article date">  <%= t(".publish_on")  %>: <%= l( article.updated_at ) %></div>
+<div class="article date">  <%= t(".publish_on") %>: <%= l( article.updated_at ) %></div>
 <div class="article author">  <%= t(".author")  %>: <%=  article.author %></div>
 <% if params[:action] == "my" %>
   <div class="article status"> <%= t(".status") %>: <%= article.aasm_status %></div>
@@ -31,4 +35,7 @@
     <% end %>
   </div>
 <% end %>
-</div>
+</div> 
+<% end %>
+</li>
+</ul>
