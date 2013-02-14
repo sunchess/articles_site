@@ -4,7 +4,16 @@
   after_filter :authorize, :only => [:sort]
   load_and_authorize_resource :article, :except => [:preview, :sort]
   protect_from_forgery :except => "preview"
-
+  uses_tiny_mce :options => {
+                            :theme => 'advanced',
+                            :theme_advanced_resizing => true,
+                            :theme_advanced_resize_horizontal => false,
+                            :theme_advanced_toolbar_location => "top",
+                            :theme_advanced_toolbar_align => "left",
+                            :theme_advanced_statusbar_location => "bottom",
+                            :theme_advanced_buttons1 => %w{ bold italic underline fontselect fontsizeselect formatselect newdocument},
+                            :theme_advanced_buttons2 => %w{ justifyleft justifycenter justifyright bullist numlist undo redo }
+                            }
   def my
     @articles = current_user.articles.not_deleted.paginate(:page => params[:page], :per_page => 10)
   end

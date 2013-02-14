@@ -28,6 +28,7 @@
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js", "rails.js", "zoom.js", "sort.js" %>
   <%= yield( :editor ) %>
   <%= csrf_meta_tag %>
+  <%= include_tiny_mce_if_needed %>
 
 </head>
 

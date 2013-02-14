@@ -31,8 +31,8 @@
       </span>
     <% end %>
     <br/>
-    <b>Место сбора</b>
     <% if @store.gather_place? %>
+    <b>Место сбора</b>
       <span>
         <%= image_tag @store.gather_place.url(:big), :id=>"picture" %>
       </span>

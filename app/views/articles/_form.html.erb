@@ -21,7 +21,7 @@
   </p>
   <p>
     <%= f.label :body %><%= mark_required(@article, :body) %><br/>
-    <%= f.text_area :body, :class => "markItUp", :size => "100x20" %>
+    <%= f.text_area :body, :class => "mceEditor", :size => "100x20" %>
   </p>
   <% if admin? %>
     <p>
