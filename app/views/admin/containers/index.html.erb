@@ -1,0 +1,22 @@
+<h1><%= t(".title") %></h1>
+<br/>
+  <%= link_to t("Добавить позицию"), new_admin_container_path, :class => "ask" %>
+<br/>
+  <table class="border" width="500px">
+    <tr>
+      <th><%= t(".name") %></th>
+      <th width="50%"><%= t(".description") %></th>
+      <th><%= t(".image") %></th>
+      <th><%= t(".position") %></th>
+      <th><%= t(".tools") %></th>
+    </tr>
+    <% @containers.each do | container | %>
+      <tr>
+        <td><%= container.name %></td>
+        <td><%= container.description %></td>
+        <td><%= link_to image_tag(container.image.url(:thumb)), container.image.url%>
+        <td><%= container.position%></td>
+        <td><%= link_to t(".edit"), edit_admin_container_path(container) %></td>
+      </tr>
+    <% end %>
+  </table>

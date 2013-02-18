@@ -18,7 +18,6 @@ class Admin::StoresController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -33,7 +32,6 @@ class Admin::StoresController < ApplicationController
   end
 
   def delete
-    
   end
 
 end

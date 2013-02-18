@@ -1,0 +1,22 @@
+ru:
+  admin:
+    containers:
+      new:
+        title: "Добавить тару"
+      edit:
+        title: "Редактирование позиции"
+
+  containers:
+    successful:
+      create: "Тара добавлена"
+    index:
+      title: "Тара"
+
+
+  activerecord:
+    attributes:
+       container:
+         name: "Название"
+         description: "Описание тары"
+         image: "Изображение тары"
+         position: "Позиция"

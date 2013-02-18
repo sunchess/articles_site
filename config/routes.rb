@@ -41,6 +41,7 @@ Jsovet::Application.routes.draw do
     resources :main_questions, :only => "index"
     resources :unpublished_articles, :only => "index"
     resources :questions, :only => "index"
+    resources :containers
   end
 
   resources :categories, :only => %w{index} do
@@ -50,6 +51,8 @@ Jsovet::Application.routes.draw do
   resources :recipe_categories, :only => %w{index} do
     resources :recipes
   end
+
+  resources :containers, :only => %w{index}
 
   resources :stores, :only => %w{show index} do
     collection do
@@ -93,7 +96,7 @@ Jsovet::Application.routes.draw do
 
   match 'search/index' => 'search#index', :as => :search
   match 'how_to_buy' => 'home#how_to_buy', :as => :how_to_buy
-  match 'container' => 'home#container', :as => :container
+  # match 'container' => 'home#container', :as => :container
   # match 'articles/main_articles' => 'articles#main_articles'
 
 

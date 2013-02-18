@@ -7,7 +7,7 @@ class Ability
     if user.role? :admin
       can :manage, :all
     else
-      can :read, [Category, Article, Comment, Question, Review, Recipe, Store]
+      can :read, [Category, Article, Comment, Question, Review, Recipe, Store, Container]
       can :create, Question
       can :create, Review
       can :create, Recipe

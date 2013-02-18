@@ -4,7 +4,7 @@ ru:
       new:
         title: "Добавить позицию в магазин"
       edit:
-        title: "Редактирвоние позиции"
+        title: "Редактирование позиции"
 
   stores:
     successful:

@@ -1,0 +1,14 @@
+<h4><%= container.name %></h4>
+<br/>
+<table border="0">
+  <tr>
+    <td>
+      <%= image_tag container.image.url(:medium), :id => "picture" %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p><%= container.description %></p>
+    </td>
+  </tr>
+</table>

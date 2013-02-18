@@ -25,6 +25,9 @@ SitemapGenerator::Sitemap.create do
       add store_path(store), :lastmod => store.updated_at
     end
 
+  # Container path
+    add containers_path, :changefreq => 'weekly'
+
   # Examples:
   #
   # Add '/articles'

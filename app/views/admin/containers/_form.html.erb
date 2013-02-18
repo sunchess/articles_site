@@ -1,0 +1,11 @@
+<div>
+  <%= semantic_form_for [:admin, @container], :html => {:multipart => true} do |f| %>
+    <%= render "shared/error_messages", :target => @container %>
+    <p>
+      <%= f.input :name %> <%= f.input :description %> <%= f.input :position, :size => 3 %> <%= f.input :image, :as => :file %>
+    </p>
+    
+    <br/>
+    <%= f.submit %>
+  <% end %>
+</div>

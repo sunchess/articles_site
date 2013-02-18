@@ -12,7 +12,6 @@ class Admin::ArticlesController < ApplicationController
       Article.update_all({:position => index+1}, {:id => id})
     end
     render :nothing => true
-  
   end
 
 end

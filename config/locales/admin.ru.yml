@@ -11,6 +11,7 @@ ru:
         recipe_category: "Категории рецептов"
         unpublished_articles: "Неопубликованные статьи"
         questions: "Все вопросы"
+        containers: "Тара"
     categories:
       index:
         title: "Управление категориями"
@@ -37,6 +38,15 @@ ru:
         name: "Название"
         position: "Позиция"
         tools: "Действия"
+    containers:
+      index:
+        title: "Тара"
+        edit: "Редактировать"
+        name: "Название"
+        position: "Позиция"
+        tools: "Действия"
+        description: "Описание"
+        image: "Изображение"
 
   
   activerecord:
