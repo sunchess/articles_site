@@ -443,3 +443,6 @@ td {
 	cursor: move;
 	color: #777;
 }
+#add_reciepe_button {
+	margin-top: 10px;
+}

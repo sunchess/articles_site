@@ -29,7 +29,7 @@
                                   <% if article.publish_on_main? %>
                   <div class="post">
                                       <h4><%= link_to article.name, category_article_path(article.category,article) %></h4>
-                                      <p><%= truncate article.body, :length => 200 %> </p>
+                                      <p><%= raw(truncate article.body, :length => 200) %></p>
                                         <%= link_to "Подробнее...", category_article_path(article.category,article), :class=>"more"%>
                 </div><!-- END post -->
                                   <% end %>

@@ -22,8 +22,7 @@
   <% end %>
 </div><!-- END posts -->
 
-<div id="">
-  <%= will_paginate @recipes %>
+  <%= will_paginate @recipes, :previous_label => h("<"), :next_label => h(">") %>
+<div id="add_reciepe_button">
+  <%= link_to 'Добавить рецепт', new_recipe_path, :class => "ask" %>
 </div>
-
-<%= link_to 'Добавить рецепт', new_recipe_path, :class => "ask" %>

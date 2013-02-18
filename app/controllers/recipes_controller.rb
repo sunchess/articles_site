@@ -3,7 +3,6 @@ class RecipesController < InheritedResources::Base
   #before_filter proc{ @comments = if(can? :manage, RecipesComment) then @recipe.recipe_comments else @recipe.recipe_comments.shown end }, :only => :show
 
   load_and_authorize_resource :recipe
-
   def create
     create!(:notice => "Ваш рецепт добавлен! После проверки администрацией он будет доступен. Спасибо!"){ recipes_path }
     AppMailer.new_recipe(@recipe).deliver
@@ -30,7 +29,7 @@ protected
     @recipes = if params[:show_all] and can?(:manage, Recipe)
       Recipe.paginate(:page => params[:page])
     else
-      Recipe.showned.paginate(:page => params[:page])
+      Recipe.showned.page(params[:page]).per_page(4)
     end
   end
 
