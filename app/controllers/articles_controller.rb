@@ -1,6 +1,6 @@
  class ArticlesController < ApplicationController
   before_filter :find_category, :only => [ :index, :show ]
-  before_filter :find_article, :only => %w{publish delete publish_on_main}
+  before_filter :find_article, :only => %w{publish delete destroy publish_on_main}
   after_filter :authorize, :only => [:sort]
   load_and_authorize_resource :article, :except => [:preview, :sort]
   protect_from_forgery :except => "preview"
@@ -15,7 +15,7 @@
                             :theme_advanced_buttons2 => %w{ justifyleft justifycenter justifyright bullist numlist undo redo }
                             }
   def my
-    @articles = current_user.articles.not_deleted.paginate(:page => params[:page], :per_page => 10)
+    @articles = current_user.articles.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end
 
   def index
@@ -104,7 +104,7 @@
 
   def destroy
     @article.destroy
-    redirect_to category_articles_path(@category)
+    redirect_to admin_articles_path
   end
 
   def preview

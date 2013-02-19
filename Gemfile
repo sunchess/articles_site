@@ -7,7 +7,7 @@ gem "devise"
 gem "hpricot"
 gem "haml"
 gem 'will_paginate'
-gem 'tiny_mce'
+gem 'tiny_mce'  
 #gem "acts_as_list"
 #gem "acts_as_tree"
 #gem "geokit"

@@ -16,9 +16,10 @@ class Article < ActiveRecord::Base
   validates_length_of :body, :within => 500..50000
 
   scope :published, where(:aasm_status => :publics)
-  scope :draft, where(:aasm_status=> :draft)
+  scope :draft, where(:aasm_status=> [:draft, :deleted])
   scope :deleted, where(:aasm_status => :deleted)
   scope :not_deleted, where(:aasm_status => [:publics, :draft])
+
 
   def relative_ids
     self.relatives.published.map(&:id)

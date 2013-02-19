@@ -16,13 +16,13 @@
   <div>
     <%= link_to t("edit"), edit_article_path(article) %>
     <% if can? :destroy, article %>
-     | <%= link_to t("destroy"), article_path(article), :method => :delete%>
+     | <%= link_to t("destroy"), category_article_path(article.category.id, article), :confirm => t("confirm"), :method => :delete %>
     <% end %>
     <% if can? :publish, article and not article.publics? %>
      | <%= link_to t("publish"), publish_article_path(article) %>
     <% end %>
-    <% if can? :delete, article %>
-     | <%= link_to t("delete"), delete_article_path(article), :confirm => t("confirm") %>
+    <% if can? :delete, article and not article.deleted? %>
+     | <%= link_to t("draft"), delete_article_path(article) %>
     <% end %>
     <% if can? :manage, article %>
      | <%= link_to t("relative_articles"), article_relative_articles_path(article) %>
