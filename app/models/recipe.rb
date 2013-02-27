@@ -16,5 +16,6 @@ class Recipe < ActiveRecord::Base
   validates_presence_of :recipe_category_id
 
   scope :showned, where(:shown => true)
+  scope :unpublished, where(:shown => false)
 
 end
