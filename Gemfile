@@ -22,6 +22,7 @@ gem 'thinking-sphinx', '2.0.5'
 gem 'formtastic', "2.0.2"
 gem 'russian'
 gem 'sitemap_generator'
+gem 'truncate_html', "~> 0.3.2"
 
 #gem 'inherited_resources',        '~> 1.2.2'
 # Bundle edge Rails instead:

@@ -138,6 +138,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    truncate_html (0.3.2)
     tzinfo (0.3.31)
     warden (1.1.0)
       rack (>= 1.0)
@@ -167,4 +168,5 @@ DEPENDENCIES
   sitemap_generator
   thinking-sphinx (= 2.0.5)
   tiny_mce
+  truncate_html (~> 0.3.2)
   will_paginate
