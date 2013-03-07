@@ -133,6 +133,8 @@ GEM
       linecache (>= 0.3)
     russian (0.6.0)
       i18n (>= 0.5.0)
+    rvm-capistrano (1.2.7)
+      capistrano (>= 2.0.0)
     sitemap_generator (3.1.1)
       builder
     thinking-sphinx (2.0.5)
@@ -176,6 +178,7 @@ DEPENDENCIES
   rails (= 3.0.11)
   ruby-debug
   russian
+  rvm-capistrano
   sitemap_generator
   thinking-sphinx (= 2.0.5)
   tiny_mce

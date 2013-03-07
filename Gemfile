@@ -33,4 +33,5 @@ group :development do
   gem 'capistrano', '~> 2.11.2'
   gem "capistrano_colors", "~> 0.5.5", :require => false
   gem "capistrano-unicorn", "~> 0.1.6"
+  gem "rvm-capistrano"
 end
