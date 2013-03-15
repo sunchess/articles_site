@@ -1,0 +1,28 @@
+<% if can? :edit, Recipe %>
+  <%= link_to "Опубликованные рецепты", recipes_path %> | <%= link_to "Неопубликованные рецепты", recipes_path(:show_unpublished => true) %>
+<% end %>
+<div class="posts single">
+  <h4><%= @category.name %></h1>
+</div>
+<div class="posts">
+  <% if params[:show_unpublished] and can?(:manage, Recipe) %>
+    <% @recipes = @category.recipes.unpublished.lasts %>
+  <% else %>
+    <% @recipes = @category.recipes.showned.lasts %>
+  <% end %>
+    <% @recipes.each do |recipe| %>
+    <div class="post">
+      <p>
+        <b><%= recipe.user_name %></b>
+      </p>
+      <p>
+        <%= recipe.body %>
+      </p>
+      <%= link_to "Комментировать", recipe, :class=>"more"%>
+    </div><!-- END post -->
+  <% end %>
+</div><!-- END posts -->
+
+<div id="add_reciepe_button">
+  <%= link_to 'Добавить рецепт', new_recipe_path, :class => "ask" %>
+</div>
