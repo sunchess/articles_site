@@ -3,17 +3,16 @@
 <% end %>
 <% @categories.each do |category| %>
 <div class="posts single">
-  <h1><%= category.name %></h1>
+  <h4><%= link_to category.name, recipe_category_path(category) %></h1>
 </div>
 <div class="posts">
   <% if params[:show_unpublished] and can?(:manage, Recipe) %>
-    <% @recipes = category.recipes.unpublished %>
+    <% @recipes = category.recipes.unpublished.lasts %>
   <% else %>
-    <% @recipes = category.recipes.showned %>
+    <% @recipes = category.recipes.showned.lasts %>
   <% end %>
     <% @recipes.each do |recipe| %>
     <div class="post">
-      <h4><%= recipe.title %></h4>
       <p>
         <b><%= recipe.user_name %></b>
       </p>

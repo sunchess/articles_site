@@ -2,7 +2,6 @@
   <%= f.inputs do %>
     <%= f.input :recipe_category_id, :required => true, :as => :select, :collection => RecipeCategory.all %>
     <%= f.input :user_name %>
-    <%= f.input :title %>
     <%= f.input :body %>
     <% if can? :manage, Recipe %>
       <%= f.input :shown %>

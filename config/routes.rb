@@ -48,7 +48,7 @@ Jsovet::Application.routes.draw do
     resources :articles
   end
 
-  resources :recipe_categories, :only => %w{index} do
+  resources :recipe_categories, :only => %w{index, show} do
     resources :recipes
   end
 
