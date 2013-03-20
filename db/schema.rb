@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130218180948) do
+ActiveRecord::Schema.define(:version => 20130314153008) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -103,9 +103,8 @@ ActiveRecord::Schema.define(:version => 20130218180948) do
 
   create_table "recipes", :force => true do |t|
     t.string   "user_name"
-    t.string   "title"
     t.text     "body"
-    t.boolean  "shown",              :default => false, :null => false
+    t.boolean  "shown",              :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "recipe_category_id"
