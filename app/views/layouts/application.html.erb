@@ -79,7 +79,13 @@
 				<ul><%= yield :javascript %>
                                   <%#= render :partial => "layouts/category", :collection => Category.all %>
 				</ul>
+        <% unless params[:action] == "mayskiy_med"  %>
+          <div class="sidebar_block" style="margin-bottom: 10px; margin-left: 15px;">
+            <%= link_to "Майский мед 2013", mayskiy_path, :class => "ask" %>
+          </div>
+        <% end %>
 			</div><!-- END sidebar_block -->
+
                         <%= render :partial => "shoping_carts/cart" %>
 			<div class="sidebar_block contact">
 				<h2>Контакты</h2>
