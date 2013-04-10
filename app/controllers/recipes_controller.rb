@@ -9,7 +9,6 @@ class RecipesController < InheritedResources::Base
 
   def create
     create!(:notice => "Ваш рецепт добавлен! После проверки администрацией он будет доступен. Спасибо!"){ recipes_path }
-    AppMailer.new_recipe(@recipe).deliver
   end
 
   def edit

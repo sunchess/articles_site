@@ -16,4 +16,18 @@ class Recipe < ActiveRecord::Base
   scope :unpublished, where(:shown => false)
   scope :lasts, limit(3)
 
+  after_create :send_email
+
+  def send_email
+    AppMailer.new_recipe(self).deliver
+  end
+
+  before_create :set_shown
+
+  def set_shown
+    if self.shown.nil?
+      self.shown = false
+    end
+  end
+
 end
