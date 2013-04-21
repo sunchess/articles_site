@@ -1,3 +1,61 @@
+<% content_for :map do %>
+<script charset="utf-8" src="https://clck.yandex.ru/jclck/dtype=stred/pid=443/cid=71834/path=map/rnd=0.48028539191000164/*https://maps.yandex.ru/"></script>
+<script src="http://api-maps.yandex.ru/2.0/?load=package.full&amp;lang=ru-RU" type="text/javascript"></script>
+<script type="text/javascript">
+        // Как только будет загружен API и готов DOM, выполняем инициализацию
+        //http://maps.yandex.ru/-/CVVyVW2n
+        ymaps.ready(init);
+
+        function init () {
+            var myMap = new ymaps.Map("map", {
+                    center: [44.268141, 38.863351],
+                    zoom: 14,
+                    type: "yandex#hybrid"
+                }),
+
+                // Создаем метку. При создании метки указываем ее свойство -  текст для отображения в иконке.38.863351,44.268141
+                myPlacemark = new ymaps.Placemark([44.269837, 38.86172], {
+                    // Свойства
+                    // Текст метки
+                    iconContent: 'Наша пасека'
+                }, {
+                    // Опции
+                    // Иконка метки будет растягиваться под ее контент
+                    preset: 'twirl#blueStretchyIcon'
+                });
+
+         // В метод add можно передать строковый идентификатор
+            // элемента управления и его параметры.
+            myMap.controls
+                // Кнопка изменения масштаба
+                .add('zoomControl')
+                // Список типов карты
+                .add('typeSelector')
+                // Кнопка изменения масштаба - компактный вариант
+                // Расположим её справа
+                //.add('smallZoomControl', { right: 5, top: 75 })
+                // Стандартный набор кнопок
+                .add('mapTools');
+
+            // Также в метод add можно передать экземпляр класса, реализующего определенный элемент управления.
+            // Например, линейка масштаба ('scaleLine')
+            myMap.controls
+                .add(new ymaps.control.ScaleLine())
+                // В конструкторе элемента управления можно задавать расширенные
+                // параметры, например, тип карты в обзорной карте
+                .add(new ymaps.control.MiniMap({
+                    type: 'yandex#publicMap'
+                }));
+
+
+            // Добавляем метки на карту
+            myMap.geoObjects
+                .add(myPlacemark)
+                .add(myGeoObject);
+        }
+    </script>
+
+<% end %>
 <%= title("Майский мед 2013 года :: Мед на дом") %>
 <%= description("Мы начинаем подготовку пасеки к первому в этом году сбору майского меда!") %>
 
@@ -97,6 +155,11 @@
 <p>
   <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
   <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="link" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
+</p>
+
+<p>
+  <div id="map" style="width:600px; height:600px">
+  </div>
 </p>
 
 <script type="text/javascript">
