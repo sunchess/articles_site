@@ -4,4 +4,8 @@ class HomeController < ApplicationController
     @stores = Store.shown.at_index
   end
 
+  def contacts
+
+  end
+
 end
