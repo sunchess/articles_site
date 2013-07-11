@@ -1,0 +1,83 @@
+<% content_for :map do %>
+<script charset="utf-8" src="https://clck.yandex.ru/jclck/dtype=stred/pid=443/cid=71834/path=map/rnd=0.48028539191000164/*https://maps.yandex.ru/"></script>
+<script src="http://api-maps.yandex.ru/2.0/?load=package.full&amp;lang=ru-RU" type="text/javascript"></script>
+<script type="text/javascript">
+        // Как только будет загружен API и готов DOM, выполняем инициализацию
+        //http://maps.yandex.ru/-/CVVyVW2n
+        ymaps.ready(init);
+
+        function init () {
+            var myMap = new ymaps.Map("map", {
+                    center: [47.262659, 39.857008],
+                    zoom: 16,
+                    type: "yandex#map"
+                }),
+
+                // Создаем метку. При создании метки указываем ее свойство -  текст для отображения в иконке.38.863351,44.268141
+                myPlacemark = new ymaps.Placemark([47.262601, 39.858896], {
+                    // Свойства
+                    // Текст метки
+                    iconContent: "Ростовская область, \n г. Аксай, проспект Ленина, д. 12"
+                }, {
+                    // Опции
+                    // Иконка метки будет растягиваться под ее контент
+                    preset:'twirl#blueStretchyIcon'
+                });
+
+         // В метод add можно передать строковый идентификатор
+            // элемента управления и его параметры.
+            myMap.controls
+                // Кнопка изменения масштаба
+                .add('zoomControl')
+                // Список типов карты
+                .add('typeSelector')
+                // Кнопка изменения масштаба - компактный вариант
+                // Расположим её справа
+                //.add('smallZoomControl', { right: 5, top: 75 })
+                // Стандартный набор кнопок
+                .add('mapTools');
+
+            // Также в метод add можно передать экземпляр класса, реализующего определенный элемент управления.
+            // Например, линейка масштаба ('scaleLine')
+            myMap.controls
+                .add(new ymaps.control.ScaleLine())
+                // В конструкторе элемента управления можно задавать расширенные
+                // параметры, например, тип карты в обзорной карте
+                .add(new ymaps.control.MiniMap({
+                    type: 'yandex#publicMap'
+                }));
+
+
+            // Добавляем метки на карту
+            myMap.geoObjects
+                .add(myPlacemark)
+                .add(myGeoObject);
+        }
+    </script>
+<% end %>
+<%= title("Контакты :: Мед на дом") %>
+<%= description("Наш адрес: Ростовская область, г. Аксай, проспект Ленина, д. 12, офис 315 А.") %>
+
+<div class="posts single">
+  <h1>Контакты</h1>
+</div>
+
+
+<div class="post">
+  <p>
+    Адрес: Ростовская область, г. Аксай, проспект Ленина, д. 12, офис 315 А.
+  </p>
+  <p>
+   Телефон для связи: +7(928)604-78-34
+  </p>
+  <p>
+    Email: <%= mail_to "zakaz@mednadom.com", "zakaz@mednadom.com" %>
+  </p>
+</div>
+
+<p>
+  <div id="map" style="width:600px; height:600px">
+  </div>
+</p>
+
+

@@ -97,6 +97,7 @@ Jsovet::Application.routes.draw do
   match 'search/index' => 'search#index', :as => :search
   match 'how_to_buy' => 'home#how_to_buy', :as => :how_to_buy
   get "mayskiy_med_2013" => "home#mayskiy_med", :as => :mayskiy
+  get "contacts" => "home#contacts", :as => :contacts
   # match 'container' => 'home#container', :as => :container
   # match 'articles/main_articles' => 'articles#main_articles'
 

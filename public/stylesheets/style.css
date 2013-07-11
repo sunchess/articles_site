@@ -411,7 +411,7 @@ body{
 .footer_left{
 	float: left;
 	margin-top: 27px;
-	width: 460px;
+	width: 600px;
 }
 	.footer_left p{
 		text-align: right;
@@ -419,7 +419,7 @@ body{
 .footer_right{
 	float: left;
 	margin: 27px 0 0 65px;
-	width: 400px;
+	width: 260px;
 }
 
 /* css for timepicker */
