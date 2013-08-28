@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130314153008) do
+ActiveRecord::Schema.define(:version => 20130828094406) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -173,6 +173,8 @@ ActiveRecord::Schema.define(:version => 20130314153008) do
     t.string   "certificate_content_type"
     t.integer  "certificate_file_size"
     t.datetime "certificate_updated_at"
+    t.integer  "price_three_liters",        :default => 0
+    t.integer  "price_one_liter",           :default => 0
   end
 
   create_table "users", :force => true do |t|

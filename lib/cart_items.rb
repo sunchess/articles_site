@@ -7,7 +7,15 @@ class CartItems
   end
 
   def add(pos, amount)
-    val = [pos.id, pos.price, pos.name, amount]
+    pos_price = if amount == 1400
+      pos.price_one_liter
+    elsif amount == 4500
+      pos.price_three_liters
+    else
+      pos.price
+    end
+
+    val = [pos.id, pos_price, pos.name, amount]
     prod = @products.select{|p| p.first == pos.id}
     unless prod.empty?
       prod = prod.first
@@ -18,10 +26,10 @@ class CartItems
       # replice position of array
       @products[indx] = prod
 
-      price = ( amount/1000.0 ) * pos.price.to_f
+      price = pos_price.to_f
     else
       @products.push val
-      price = ( amount/1000.0 ) * pos.price.to_f
+      price = pos_price.to_f
     end
     @total = @total + price
   end

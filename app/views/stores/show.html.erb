@@ -41,7 +41,9 @@
       <% if @store.prod? %>
         <p><%= @store.price/10 %> Р.</p>
       <% else %>
-        <p><%= @store.price %> Р.</p>
+        <p><%= @store.price %> Р. 1кг.</p>
+        <p><%= @store.price_one_liter %> Р. 1 литр</p>
+        <p><%= @store.price_three_liters %> Р. 3 литра</p>
       <% end %>
       <%= form_tag(add_shoping_cart_path(@store), :remote => true, :method => :get) do %>
         <table border="0">

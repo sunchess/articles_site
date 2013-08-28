@@ -25,6 +25,8 @@ ru:
         shown: "Показываем?"
         logo: "Изображение медоноса"
         price: "Цена за кг."
+        price_three_liters: "Цена за 3 литра"
+        price_one_liter: "Цена за литр"
         prod: "Продукт"
         fresh: "Свежий продукт"
         position: "Позиция"
