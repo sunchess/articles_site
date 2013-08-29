@@ -6,8 +6,8 @@ module ShopingCartsHelper
       "1 килограмм"
     when 1400
       "1 литр(1400 грамм)"
-    when 4200
-      "3 литра(4200 грамм)"
+    when 4500
+      "3 литра(4500 грамм)"
     end
 
     if !val
